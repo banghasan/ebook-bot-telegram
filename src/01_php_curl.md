@@ -27,7 +27,7 @@ PHP adalah bahasa pemrograman sisi server yang sangat populer untuk pengembangan
 #### 1.3. Persiapan Lingkungan Pengembangan
 
 Untuk memulai, Anda memerlukan lingkungan pengembangan yang mencakup:
-1.  **Web Server:** Apache, Nginx, atau sejenisnya.
+1.  **Web Server:** Apache, Nginx, atau sejenisnya. Diperlukan hanya jika menggunakan metode webhook.
 2.  **PHP:** Versi 7.4 ke atas direkomendasikan.
 3.  **Ekstensi cURL:** Pastikan ekstensi `php-curl`[^phpcurl] telah diaktifkan di konfigurasi PHP Anda.
 
@@ -143,6 +143,83 @@ if ($bot_info['ok']) {
     echo "Gagal terhubung ke API Telegram: " . $bot_info['description'] . "\n";
 }
 ```
+
+#### 2.5. Menjalankan Skrip Melalui Command Line (CLI)
+
+Menjalankan skrip langsung dari command line memudahkan pengujian tanpa harus menyiapkan server web terlebih dahulu. Berikut langkah yang bisa diikuti secara berurutan:
+
+1.  **Pastikan PHP terpasang dengan benar.** Buka Terminal (macOS/Linux) atau Command Prompt/PowerShell (Windows), lalu jalankan:
+
+    ```bash
+    php -v
+    ```
+
+    Jika versi PHP muncul, berarti PHP siap digunakan. 
+    
+    Contoh hasilnya:
+    
+    ```sh
+    $ php -v
+    PHP 8.3.6 (cli) (built: Jul 14 2025 18:30:55) (NTS)
+    Copyright (c) The PHP Group
+    Zend Engine v4.3.6, Copyright (c) Zend Technologies
+        with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies
+    ```
+    
+    ![](./img/php/version.jpg)
+    
+    Bila muncul pesan error, instal PHP terlebih dahulu atau pastikan path PHP sudah ditambahkan ke `PATH`.
+    
+2.  **Simpan kode PHP Anda ke dalam sebuah berkas.** Misalnya `send_message.php` atau `get_me.php`. Gunakan editor teks apa pun (Notepad, VS Code, atau nano) dan pastikan token bot sudah diganti dengan milik Anda.
+3.  **Masuk ke folder tempat berkas disimpan.** Gunakan perintah `cd` (change directory). Contoh:
+
+    ```bash
+    cd /home/user/proyek-bot
+    ```
+
+    Di Windows, sesuaikan dengan drive yang tepat, misalnya `cd C:\Users\nama\proyek-bot`.
+4.  **Jalankan skrip dengan perintah `php nama_berkas.php`.** Contoh:
+
+    ```bash
+    php send_message.php
+    ```
+
+    Terminal akan menampilkan hasil `print_r($result)` atau pesan lain yang Anda buat di skrip. Jika permintaan berhasil, status `ok` bernilai `true` dan pesan akan terkirim ke Telegram.
+5.  **Baca pesan atau error yang muncul.** Pesan sukses berarti skrip berjalan sesuai harapan. Jika ada error (misalnya `{"ok":false,...}`), catat keterangannya, periksa ulang token, koneksi internet, atau parameter yang dikirim.
+
+Dengan alur di atas, siapapun dapat menguji bot kecil secara mandiri hanya bermodalkan PHP CLI dan koneksi internet, tanpa harus memahami konfigurasi server web yang lebih kompleks.
+
+##### Melihat Detail Permintaan dengan cURL Verbose
+
+Kadang perlu melihat detail lalu lintas HTTP (header permintaan, header respons, status koneksi) untuk memastikan permintaan benar. PHP menyediakan opsi `CURLOPT_VERBOSE` agar cURL mengeluarkan log proses secara mendetail.
+
+*   **Fungsi utama:** Menampilkan informasi debug yang mencakup bagaimana cURL membuka koneksi, header yang dikirim, respon yang diterima, hingga informasi SSL.
+*   **Cara mengaktifkan:** Setel `CURLOPT_VERBOSE` ke `true`. Agar log rapi, arahkan output-nya ke berkas atau `php://stdout`.
+
+Contoh menyalakan verbose dan menyimpan log ke berkas `curl_debug.log`:
+
+```php
+$ch = curl_init();
+$verbose = fopen('curl_debug.log', 'w'); // log akan ditulis ke file
+
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+curl_setopt($ch, CURLOPT_VERBOSE, true); // aktifkan verbose
+curl_setopt($ch, CURLOPT_STDERR, $verbose); // arahkan output verbose
+
+$response = curl_exec($ch);
+
+if (curl_error($ch)) {
+    throw new \Exception(curl_error($ch));
+}
+
+curl_close($ch);
+fclose($verbose);
+```
+
+Setelah skrip dijalankan lewat command line, buka `curl_debug.log` untuk melihat seluruh detail komunikasi. Ketika terjadi error (contoh: token salah atau koneksi ditolak), informasi verbose biasanya memberi petunjuk jelas soal penyebabnya.
 
 ### Bab 3: Menerima Pembaruan (Updates) dari Pengguna
 
