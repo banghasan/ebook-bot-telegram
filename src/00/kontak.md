@@ -1,7 +1,7 @@
-Untuk memperkuat ekosistem belajar, silakan bergabung dengan grup Telegram `@botindonesia`.
+Untuk memperkuat ekosistem belajar bersama, silakan bergabung dengan grup Telegram [@botIndonesia](https://t.me/botindonesia)
 
-Di sana kita dapat bertukar pandangan, mengulas studi kasus, hingga membantu pemula yang baru merintis. 
+Di sana, kita bisa berdiskusi santai, bertukar pikiran, mengulas studi kasus, hingga membantu teman-teman yang baru memulai. Anggap saja ini seperti tongkrongan digital, karena obrolan di dalamnya ada juga bebas dan lepas.
 
-Jika memiliki pertanyaan khusus terkait isi buku, kanal ini juga menjadi jalur kontak utama agar penulis dan pembaca lain dapat merespons lebih cepat.
+Jika ada yang ingin ditanyakan atau didiskusikan terkait materi dan tutorial di sini, grup tersebut adalah jalur komunikasi utamanya. Dengan begitu, diskusi publik akan lebih bermanfaat bagi semua anggota.
 
-Namun perlu dicatat ya, bahwa semua pertanyaan tidak harus dijawab. Karena jalur ini adalah jalur komunitas, untuk *sharing* dan *caring*.
+Mohon dipahami bahwa ini adalah ruang komunitas untuk berbagi, bukan layanan tanya-jawab. Tidak semua pertanyaan harus dan bisa terjawab. Mari kita ciptakan lingkungan belajar yang santai dan saling mendukung.
