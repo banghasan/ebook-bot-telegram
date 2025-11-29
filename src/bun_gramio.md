@@ -15,28 +15,7 @@
 *   **Website:** [banghasan.com](https://banghasan.com)
 *   **Grup Diskusi Telegram:** [@botindonesia](https://t.me/botindonesia)
 
-## Desain Cover Buku (Representasi Teks)
-
-```markdown
-======================================================================
-[HEADER - Warna Cyan Blue]
-  Membangun Bot Telegram
-  dengan Bun dan GramIO
-[SUBTITLE - Warna Putih]
-  Panduan (Semoga) Lengkap dari Pemula hingga Lanjutan
-======================================================================
-
-[VISUAL ELEMENT - Ilustrasi Abstrak Bun (Petir), Telegram (Pesawat Kertas), dan Kode (Sirkuit)]
-
-[FOOTER - Warna Electric Green]
-  Penulis: bangHasan
-  Desember 2025
-  
-  Email: banghasan@gmail.com
-  Web: https://banghasan.com
-  Diskusi: @botindonesia (Telegram)
-======================================================================
-```
+![](./img/bun/bun_cover.webp)
 
 ---
 
