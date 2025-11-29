@@ -29,7 +29,7 @@ PHP adalah bahasa pemrograman sisi server yang sangat populer untuk pengembangan
 Untuk memulai, Anda memerlukan lingkungan pengembangan yang mencakup:
 1.  **Web Server:** Apache, Nginx, atau sejenisnya.
 2.  **PHP:** Versi 7.4 ke atas direkomendasikan.
-3.  **Ekstensi cURL:** Pastikan ekstensi `php-curl` telah diaktifkan di konfigurasi PHP Anda.
+3.  **Ekstensi cURL:** Pastikan ekstensi `php-curl`[^phpcurl] telah diaktifkan di konfigurasi PHP Anda.
 
 #### 1.4. Mendapatkan Token Bot dari @BotFather
 
@@ -838,3 +838,5 @@ class SimpleTelegramBot {
 }
 ?>
 ```
+
+[^phpcurl]: [PHP Curl](https://www.php.net/manual/en/book.curl.php) dokumentasi resmi PHP Curl

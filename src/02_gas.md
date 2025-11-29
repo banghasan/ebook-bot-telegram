@@ -31,6 +31,17 @@ Ada beberapa alasan kuat mengapa GAS menjadi pilihan ideal untuk hosting bot Tel
 2.  **Integrasi Google yang Mudah:** Bot Anda dapat dengan mudah membaca dan menulis data ke Google Sheets, mengirim email melalui Gmail, atau mengelola file di Google Drive.
 3.  **Kemudahan Deployment:** Proses *deployment* bot Telegram di GAS sangat sederhana, hanya dengan mempublikasikan skrip sebagai aplikasi web (*Web App*).
 
+#### Limitasi Penggunaan Google Apps Script
+
+Di balik kemudahannya, GAS memiliki kuota dan batas teknis yang perlu diingat agar bot tetap andal:
+
+- **Durasi Eksekusi:** Setiap pemanggilan fungsi (termasuk `doPost`) dibatasi sekitar 6 menit untuk akun individu; jika logika bot terlalu berat, eksekusi akan dihentikan otomatis.
+- **Total Waktu Harian:** Jumlah total runtime skrip dibatasi ±90 menit per hari untuk akun standar, sehingga lonjakan trafik dapat menghentikan bot hingga kuota direset.
+- **Permintaan Eksternal:** Kuota `UrlFetchApp` (metode yang digunakan Lumpia untuk memanggil Telegram API) sekitar 20.000 permintaan per hari; melebihi angka ini akan menimbulkan error `Exception: Service invoked too many times`.
+- **Respon dan Payload:** Ukuran respons Web App dibatasi ±50 MB dan ukuran request POST dibatasi agar server GAS tetap stabil; kiriman file besar tidak akan diterima.
+
+Jika kebutuhan proyek melampaui batas tersebut, pertimbangkan untuk memecah beban kerja, menggunakan cache, atau memigrasikan bot ke platform serverless lain. Detail kuota selalu diperbarui dalam dokumentasi resmi Google Apps Script [^5].
+
 ### 1.3 Mengenal Lumpia Framework (TelegramBotIndonesia Library)
 
 Meskipun Telegram menyediakan API yang kuat, berinteraksi langsung dengannya menggunakan GAS bisa menjadi rumit. Di sinilah **Lumpia Framework** berperan.
@@ -442,3 +453,4 @@ Untuk terus mengembangkan kemampuan bot Anda, kami merekomendasikan sumber daya 
 [^2]: [GAS-Lib-v3 GitHub](https://github.com/telegrambotindonesia/GAS-Lib-v3) *Source Code Framework*
 [^3]: [Telegram Bot API](https://core.telegram.org/bots/api) *Dokumentasi Resmi API Telegram*
 [^4]: [Telegram Bot Indonesia](https://t.me/botIndonesia) *Grup Diskusi Telegram*
+[^5]: [Google Apps Script Quotas](https://developers.google.com/apps-script/guides/services/quotas) *Daftar Batas Layanan dan Kuota GAS Terbaru*
