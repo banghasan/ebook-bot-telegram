@@ -6,6 +6,8 @@ Tutorial ini akan memandu Anda langkah demi langkah untuk membuat sebuah skrip s
 
 ### Langkah 1: Membuat Bot Telegram
 
+![](https://lumpia.js.org/images/botfather/cari_botfather.webp)
+
 Untuk mengirim pesan melalui API Telegram, kita memerlukan sebuah bot.
 
 1.  Buka aplikasi Telegram Anda, cari akun bernama `BotFather` (ada tanda centang biru).
@@ -15,11 +17,11 @@ Untuk mengirim pesan melalui API Telegram, kita memerlukan sebuah bot.
 5.  Selanjutnya, berikan username untuk bot Anda. Username harus unik dan diakhiri dengan kata `bot` (misalnya: `vps_monitor_xyz_bot`).
 6.  Setelah berhasil, `BotFather` akan memberikan Anda sebuah **Token API**. Token ini sangat rahasia dan digunakan untuk mengontrol bot Anda.
 
-    ![Contoh Token dari BotFather](https://core.telegram.org/file/811140227/1/zlN4go--g34/41f4f4f7a22ad74e53)
+![Contoh Token dari BotFather](https://lumpia.js.org/images/botfather/token.webp)
 
-    Salin dan simpan token ini di tempat yang aman. Kita akan menggunakannya di dalam skrip.
+Salin dan simpan token ini di tempat yang aman. Kita akan menggunakannya di dalam skrip.
 
-    **CATATAN PENTING:** Jaga kerahasiaan Token API Anda. Siapa pun yang memilikinya dapat mengendalikan bot Anda.
+**CATATAN PENTING:** Jaga kerahasiaan Token API Anda. Siapa pun yang memilikinya dapat mengendalikan bot Anda.
 
 ---
 
@@ -67,9 +69,11 @@ Setelah bot dibuat, kita perlu tahu kemana pesan notifikasi akan dikirim. Setiap
       ]
     }
     ```
-    Atau bisa didapatkan di bot [@strukturbot](https://t.me/strukturbot)
+Atau bisa didapatkan di bot [@strukturbot](https://t.me/strukturbot)
     
-    Salin dan simpan `Chat ID` Anda.
+![](./img/strukturbot.webp)
+    
+Salin dan simpan `ID` / `Chat ID` Anda.
 
 ---
 

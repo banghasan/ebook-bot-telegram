@@ -1,6 +1,13 @@
 # Summary
 
-- [Pengantar](./00_pengantar.md)
+- [Pengantar](./00/pengantar.md)
+  - [Latar Belakang](./00/latar_belakang.md)
+  - [Penting Sebelum Baca](./00/penting_sebelum_baca.md)
+  - [Catatan tentang Konsep "Free"](./00/konsep_free.md)
+  - [Tanggung Jawab](./00/tanggung_jawab.md)
+  - [Motivasi untuk Melangkah](./00/motivasi.md)
+  - [Diskusi dan Kontak](./00/kontak.md)
+- [Daftar Ebook](./daftar_isi.md)
 - [Telegram dan Integrasi](./tools/README.md)
   - [Notifikasi Login SSH](./tools/tutorial_telegram_curl_bash.md)
 - [PHP dan Curl](./01_php_curl.md)

@@ -272,6 +272,8 @@ Bot Telegram adalah akun otomatis yang berinteraksi dengan pengguna melalui API 
 
 #### 4.2. Mendapatkan Token Bot dari BotFather: Kunci Rahasia Anda
 
+![](https://lumpia.js.org/images/botfather/cari_botfather.webp)
+
 Token API adalah string unik yang berfungsi sebagai kata sandi bot Anda. Token ini digunakan oleh GramIO untuk mengautentikasi permintaan ke server Telegram.
 
 **Langkah-langkah Mendapatkan Token:**
@@ -279,6 +281,8 @@ Token API adalah string unik yang berfungsi sebagai kata sandi bot Anda. Token i
 2.  Ketik `/newbot`.
 3.  Ikuti instruksi untuk memilih nama tampilan (misalnya, "Bot Buku Bun") dan *username* (harus diakhiri dengan `bot`, misalnya, `BotBukuBun_bot`).
 4.  BotFather akan memberikan Anda Token API.
+
+![](https://lumpia.js.org/images/botfather/token.webp)
 
 > **Peringatan Keamanan:** Token API harus diperlakukan sebagai informasi rahasia. **JANGAN PERNAH** menyimpannya langsung di kode sumber atau membagikannya di repositori publik. Selalu gunakan *Environment Variable*.
 
