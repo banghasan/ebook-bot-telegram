@@ -6,7 +6,7 @@ Untuk memahaminya, mari kita bedah dua konsep utama dari "gratis" yang sering di
 1.  **"Gratis seperti sampel produk"** (*free as in free samples*): Anda mendapatkannya tanpa biaya.
 2.  **"Gratis seperti kebebasan berpendapat"** (*free as in free speech*): Anda bebas menggunakannya sesuai keinginan Anda.
 
----
+![](https://blog.banghasan.com/assets/images/BOCAH/028.png)
 
 ## 1. Gratis sebagai "Tanpa Biaya"
 

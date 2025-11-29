@@ -1,8 +1,10 @@
 # Integrasi Bot Telegram
 
-## Apa Tujuan Bab Ini?
+![](https://blog.banghasan.com/assets/images/BOCAH/007.png)
 
-Bab ini adalah tempat untuk menyimpan berbagai skrip dan tutorial yang menghubungkan bot Telegram dengan aktivitas kita sehari-hari. Idenya adalah membuat "pembantu" digital kecil yang bisa memberikan informasi atau melakukan tugas-tugas ringan secara otomatis langsung ke akun Telegram Anda.
+## Apa Tujuan Bagian Ini?
+
+Bagian ini adalah tempat untuk menyimpan berbagai skrip dan tutorial yang menghubungkan bot Telegram dengan aktivitas kita sehari-hari. Idenya adalah membuat "pembantu" digital kecil yang bisa memberikan informasi atau melakukan tugas-tugas ringan secara otomatis langsung ke akun Telegram Anda.
 
 Fungsinya sengaja dibuat sederhana, tidak rumit, tapi sangat bermanfaat untuk mempermudah hidup dan memonitor berbagai hal.
 
@@ -35,4 +37,6 @@ Berikut adalah beberapa contoh nyata dari apa yang bisa Anda temukan atau buat d
 
 ---
 
-Intinya, Bab ini didedikasikan untuk kreativitas dalam mengotomatisasi tugas-tugas kecil yang berguna. Jika Anda punya ide lain, jangan ragu untuk menambahkannya!
+> *Meski belum semuanya dibuat*, tapi ide tetap harus ada dan berkembang :-)
+
+Intinya, bagian ini didedikasikan untuk kreativitas dalam mengotomatisasi tugas-tugas kecil yang berguna. Jika Anda punya ide lain, jangan ragu untuk menambahkannya!
