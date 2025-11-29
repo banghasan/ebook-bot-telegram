@@ -3,3 +3,24 @@ title = "Telegram Bot Indonesia"
 description = "Panduan membuat bot Telegram"
 authors = ["bangHasan"]
 language = "en"
+
+[output.html]
+smart-punctuation = true
+mathjax-support = true
+site-url = "/mdBook/"
+git-repository-url = "https://github.com/banghasan/ebook-bot-telegram"
+edit-url-template = "https://github.com/banghasan/ebook-bot-telegram/tree/main/{path}"
+hash-files = true
+
+[output.html.playground]
+editable = true
+line-numbers = true
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2

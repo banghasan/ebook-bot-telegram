@@ -445,6 +445,10 @@ Untuk terus mengembangkan kemampuan bot Anda, kami merekomendasikan sumber daya 
 2.  **Telegram Bot API Documentation** [^3]: Untuk memahami lebih dalam tentang struktur data yang dikirimkan oleh Telegram.
 3.  **Komunitas Telegram Bot Indonesia** [^4]: Bergabunglah dengan grup diskusi untuk bertanya dan berbagi pengalaman.
 
+> Jangan lupa tonton video tutorialnya pada [youtube](https://youtu.be/H_GBc1nfqcA)
+[![](https://i.ytimg.com/vi/H_GBc1nfqcA/maxresdefault.jpg)](https://youtu.be/H_GBc1nfqcA)
+
+
 ***
 
 ## Referensi

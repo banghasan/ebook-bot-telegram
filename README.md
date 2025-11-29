@@ -9,7 +9,6 @@ Repositori ini berisi sumber materi buku digital bertema pembangunan bot Telegra
 | `src/` | Naskah utama setiap bab (Markdown) yang akan dirender oleh mdBook. |
 | `book/` | Hasil build statis yang dihasilkan oleh `mdbook build`. Folder ini menjadi target publikasi pada layanan hosting. |
 | `book.toml` | Konfigurasi mdBook (judul, navigasi, dll.). |
-| `serve.sh` | Skrip bantu untuk menjalankan server lokal mdBook. |
 
 ## Cara Menjalankan Secara Lokal
 
@@ -17,7 +16,9 @@ Repositori ini berisi sumber materi buku digital bertema pembangunan bot Telegra
 2. Jalankan `mdbook serve --open` untuk melihat pratinjau lokal dengan *hot reload*.
 3. Untuk menghasilkan versi siap rilis, jalankan `mdbook build` sehingga keluaran HTML tersimpan di direktori `book/`.
 
-## Deployment ke Netlify
+## Deployment
+
+### Netlify
 
 Gunakan pengaturan berikut saat menyiapkan situs Netlify:
 
@@ -29,6 +30,12 @@ Gunakan pengaturan berikut saat menyiapkan situs Netlify:
   curl -sSL "https://github.com/rust-lang/mdBook/releases/download/v${VERSION}/mdbook-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar -xz && \
   ./mdbook build
   ```
+
+### Clouflare Pages
+
+```bash
+VERSION=$(curl -s https://api.github.com/repos/rust-lang/mdBook/releases/latest | grep tag_name | cut -d '"' -f 4 | sed 's/^v//') && curl -sSL "https://github.com/rust-lang/mdBook/releases/download/v${VERSION}/mdbook-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar -xz && ./mdbook build
+```
 
 Perintah di atas akan mengambil rilis mdBook terbaru secara otomatis, mengekstraknya, dan menjalankan proses build untuk menghasilkan folder `book/` yang siap dipublikasikan oleh Netlify.
 
