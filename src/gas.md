@@ -13,6 +13,58 @@
 
 ![Cover GAS Ebook](./img/gas/gas_cover.webp)
 
+## Daftar Isi
+
+- [Bab 1: Pendahuluan - Mengapa GAS dan Lumpia?](#bab-1-pendahuluan---mengapa-gas-dan-lumpia)
+  - [1.1 Latar Belakang](#11-latar-belakang)
+  - [1.2 Untuk Siapa Buku Ini?](#12-untuk-siapa-buku-ini)
+    - [🎯 Pemula Absolut (Belum Pernah Coding)](#-pemula-absolut-belum-pernah-coding)
+    - [💡 Pemula dengan Pengetahuan Dasar Programming](#-pemula-dengan-pengetahuan-dasar-programming)
+    - [🚀 Developer Berpengalaman](#-developer-berpengalaman)
+  - [1.3 Apa Itu Bot Telegram?](#13-apa-itu-bot-telegram)
+  - [1.4 Mengapa Google Apps Script (GAS)?](#14-mengapa-google-apps-script-gas)
+    - [Limitasi Penggunaan Google Apps Script](#limitasi-penggunaan-google-apps-script)
+  - [1.5 Mengenal Lumpia Framework (TelegramBotIndonesia Library)](#15-mengenal-lumpia-framework-telegrambotindonesia-library)
+  - [1.6 Apa yang Perlu Dipersiapkan?](#16-apa-yang-perlu-dipersiapkan)
+    - [✅ Akun dan Akses](#-akun-dan-akses)
+    - [🛠️ Pengetahuan Dasar (Opsional tapi Direkomendasikan)](#️-pengetahuan-dasar-opsional-tapi-direkomendasikan)
+    - [📋 Checklist Persiapan Teknis](#-checklist-persiapan-teknis)
+    - [💡 Tips Sebelum Memulai](#-tips-sebelum-memulai)
+
+- [Bab 2: Persiapan Awal - BotFather dan GAS](#bab-2-persiapan-awal---botfather-dan-gas)
+  - [2.1 Langkah 1: Mendapatkan Token Bot dari BotFather](#21-langkah-1-mendapatkan-token-bot-dari-botfather)
+  - [2.2 Langkah 2: Membuat Proyek Google Apps Script](#22-langkah-2-membuat-proyek-google-apps-script)
+  - [2.3 Langkah 3: Menambahkan Lumpia Framework (Library)](#23-langkah-3-menambahkan-lumpia-framework-library)
+
+- [Bab 3: Bot Pertama Anda - Hello World](#bab-3-bot-pertama-anda---hello-world)
+  - [3.1 Struktur Kode Dasar](#31-struktur-kode-dasar)
+    - [3.1.1 Fungsi `doPost(e)`](#311-fungsi-doposte)
+    - [3.1.2 Inisiasi Bot](#312-inisiasi-bot)
+  - [3.2 Menambahkan Handler Perintah](#32-menambahkan-handler-perintah)
+  - [3.3 Deployment dan Webhook](#33-deployment-dan-webhook)
+    - [3.3.1 Deployment (Penerbitan)](#331-deployment-penerbitan)
+    - [3.3.2 Set Webhook](#332-set-webhook)
+
+- [Bab 4: Fitur Menengah - Context dan Keyboard](#bab-4-fitur-menengah---context-dan-keyboard)
+  - [4.1 Objek Context (`ctx`)](#41-objek-context-ctx)
+  - [4.2 Keyboard Kustom](#42-keyboard-kustom)
+    - [4.2.1 Reply Keyboard (Keyboard Balasan)](#421-reply-keyboard-keyboard-balasan)
+    - [4.2.2 Inline Keyboard (Keyboard Sebaris)](#422-inline-keyboard-keyboard-sebaris)
+
+- [Bab 5: Fitur Mahir - Middleware dan Integrasi GAS](#bab-5-fitur-mahir---middleware-dan-integrasi-gas)
+  - [5.1 Middleware: Memproses Pesan Sebelum Handler](#51-middleware-memproses-pesan-sebelum-handler)
+  - [5.2 Manajemen Sesi (State Management)](#52-manajemen-sesi-state-management)
+  - [5.3 Integrasi dengan Google Sheets](#53-integrasi-dengan-google-sheets)
+    - [Integrasi dengan miniSheetDBv2](#integrasi-dengan-minisheetdbv2)
+
+- [Penutup dan Sumber Daya Lanjutan](#penutup-dan-sumber-daya-lanjutan)
+  - [Ringkasan Pembelajaran](#ringkasan-pembelajaran)
+  - [Sumber Daya Lanjutan](#sumber-daya-lanjutan)
+
+- [Referensi](#referensi)
+
+---
+
 ## Bab 1: Pendahuluan - Mengapa GAS dan Lumpia?
 
 Selamat datang di panduan komprehensif untuk membangun bot Telegram yang kuat
