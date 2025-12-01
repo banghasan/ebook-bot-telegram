@@ -9,7 +9,11 @@
 
 ![cover php cURL](./static/img/cover_php_curl.webp)
 
-### Bab I. Pengantar Bot Telegram dan PHP
+---
+
+## Bagian I: Dasar-Dasar
+
+### Bab 1: Pengantar Bot Telegram dan PHP
 
 #### 1.1. Apa itu Bot Telegram?
 
@@ -31,15 +35,11 @@ Untuk memulai, Anda memerlukan lingkungan pengembangan yang mencakup:
 
 #### 1.4. Mendapatkan Token Bot dari @BotFather
 
-![](https://lumpia.js.org/images/botfather/cari_botfather.webp)
-
 Setiap bot memerlukan token unik untuk otentikasi. Token ini didapatkan dari bot resmi Telegram, **@BotFather**.
 
 1.  Buka aplikasi Telegram dan cari **@BotFather**.
 2.  Ketik `/newbot` dan ikuti instruksi untuk memilih nama bot (misalnya, "Bot Buku PHP") dan username (harus diakhiri dengan "bot", misalnya, "BotBukuPHP_bot").
 3.  Setelah berhasil, @BotFather akan memberikan Anda **HTTP API Token** yang terlihat seperti `123456:ABC-DEF1234ghIkl-jkl-jkl-jkl-jkl`. **Jaga kerahasiaan token ini.**
-
-![](https://lumpia.js.org/images/botfather/token.webp)
 
 ### Bab 2: Interaksi Pertama dengan Telegram Bot API
 
