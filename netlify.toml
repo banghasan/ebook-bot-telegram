@@ -1,6 +1,34 @@
 [build]
   publish = "book"
   command = """
-  curl -s https://github.com/rust-lang/mdBook/releases/download/v0.5.1/mdbook-v0.5.1-x86_64-unknown-linux-gnu.tar.gz | tar -xz
-  ./mdbook build
+    mkdir -p .netlify-cache/tools bin
+
+    MDBOOK_URL=https://github.com/rust-lang/mdBook/releases/download/v0.5.1/mdbook-v0.5.1-x86_64-unknown-linux-gnu.tar.gz
+    MDBOOK_FILE=mdbook.tar.gz
+    MDBOOK_SHA256=5c746127707bd768ecfc2d7fb2374cc11d5ae653aea438e15eea3154a1a69f92
+
+    # ---------------------------
+    # DOWNLOAD + VERIFY MDBOOK
+    # ---------------------------
+    if [ ! -f .netlify-cache/tools/mdbook ]; then
+      wget -q $MDBOOK_URL -O $MDBOOK_FILE
+
+      echo "$MDBOOK_SHA256  $MDBOOK_FILE" | sha256sum -c - || \
+      (echo 'Checksum mdBook invalid! Download ulang...' && rm -f $MDBOOK_FILE && wget -q $MDBOOK_URL -O $MDBOOK_FILE)
+
+      echo "$MDBOOK_SHA256  $MDBOOK_FILE" | sha256sum -c - || \
+      (echo 'Checksum mdBook gagal dua kali. Stop.' && exit 1)
+
+      tar -xzf $MDBOOK_FILE
+      mv mdbook .netlify-cache/tools/mdbook
+    fi
+
+    # ---------------------------
+    # COPY TOOL & BUILD BOOK
+    # ---------------------------
+    cp .netlify-cache/tools/mdbook bin/
+    chmod +x bin/mdbook
+    export PATH=$PATH:$(pwd)/bin
+
+    bin/mdbook build
   """
