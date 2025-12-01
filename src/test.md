@@ -1,7 +1,6 @@
-<!-- toc -->
-
-
 # Halaman Uji Coba
+
+![](https://blog.banghasan.com/assets/images/BOCAH/014.png)
 
 Halaman ini sengaja dibuat sebagai ruang eksperimen supaya setiap fungsi dapat diuji sebelum diterapkan ke halaman lain.
 
@@ -67,8 +66,41 @@ Silakan gunakan halaman ini sesuka hati untuk mencoba berbagai format dan memast
 
 ## MdBook Plugins
 
-### Admonish
+### Katex
 
+Bagian ini membantu menguji apakah KaTeX bekerja sebagaimana mestinya. Gunakan teks di bawah untuk menyalin, memodifikasi, lalu melihat hasil render secara langsung.
+
+Here is an inline example, $ \pi(\theta) $,
+
+an equation,
+
+$$ \nabla f(x) \in \mathbb{R}^n, $$
+
+and a regular \$ symbol.
+
+Tambahan contoh:
+
+- Inline integral: $ \int_{0}^{1} x^2 \, dx = \frac{1}{3} $.
+- Rumus kuadrat dalam block math:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+- Matriks sederhana:
+
+$$
+\mathbf{M} =
+\begin{bmatrix}
+1 & 0 & 0 \\\\
+0 & 1 & 0 \\\\
+0 & 0 & 1
+\end{bmatrix}
+$$
+
+Silakan ubah parameter atau tambahkan simbol lain untuk menguji dukungan KaTeX yang lebih kompleks.
+
+### Admonish
 
 A custom title can be provided:
 
