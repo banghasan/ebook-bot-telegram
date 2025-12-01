@@ -29,3 +29,5 @@ Setiap bot memerlukan token unik untuk otentikasi. Token ini didapatkan dari bot
 3.  Setelah berhasil, @BotFather akan memberikan Anda **HTTP API Token** yang terlihat seperti `123456:ABC-DEF1234ghIkl-jkl-jkl-jkl-jkl`. **Jaga kerahasiaan token ini.**
 
 ![](https://lumpia.js.org/images/botfather/token.webp)
+
+[^phpcurl]: [PHP Curl](https://www.php.net/manual/en/book.curl.php) dokumentasi resmi PHP Curl

@@ -875,5 +875,3 @@ class SimpleTelegramBot {
 }
 ?>
 ```
-
-[^phpcurl]: [PHP Curl](https://www.php.net/manual/en/book.curl.php) dokumentasi resmi PHP Curl
