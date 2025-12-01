@@ -7,7 +7,7 @@
 *   **Grup Diskusi Telegram:** [@botindonesia](https://t.me/botindonesia)
 *   **Versi:** `0.0.1`
 
-![cover php cURL](./static/img/cover_php_curl.webp)
+![cover php cURL](./PHP/curl/static/img/cover_php_curl.webp)
 
 ---
 
@@ -164,7 +164,7 @@ Menjalankan skrip langsung dari command line memudahkan pengujian tanpa harus me
         with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies
     ```
     
-    ![](./static/img/version.jpg)
+    ![](./PHP/curl/static/img/version.jpg)
     
     Bila muncul pesan error, instal PHP terlebih dahulu atau pastikan path PHP sudah ditambahkan ke `PATH`.
     

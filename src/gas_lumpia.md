@@ -11,7 +11,7 @@
 
 ---
 
-![Cover GAS Ebook](./static/img/gas_cover.webp)
+![Cover GAS Ebook](./GAS/static/img/gas_cover.webp)
 
 ## Bab 1: Pendahuluan - Mengapa GAS dan Lumpia?
 
