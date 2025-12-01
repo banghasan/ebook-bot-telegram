@@ -5,15 +5,15 @@
 
     MDBOOK_URL=https://github.com/rust-lang/mdBook/releases/download/v0.4.52/mdbook-v0.4.52-x86_64-unknown-linux-gnu.tar.gz
     MDBOOK_FILE=mdbook.tar.gz
-    MDBOOK_SHA256=__ISI_SHA256_MDBOOK_DI_SINI__
+    MDBOOK_SHA256=29b7e5ba01321e3bbc4487012544cea516f01377ffd1e26b4adeed9b8ed875a9
 
     EMBEDIFY_URL=https://github.com/MR-Addict/mdbook-embedify/releases/download/0.2.18/mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu.zip
     EMBEDIFY_FILE=embedify.zip
-    EMBEDIFY_SHA256=__ISI_SHA256_EMBEDIFY_DI_SINI__
+    EMBEDIFY_SHA256=23815a0851cb6f3f5a0faeeec3d207093d253c6b6fb30e41ffea2568eaeca400
 
     KATEX_URL=https://github.com/lzanini/mdbook-katex/releases/download/0.10.0-alpha-binaries/mdbook-katex-v0.10.0-alpha-x86_64-unknown-linux-gnu.tar.gz
     KATEX_FILE=katex.tar.gz
-    KATEX_SHA256=__ISI_SHA256_KATEX_DI_SINI__
+    KATEX_SHA256=8f6f45e9a8c28004d2dbacf9e72051aff10c921491eb29d5ec3e226750d16c62
 
     # ---------------------------
     # DOWNLOAD + VERIFY MDBOOK
