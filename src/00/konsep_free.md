@@ -23,8 +23,8 @@ Biasanya, ada model bisnis di baliknya:
 *   **Monetisasi Data:** Jika kamu tidak membayar untuk produknya, seringkali **Kamulah produknya**. Data aktivitasmu dikumpulkan dan dianalisis untuk berbagai keperluan.
     *   **Contoh Nyata:** Banyak aplikasi gratis di ponsel yang meminta akses ke kontak atau lokasimu. Data ini bisa jadi diolah secara anonim dan dijual ke pihak ketiga untuk riset pasar.
 
-#### **Kaitan dengan Bot Telegram:**
-Dalam panduan ini, kita akan menggunakan layanan seperti **Google Apps Script (GAS)** atau **Vercel Hobby** untuk menjalankan bot kita. Layanan ini *gratis tanpa biaya*, tetapi datang dengan batasan (kuota), seperti jumlah eksekusi harian atau bot yang akan "tidur" jika tidak aktif. Jika bot kita menjadi sangat populer, kita mungkin perlu membayar untuk meningkatkan kapasitas.
+#### Kaitan dengan Bot Telegram
+Dalam panduan ini, kita akan menggunakan layanan seperti **Google Apps Script (GAS)** atau **Laptop/Komputer Sendiri** untuk menjalankan bot kita. Layanan ini *gratis tanpa biaya*, tetapi datang dengan batasan (kuota), seperti jumlah eksekusi harian atau bot yang akan "tidur" jika tidak aktif. Jika bot kita menjadi sangat populer, kita mungkin perlu membayar untuk meningkatkan kapasitas.
 
 ---
 
@@ -42,8 +42,16 @@ Ini mengacu pada kebebasan pengguna untuk:
     *   **Resep Tertutup (Proprietary):** kamu hanya diberi tahu cara memanggangnya. Kamu tidak tahu bahan-bahan rahasianya dan dilarang membagikan resep itu.
     *   **Resep Terbuka (Open Source):** kamu mendapatkan daftar lengkap bahan, instruksi, dan izin untuk mengubah resep (misalnya, mengganti gula dengan madu) dan membagikan resep barumu kepada siapa pun.
 
-#### **Kaitan dengan Bot Telegram:**
-Banyak *library* (pustaka kode) yang kita gunakan untuk membuat bot, seperti **grammY** (JavaScript) atau **python-telegram-bot** (Python), bersifat *open source*. Artinya, kita punya **kebebasan** untuk melihat kode mereka, memodifikasinya jika perlu, dan berkontribusi pada pengembangannya. Kita tidak terjebak pada satu vendor dan memiliki kontrol penuh atas teknologi yang kita gunakan.
+#### Kaitan dengan Bot Telegram
+Banyak *library* (pustaka kode) yang kita gunakan untuk membuat bot, seperti **grammY** (JavaScript) atau **python-telegram-bot** (Python), bersifat *open source*.
+
+Ini artinya, kita punya **kebebasan** penuh untuk:
+
+- Melihat dan memeriksa kode mereka.
+- Memodifikasinya jika memang diperlukan.
+- Bahkan ikut berkontribusi dalam pengembangannya.
+
+Kita tidak terjebak pada satu vendor saja dan punya kontrol penuh atas teknologi yang kita gunakan. Kita merasa nyaman karena bisa memastikan bahwa tidak ada *spyware*, *backdoor* atau hal berbahaya lainnya di dalam sistem.
 
 ---
 
@@ -56,6 +64,16 @@ Seperti yang disinggung di teks awal, tidak ada yang benar-benar 100% gratis. Ba
 *   **Keterbatasan:** Menerima batasan dari layanan gratis atau risiko bahwa layanan tersebut bisa berhenti kapan saja.
 
 Memahami kedua sisi dari "gratis" ini membantu kita menjadi pengembang yang lebih bijak. Kita bisa memanfaatkan apa yang tersedia tanpa biaya untuk memulai, sambil menghargai kebebasan yang diberikan oleh komunitas *open source* untuk membangun teknologi yang lebih baik dan lebih transparan.
+
+### Donasi
+
+Apabila kamu merasa mendapatkan manfaat yang signifikan dari suatu proyek atau layanan gratis, dengan rendah hati menyarankan kamu untuk mempertimbangkan donasi. Dukungan finansial dari pengguna yang puas—seperti kamu—merupakan energi utama bagi para pengembang untuk menjaga kelangsungan proyek, membantu menutup biaya operasional, dan terus berinovasi dalam menghadirkan fitur-fitur baru.
+
+```admonish tip
+Ini juga berlaku untuk Proyek Pembelajaran ini!
+```
+
+Meski demikian, kami tegaskan bahwa memberikan donasi bukanlah suatu kewajiban bagimu.
 
 ### Referensi untuk Bacaan Lebih Lanjut
 *   [What is Free Software?](https://www.gnu.org/philosophy/free-sw.html) - Penjelasan dari Free Software Foundation.

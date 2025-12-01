@@ -1,7 +1,7 @@
 ![](https://blog.banghasan.com/assets/images/BOCAH/010.png)
 
 Sebelum memulai perjalanan belajar membuat bot Telegram, ada beberapa hal
-penting yang perlu kamu pahami dan persiapkan. Panduan ini akan membantumu
+penting yang perlu kita pahami dan persiapkan. Panduan ini akan membantu
 memaksimalkan proses pembelajaran dan menghindari kendala yang sering dialami
 pemula.
 
@@ -12,6 +12,8 @@ pemula.
 Dalam mempelajari pemrograman bot Telegram, **sikap mental yang tepat** adalah
 kunci kesuksesan. Anggaplah setiap latihan sebagai eksperimen yang menarik,
 bukan sebagai ujian yang harus sempurna.
+
+Terutama buat adik-adik kita, jangan ragu untuk memulai dan mencoba yak.
 
 ### Mengapa Mindset Ini Penting?
 

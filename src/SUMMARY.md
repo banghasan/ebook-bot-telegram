@@ -6,7 +6,7 @@
   - [Catatan tentang Konsep "Free"](./00/konsep_free.md)
   - [Tanggung Jawab](./00/tanggung_jawab.md)
   - [Motivasi untuk Melangkah](./00/motivasi.md)
-  - [Diskusi dan Kontak](./00/kontak.md)
+  - [Ruang Diskusi](./00/diskusi.md)
 - [Daftar Ebook](./daftar_isi.md)
 - [Telegram dan Integrasi](./tools/README.md)
   - [Notifikasi Login SSH](./tools/tutorial_telegram_curl_bash.md)
