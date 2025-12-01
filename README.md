@@ -9,18 +9,20 @@ Repositori ini berisi sumber materi buku digital bertema pembangunan bot Telegra
 | Direktori/Berkas | Deskripsi Singkat |
 | --- | --- |
 | `src/` | Naskah utama setiap bab (Markdown) yang akan dirender oleh mdBook. |
-| `book/` | Hasil build statis yang dihasilkan oleh `mdbook build`. Folder ini menjadi target publikasi pada layanan hosting. |
+| `buku/` | Hasil build statis yang dihasilkan oleh `mdbook build`. Folder ini menjadi target publikasi pada layanan hosting. |
 | `book.toml` | Konfigurasi mdBook (judul, navigasi, dll.). |
 
 ## Cara Menjalankan Secara Lokal
 
-1. Pastikan `mdbook` sudah terpasang (`cargo install mdbook`) atau gunakan build command di bawah untuk mengunduh versi terbaru.
+1. Pastikan `mdbook` sudah terpasang.
 2. Jalankan `mdbook serve --open` untuk melihat pratinjau lokal dengan *hot reload*.
-3. Untuk menghasilkan versi siap rilis, jalankan `mdbook build` sehingga keluaran HTML tersimpan di direktori `book/`.
+3. Untuk menghasilkan versi siap rilis, jalankan `mdbook build` sehingga keluaran HTML tersimpan di direktori `buku/`.
 
 ## Deployment
 
 Menggunakan release terbaru mdbook tanpa `preprocessor`
+
+(gagal terus euy, versi 5.x belum support `preprocessor` kayaknya)
 
 ### Netlify
 
@@ -37,6 +39,8 @@ Gunakan pengaturan berikut saat menyiapkan situs Netlify:
 
 ### Clouflare Pages
 
+- **Publish Directory:** `book`
+- **Build Command:**
 ```bash
 VERSION=$(curl -s https://api.github.com/repos/rust-lang/mdBook/releases/latest | grep tag_name | cut -d '"' -f 4 | sed 's/^v//') && curl -sSL "https://github.com/rust-lang/mdBook/releases/download/v${VERSION}/mdbook-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar -xz && ./mdbook build
 ```
@@ -68,3 +72,9 @@ bin/mdbook build
 ```
 
 Netlify tidak perlu lagi, karena sudah ditambahkan pada file `netlify.toml`
+
+## Notes
+
+Karena versi lama tidak support sub-menu otomatis di panel sebelah kiri, maka diubah kembali ke versi `0.5.x`.
+
+Semoga seiring waktu bisa support plugins lagi, terutama `mdbook-embedify`.

@@ -231,6 +231,8 @@ dari Telegram dan proyek Google Apps Script.
 **BotFather** adalah bot resmi Telegram yang digunakan untuk membuat dan
 mengelola bot-bot lainnya.
 
+![](https://lumpia.js.org/images/botfather/cari_botfather.webp)
+
 1. Buka aplikasi Telegram kamu dan cari **@BotFather**.
 2. Ketik perintah `/newbot` dan ikuti instruksi.
 3. Pilih nama untuk bot kamu (misalnya, "Bot Ebook Saya").
@@ -238,6 +240,8 @@ mengelola bot-bot lainnya.
    "ebook_bot_saya_bot").
 5. Setelah berhasil, BotFather akan memberikan kamu **HTTP API Token**. Simpan
    token ini dengan aman, karena ini adalah kunci untuk mengontrol bot kamu.
+
+![](https://lumpia.js.org/images/botfather/token.webp)
 
 **Penting:** Token bot kamu akan terlihat seperti ini:
 `123456789:ABC-DEF1234ghIkl-Jkl-Lmn-Opq-Rst-Uvwxyz`.
