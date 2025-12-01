@@ -1,7 +1,7 @@
 ![](https://blog.banghasan.com/assets/images/BOCAH/010.png)
 
 Sebelum memulai perjalanan belajar membuat bot Telegram, ada beberapa hal
-penting yang perlu Anda pahami dan persiapkan. Panduan ini akan membantu Anda
+penting yang perlu kamu pahami dan persiapkan. Panduan ini akan membantumu
 memaksimalkan proses pembelajaran dan menghindari kendala yang sering dialami
 pemula.
 
@@ -17,7 +17,7 @@ bukan sebagai ujian yang harus sempurna.
 
 Setiap bahasa pemrograman memiliki cara penulisan dan pola pikir (idiom) yang
 unik. Apa yang mudah di satu bahasa, mungkin memerlukan pendekatan berbeda di
-bahasa lain. Dengan mindset eksperimen, Anda akan:
+bahasa lain. Dengan mindset eksperimen, kamu akan:
 
 - **Lebih berani mencoba** berbagai pendekatan tanpa takut salah
 - **Belajar lebih cepat** dari setiap kesalahan yang terjadi
@@ -25,14 +25,14 @@ bahasa lain. Dengan mindset eksperimen, Anda akan:
 
 ### Tips Praktis
 
-- **Catat setiap percobaan** yang Anda lakukan, baik yang berhasil maupun yang
+- **Catat setiap percobaan** yang kamu lakukan, baik yang berhasil maupun yang
   gagal
-- **Refleksikan perbedaan** antara berbagai pendekatan yang Anda coba
+- **Refleksikan perbedaan** antara berbagai pendekatan yang kamu coba
 - **Jangan menyerah** ketika menemui error — ini adalah bagian normal dari
   proses belajar
 
 Seperti yang dikatakan Thomas Edison: _"Kegagalan hanya sinyal bahwa kita tengah
-mendekati jawaban."_ Setiap error adalah petunjuk yang membawa Anda lebih dekat
+mendekati jawaban."_ Setiap error adalah petunjuk yang membawa kamu lebih dekat
 ke solusi.
 
 ---
@@ -40,14 +40,14 @@ ke solusi.
 ## 2. Struktur Belajar: Ikuti Alur yang Sistematis
 
 Materi dalam buku ini dirancang dengan pola pembelajaran yang terstruktur dan
-bertahap. Memahami struktur ini akan membantu Anda belajar lebih efektif.
+bertahap. Memahami struktur ini akan membantu kamu belajar lebih efektif.
 
 ### Pola Pembelajaran: Konsep → Praktik → Studi Kasus
 
 Setiap bab mengikuti alur berikut:
 
 1. **Konsep** — Penjelasan teori dan dasar-dasar yang perlu dipahami
-2. **Praktik** — Latihan langsung dengan kode yang bisa Anda coba sendiri
+2. **Praktik** — Latihan langsung dengan kode yang bisa kamu coba sendiri
 3. **Studi Kasus** — Penerapan konsep dalam contoh nyata yang lebih kompleks
 
 ### Mengapa Urutan Itu Penting?
@@ -61,14 +61,14 @@ selanjutnya sering kali menggunakan konsep dari bab sebelumnya. Oleh karena itu:
   akan digunakan nanti
 - **Ulangi bab sebelumnya** jika merasa kesulitan memahami bab berikutnya
 
-Dengan mengikuti alur naratif yang telah dirancang, Anda akan merasakan progres
+Dengan mengikuti alur naratif yang telah dirancang, kamu akan merasakan progres
 yang jelas dan terukur.
 
 ---
 
 ## 3. Prasyarat Teknis: Persiapan Lingkungan Pengembangan
 
-Sebelum mulai coding, pastikan Anda telah menyiapkan **lingkungan pengembangan**
+Sebelum mulai coding, pastikan kamu telah menyiapkan **lingkungan pengembangan**
 yang diperlukan. Persiapan yang baik akan menghemat waktu dan menghindari
 frustrasi di tengah pembelajaran.
 
@@ -76,8 +76,7 @@ frustrasi di tengah pembelajaran.
 
 #### a. Editor Teks atau IDE (Integrated Development Environment)
 
-Anda memerlukan aplikasi untuk menulis kode. Beberapa pilihan yang
-direkomendasikan:
+Kamu memerlukan aplikasi untuk menulis kode. Beberapa pilihan yang direkomendasikan:
 
 - **Visual Studio Code** (gratis, populer, banyak ekstensi)
 - **PyCharm** (khusus untuk Python, ada versi gratis)
@@ -85,15 +84,15 @@ direkomendasikan:
 
 #### b. Runtime Bahasa Pemrograman
 
-Pastikan bahasa pemrograman yang akan Anda gunakan sudah terinstal di komputer:
+Pastikan bahasa pemrograman yang akan kamu gunakan sudah terinstal di komputer:
 
 - **Python** — jika menggunakan python-telegram-bot
 - **Node.js** — jika menggunakan Telegraf atau node-telegram-bot-api
-- **PHP**, **Go**, atau bahasa lain sesuai pilihan Anda
+- **PHP**, **Go**, atau bahasa lain sesuai pilihanmu
 
 #### c. Akun Telegram BotFather
 
-BotFather adalah bot resmi Telegram untuk membuat dan mengelola bot. Anda perlu:
+BotFather adalah bot resmi Telegram untuk membuat dan mengelola bot. Kamu perlu:
 
 1. Membuka aplikasi Telegram
 2. Mencari **@BotFather**
@@ -103,35 +102,35 @@ BotFather adalah bot resmi Telegram untuk membuat dan mengelola bot. Anda perlu:
 
 Meskipun setiap bab dalam buku ini menjelaskan langkah instalasi secara detail,
 **mempersiapkan semuanya di awal** akan membuat proses belajar lebih lancar.
-Anda bisa langsung fokus pada materi tanpa terganggu masalah teknis.
+Kamu bisa langsung fokus pada materi tanpa terganggu masalah teknis.
 
 ---
 
-## 4. Catatan dan Dokumentasi: Jurnal Belajar Anda
+## 4. Catatan dan Dokumentasi: Jurnal Belajarmu
 
-Salah satu kebiasaan terbaik yang bisa Anda kembangkan adalah
+Salah satu kebiasaan terbaik yang bisa kamu kembangkan adalah
 **mendokumentasikan proses belajar**. Ini mungkin terdengar sepele, tetapi
 manfaatnya luar biasa besar.
 
 ### Mengapa Perlu Membuat Catatan?
 
-- **Referensi pribadi** — Anda bisa kembali melihat solusi yang pernah berhasil
-- **Mempercepat debugging** — Ketika menemui masalah serupa, Anda sudah tahu
+- **Referensi pribadi** — kamu bisa kembali melihat solusi yang pernah berhasil
+- **Mempercepat debugging** — Ketika menemui masalah serupa, kamu sudah tahu
   cara mengatasinya
 - **Memperkuat pemahaman** — Menulis ulang dengan kata-kata sendiri membantu
   otak memproses informasi lebih baik
-- **Portfolio belajar** — Catatan Anda bisa menjadi bukti progres dan kemampuan
+- **Portfolio belajar** — Catatanmu bisa menjadi bukti progres dan kemampuan
 
 ### Apa yang Perlu Dicatat?
 
 Buatlah **jurnal belajar** yang mencakup:
 
 - **Error yang pernah muncul** dan bagaimana cara mengatasinya
-- **Konsep yang sulit dipahami** dengan penjelasan versi Anda sendiri
+- **Konsep yang sulit dipahami** dengan penjelasan versi kamu sendiri
 - **Kode-kode penting** yang sering digunakan (snippet)
 - **Ide-ide proyek** yang muncul saat belajar
 
-Anda bisa menggunakan:
+Kamu bisa menggunakan:
 
 - Aplikasi note (Notion, Evernote, Google Keep)
 - File markdown di komputer
@@ -168,14 +167,13 @@ lebih efektif dan menyenangkan.
 Ingat pepatah populer: _"Sharing is caring"_ — **ilmu akan berlipat ganda ketika
 dibagikan**.
 
-Ketika Anda berbagi:
+Ketika kita berbagi:
 
-- Orang lain mendapat manfaat dari pengetahuan Anda
-- Anda memperkuat pemahaman dengan menjelaskan ke orang lain
+- Orang lain mendapat manfaat dari pengetahuanmu
+- Kamu juga memperkuat pemahaman dengan menjelaskan ke orang lain
 - Komunitas menjadi lebih kuat dan saling mendukung
 
-Jangan ragu untuk bertanya, tetapi juga jangan pelit berbagi ketika Anda sudah
-tahu jawabannya.
+Jangan ragu _yak_ untuk bertanya, tetapi juga jangan pelit berbagi ketika kamu sudah tahu jawabannya.
 
 ---
 
@@ -183,7 +181,9 @@ tahu jawabannya.
 
 Dengan persiapan yang tepat — mindset yang benar, pemahaman struktur belajar,
 lingkungan teknis yang siap, kebiasaan dokumentasi, dan dukungan komunitas —
-Anda sudah memiliki fondasi yang kuat untuk sukses dalam mempelajari pembuatan
+kamu sudah memiliki fondasi yang kuat untuk sukses dalam mempelajari pembuatan
 bot Telegram.
 
-Selamat belajar, dan nikmati setiap prosesnya! 🚀
+```admonish tip title="Cmungudh Ea"
+**Selamat belajar**, dan nikmati setiap prosesnya! 🚀
+```

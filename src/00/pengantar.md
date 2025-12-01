@@ -5,3 +5,7 @@
 Selamat datang di seri belajar bot Telegram lintas bahasa, sebuah perjalanan terstruktur namun santai untuk siapa saja yang ingin memadukan kreativitas dan teknologi.
 
 Semua materi, tutorial dan buku di sini ditujukan bagi pembaca yang baru mulai maupun yang telah bertahun-tahun berkarya; fokusnya menguraikan konsep secara bertahap, memadukan praktik langsung, dan menghadirkan konteks nyata agar setiap episode terasa relevan.
+
+```admonish attention title="Sharing is Caring"
+Meskipun kami bukan ahli dalam segala hal, semangat kami untuk berbagi dan membantu yang melatarbelakangi kami di sini.
+```

@@ -1,6 +1,6 @@
 # Notifikasi Login VPS ke Telegram dengan Bash dan cURL
 
-Tutorial ini akan memandu Anda langkah demi langkah untuk membuat sebuah skrip sederhana yang akan mengirimkan notifikasi ke akun Telegram Anda setiap kali ada pengguna yang berhasil login ke server (VPS) melalui SSH. Ini adalah cara yang bagus untuk memonitor aktivitas login dan meningkatkan keamanan server Anda.
+Tutorial ini akan memandu kamu langkah demi langkah untuk membuat sebuah skrip sederhana yang akan mengirimkan notifikasi ke akun Telegram kamu setiap kali ada pengguna yang berhasil login ke server (VPS) melalui SSH. Ini adalah cara yang bagus untuk memonitor aktivitas login dan meningkatkan keamanan servermu.
 
 ---
 
@@ -10,34 +10,34 @@ Tutorial ini akan memandu Anda langkah demi langkah untuk membuat sebuah skrip s
 
 Untuk mengirim pesan melalui API Telegram, kita memerlukan sebuah bot.
 
-1.  Buka aplikasi Telegram Anda, cari akun bernama `BotFather` (ada tanda centang biru).
+1.  Buka aplikasi Telegram kamu, cari akun bernama `BotFather` (ada tanda centang biru).
 2.  Mulai percakapan dengan `BotFather` dengan mengetik `/start`.
 3.  Buat bot baru dengan mengetik perintah `/newbot`.
-4.  `BotFather` akan meminta Anda untuk memberikan nama untuk bot Anda (misalnya: "VPS Monitor").
-5.  Selanjutnya, berikan username untuk bot Anda. Username harus unik dan diakhiri dengan kata `bot` (misalnya: `vps_monitor_xyz_bot`).
-6.  Setelah berhasil, `BotFather` akan memberikan Anda sebuah **Token API**. Token ini sangat rahasia dan digunakan untuk mengontrol bot Anda.
+4.  `BotFather` akan meminta kamu untuk memberikan nama untuk bot kamu (misalnya: "VPS Monitor").
+5.  Selanjutnya, berikan username untuk bot kamu. Username harus unik dan diakhiri dengan kata `bot` (misalnya: `vps_monitor_xyz_bot`).
+6.  Setelah berhasil, `BotFather` akan memberikan kamu sebuah **Token API**. Token ini sangat rahasia dan digunakan untuk mengontrol bot kamu.
 
 ![Contoh Token dari BotFather](https://lumpia.js.org/images/botfather/token.webp)
 
 Salin dan simpan token ini di tempat yang aman. Kita akan menggunakannya di dalam skrip.
 
-**CATATAN PENTING:** Jaga kerahasiaan Token API Anda. Siapa pun yang memilikinya dapat mengendalikan bot Anda.
+**CATATAN PENTING:** Jaga kerahasiaan Token API kamu. Siapa pun yang memilikinya dapat mengendalikan botmu.
 
 ---
 
-### Langkah 2: Mendapatkan Chat ID Anda
+### Langkah 2: Mendapatkan Chat ID Kamu
 
 Setelah bot dibuat, kita perlu tahu kemana pesan notifikasi akan dikirim. Setiap pengguna atau grup di Telegram memiliki `Chat ID` yang unik.
 
-1.  Di aplikasi Telegram Anda, cari username bot yang baru saja Anda buat.
-2.  Mulai percakapan dengan bot Anda dengan menekan tombol **Start** atau mengirim pesan apa pun (misalnya: "halo").
-3.  Sekarang, buka terminal di VPS Anda (atau komputer lokal yang memiliki `curl`) dan jalankan perintah berikut. Ganti `<TOKEN_BOT_ANDA>` dengan Token API yang Anda dapatkan dari `BotFather`.
+1.  Di aplikasi Telegram kamu, cari username bot yang baru saja kamu buat.
+2.  Mulai percakapan dengan bot kamu dengan menekan tombol **Start** atau mengirim pesan apa pun (misalnya: "halo").
+3.  Sekarang, buka terminal di VPS kamu (atau komputer lokal yang memiliki `curl`) dan jalankan perintah berikut. Ganti `<TOKEN_BOT_KAMU>` dengan Token API yang kamu dapatkan dari `BotFather`.
 
     ```bash
-    curl "https://api.telegram.org/bot<TOKEN_BOT_ANDA>/getUpdates"
+    curl "https://api.telegram.org/bot<TOKEN_BOT_KAMU>/getUpdates"
     ```
 
-4.  Anda akan melihat respons dalam format JSON. Cari bagian `result` -> `message` -> `chat` -> `id`. Itulah `Chat ID` Anda.
+4.  Kita akan melihat respons dalam format JSON. Cari bagian `result` -> `message` -> `chat` -> `id`. Itulah `Chat ID` kamu.
 
     ```json
     {
@@ -48,18 +48,18 @@ Setelah bot dibuat, kita perlu tahu kemana pesan notifikasi akan dikirim. Setiap
           "message": {
             "message_id": 1,
             "from": {
-              "id": 123456789, // Ini adalah Chat ID Anda
+              "id": 123456789, // Ini adalah Chat ID kamu
               "is_bot": false,
               "first_name": "Nama",
-              "last_name": "Anda",
-              "username": "usernameAnda",
+              "last_name": "Kamu",
+              "username": "usernamemu",
               "language_code": "en"
             },
             "chat": {
               "id": 123456789, // Pastikan untuk menyalin ID ini
               "first_name": "Nama",
-              "last_name": "Anda",
-              "username": "usernameAnda",
+              "last_name": "Kamu",
+              "username": "usernamemu",
               "type": "private"
             },
             "date": 1672531200,
@@ -73,7 +73,7 @@ Atau bisa didapatkan di bot [@strukturbot](https://t.me/strukturbot)
     
 ![](./img/strukturbot.webp)
     
-Salin dan simpan `ID` / `Chat ID` Anda.
+Salin dan simpan `ID` / `Chat ID` kamu.
 
 ---
 
@@ -81,7 +81,7 @@ Salin dan simpan `ID` / `Chat ID` Anda.
 
 Sekarang kita akan membuat skrip `bash` yang akan mengirim notifikasi.
 
-1.  Buat file baru di direktori yang Anda inginkan, misalnya `/usr/local/bin/notif-login.sh`.
+1.  Buat file baru di direktori yang kamu inginkan, misalnya `/usr/local/bin/notif-login.sh`.
 
     ```bash
     sudo nano /usr/local/bin/notif-login.sh
@@ -93,10 +93,10 @@ Sekarang kita akan membuat skrip `bash` yang akan mengirim notifikasi.
     #!/bin/bash
 
     # --- KONFIGURASI ---
-    # Ganti dengan Token API bot Telegram Anda
-    TOKEN="<GANTI_DENGAN_TOKEN_ANDA>"
-    # Ganti dengan Chat ID Anda
-    CHAT_ID="<GANTI_DENGAN_CHAT_ID_ANDA>"
+    # Ganti dengan Token API bot Telegram kamu
+    TOKEN="<GANTI_DENGAN_TOKEN_KAMU>"
+    # Ganti dengan Chat ID kamu
+    CHAT_ID="<GANTI_DENGAN_CHAT_ID_KAMU>"
     # --- SELESAI KONFIGURASI ---
 
     # Mendapatkan informasi login
@@ -126,7 +126,7 @@ Sekarang kita akan membuat skrip `bash` yang akan mengirim notifikasi.
     curl -s -d "chat_id=${CHAT_ID}&text=${MESSAGE}&parse_mode=Markdown" "${URL}" > /dev/null
     ```
 
-3.  **Penting:** Ganti nilai `TOKEN` dan `CHAT_ID` dengan milik Anda.
+3.  **Penting:** Ganti nilai `TOKEN` dan `CHAT_ID` dengan milikmu.
 4.  Simpan file tersebut (di `nano`, tekan `Ctrl+X`, lalu `Y`, lalu `Enter`).
 
 ---
@@ -160,11 +160,12 @@ Cara terbaik untuk memicu skrip ini saat ada login SSH adalah dengan menggunakan
     ```
 
     *   `session`: Menandakan bahwa ini berjalan pada tahap sesi.
-    *   `optional`: Jika skrip gagal, proses login tetap diizinkan. Ini penting agar Anda tidak terkunci dari server jika ada kesalahan pada skrip.
+    *   `optional`: Jika skrip gagal, proses login tetap diizinkan. Ini penting agar kamu tidak terkunci dari server jika ada kesalahan pada skrip.
     *   `pam_exec.so`: Modul PAM yang digunakan untuk mengeksekusi perintah eksternal.
 
 3.  Simpan dan tutup file.
 
+    tekan `CTRL+O` dan ENTER untuk menyimpannya.
 ---
 
 
@@ -172,17 +173,22 @@ Cara terbaik untuk memicu skrip ini saat ada login SSH adalah dengan menggunakan
 
 Selesai! Sekarang mari kita uji.
 
-1.  Logout dari sesi SSH Anda saat ini.
-2.  Login kembali ke VPS Anda.
-3.  Dalam beberapa detik, Anda akan menerima notifikasi di Telegram dari bot yang telah Anda buat!
+1.  Logout dari sesi SSH kamu saat ini.
+2.  Login kembali ke VPS-mu.
+3.  Dalam beberapa detik, kamu akan menerima notifikasi di Telegram dari bot yang telah kamu buat!
 
 Pesan notifikasinya akan terlihat seperti ini:
 
-> 🚨 *Notifikasi Login SSH di nama-vps-anda*
+> 🚨 *Notifikasi Login SSH di nama-vps-kamu*
 >
 > *Username:* `root`
+>
 > *Dari IP:* `123.123.123.123`
+>
 > *Jenis Sesi:* `sshd`
+>
 > *Waktu:* `29-11-2025 10:30:00`
 
-Selamat, Anda telah berhasil meningkatkan keamanan server Anda dengan notifikasi login real-time!
+```admonish tip title="Selamat!"
+Kamu telah berhasil meningkatkan keamanan server kamu dengan notifikasi login real-time!
+```

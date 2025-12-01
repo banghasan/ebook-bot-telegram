@@ -18,7 +18,7 @@
 Selamat datang di panduan komprehensif untuk membangun bot Telegram yang kuat
 dan fungsional menggunakan **Google Apps Script (GAS)** dan **Lumpia Framework**
 (dikenal juga sebagai TelegramBotIndonesia Library v3) [^1]. Tulisan ini
-dirancang untuk membawa Anda dari nol, bahkan jika Anda belum pernah menyentuh
+dirancang untuk membawamu dari nol, bahkan jika kamu belum pernah menyentuh
 kode sebelumnya, hingga mampu menciptakan bot dengan fitur-fitur canggih.
 
 ### 1.1 Latar Belakang
@@ -49,10 +49,10 @@ tingkat keahlian:
 
 #### 🎯 Pemula Absolut (Belum Pernah Coding)
 
-Jika Anda belum pernah menulis kode sebelumnya, jangan khawatir! Buku ini akan
-memandu Anda langkah demi langkah, dimulai dari konsep paling dasar. 
+Jika kamu belum pernah menulis kode sebelumnya, jangan khawatir! Buku ini akan
+memandu kamu langkah demi langkah, dimulai dari konsep paling dasar. 
 
-```admonish title="Anda akan belajar"
+```admonish title="Kamu akan belajar"
 
 - Cara mendapatkan token bot dari BotFather
 - Memahami struktur kode JavaScript sederhana
@@ -62,7 +62,7 @@ memandu Anda langkah demi langkah, dimulai dari konsep paling dasar.
 
 #### 💡 Pemula dengan Pengetahuan Dasar Programming
 
-Jika Anda sudah familiar dengan konsep dasar programming (variabel, fungsi,
+Jika kamu sudah familiar dengan konsep dasar programming (variabel, fungsi,
 kondisional).
 
 ```admonish summary title="Poin"
@@ -74,8 +74,8 @@ kondisional).
 
 #### 🚀 Developer Berpengalaman
 
-Bagi Anda yang sudah terbiasa dengan JavaScript atau framework bot lain (seperti
-Telegraf, python-telegram-bot), buku ini akan membantu Anda:
+Bagi kamu yang sudah terbiasa dengan JavaScript atau framework bot lain (seperti
+Telegraf, python-telegram-bot), buku ini akan membantumu:
 
 ```admonish title="Hal-hal"
 - Memahami perbedaan dan keunikan Google Apps Script
@@ -96,17 +96,17 @@ lainnya.
 ### 1.4 Mengapa Google Apps Script (GAS)?
 
 Google Apps Script adalah platform pengembangan berbasis JavaScript yang
-memungkinkan Anda mengotomatisasi, mengintegrasikan, dan memperluas produk
+memungkinkan kamu mengotomatisasi, mengintegrasikan, dan memperluas produk
 Google seperti Google Sheets, Docs, dan Drive.
 
 Ada beberapa alasan kuat mengapa GAS menjadi pilihan ideal untuk hosting bot
 Telegram, terutama bagi pemula:
 
-1. **Gratis dan Tanpa Server:** Anda tidak perlu menyewa _Virtual Private
+1. **Gratis dan Tanpa Server:** kamu tidak perlu menyewa _Virtual Private
    Server_ (VPS) atau layanan _cloud_ berbayar. GAS berjalan di infrastruktur
    Google secara gratis (dengan batasan harian yang sangat besar untuk
    penggunaan pribadi).
-2. **Integrasi Google yang Mudah:** Bot Anda dapat dengan mudah membaca dan
+2. **Integrasi Google yang Mudah:** Botmu dapat dengan mudah membaca dan
    menulis data ke Google Sheets, mengirim email melalui Gmail, atau mengelola
    file di Google Drive.
 3. **Kemudahan Deployment:** Proses _deployment_ bot Telegram di GAS sangat
@@ -143,7 +143,7 @@ menggunakan GAS bisa menjadi rumit. Di sinilah **Lumpia Framework** berperan.
 
 Lumpia Framework adalah _wrapper_ atau pustaka pihak ketiga yang dibuat khusus
 untuk Google Apps Script, menyederhanakan interaksi dengan Telegram Bot API.
-Dengan Lumpia, Anda dapat menulis kode bot yang lebih bersih, terstruktur, dan
+Dengan Lumpia, kamu dapat menulis kode bot yang lebih bersih, terstruktur, dan
 mudah dipelihara, mirip dengan _framework_ bot populer lainnya seperti Telegraf
 atau Node-Telegram-Bot-API.
 
@@ -153,7 +153,7 @@ atau Node-Telegram-Bot-API.
   _handler_ yang intuitif untuk merespons berbagai jenis pesan (perintah, teks,
   gambar, dll.).
 - **Context Object (ctx):** Setiap pembaruan pesan dibungkus dalam objek `ctx`
-  yang kaya informasi, memungkinkan Anda merespons dengan cepat dan mengakses
+  yang kaya informasi, memungkinkan kamu merespons dengan cepat dan mengakses
   data pesan dengan mudah.
 - **Dukungan Penuh Fitur Telegram:** Mulai dari _Inline Keyboard_, _Reply
   Keyboard_, hingga manajemen sesi, semua didukung dengan baik.
@@ -163,19 +163,19 @@ Materi lengkap dan videonya tersedia pada situs
 
 ### 1.6 Apa yang Perlu Dipersiapkan?
 
-Sebelum memulai perjalanan membangun bot Telegram, pastikan Anda telah
+Sebelum memulai perjalanan membangun bot Telegram, pastikan kamu telah
 menyiapkan hal-hal berikut:
 
 #### ✅ Akun dan Akses
 
 1. **Akun Telegram Aktif**
-   - Pastikan Anda memiliki aplikasi Telegram yang terinstal di smartphone atau
+   - Pastikan kamu memiliki aplikasi Telegram yang terinstal di smartphone atau
      desktop
    - Akun harus dapat mengakses @BotFather untuk membuat bot baru
 
 2. **Akun Google**
    - Diperlukan untuk mengakses Google Apps Script
-   - Pastikan Anda dapat login ke Google Drive
+   - Pastikan kamu dapat login ke Google Drive
    - Tidak memerlukan akun berbayar, akun Gmail gratis sudah cukup
 
 #### 🛠️ Pengetahuan Dasar (Opsional tapi Direkomendasikan)
@@ -188,15 +188,15 @@ menyiapkan hal-hal berikut:
      konsep yang digunakan._
 
 2. **Konsep HTTP dan API (Akan Dipelajari)**
-   - Anda tidak perlu memahami ini sebelumnya
+   - kamu tidak perlu memahami ini sebelumnya
    - Buku ini akan menjelaskan konsep webhook dan API secara bertahap
 
 #### 📋 Checklist Persiapan Teknis
 
-Sebelum masuk ke Bab 2, pastikan Anda sudah:
+Sebelum masuk ke Bab 2, pastikan kamu sudah:
 
 - [ ] Memiliki akses ke aplikasi Telegram
-- [ ] Dapat login ke Google Drive dengan akun Google Anda
+- [ ] Dapat login ke Google Drive dengan akun Google kamu
 - [ ] Memiliki koneksi internet yang stabil
 - [ ] Menyiapkan browser modern (Chrome, Firefox, Edge, atau Safari)
 - [ ] Menyiapkan text editor atau notepad untuk mencatat token dan URL
@@ -211,22 +211,22 @@ Sebelum masuk ke Bab 2, pastikan Anda sudah:
 ```
 
 ```admonish info title="Untuk Developer Berpengalaman"
-Meskipun Anda familiar dengan JavaScript,
+Meskipun kamu familiar dengan JavaScript,
  perhatikan perbedaan dan limitasi Google Apps Script dibandingkan dengan
  Node.js atau environment JavaScript lainnya.
 ```
 
 ```admonish quote title="Untuk Semua"
-Simpan token bot Anda dengan aman dan jangan pernah
+Simpan token bot kamu dengan aman dan jangan pernah
  membagikannya di tempat publik (GitHub, forum, dll). Token adalah kunci penuh
- kontrol atas bot Anda.
+ kontrol atas botmu.
 ```
 
 ---
 
 ## Bab 2: Persiapan Awal - BotFather dan GAS
 
-Sebelum menulis kode, ada dua hal penting yang harus Anda siapkan: token bot
+Sebelum menulis kode, ada dua hal penting yang harus kamu siapkan: token bot
 dari Telegram dan proyek Google Apps Script.
 
 ![](https://lumpia.js.org/images/materi_lumpia.webp)
@@ -236,30 +236,30 @@ dari Telegram dan proyek Google Apps Script.
 **BotFather** adalah bot resmi Telegram yang digunakan untuk membuat dan
 mengelola bot-bot lainnya.
 
-1. Buka aplikasi Telegram Anda dan cari **@BotFather**.
+1. Buka aplikasi Telegram kamu dan cari **@BotFather**.
 2. Ketik perintah `/newbot` dan ikuti instruksi.
-3. Pilih nama untuk bot Anda (misalnya, "Bot Ebook Saya").
-4. Pilih _username_ untuk bot Anda (harus diakhiri dengan "bot", misalnya,
+3. Pilih nama untuk bot kamu (misalnya, "Bot Ebook Saya").
+4. Pilih _username_ untuk bot kamu (harus diakhiri dengan "bot", misalnya,
    "ebook_bot_saya_bot").
-5. Setelah berhasil, BotFather akan memberikan Anda **HTTP API Token**. Simpan
-   token ini dengan aman, karena ini adalah kunci untuk mengontrol bot Anda.
+5. Setelah berhasil, BotFather akan memberikan kamu **HTTP API Token**. Simpan
+   token ini dengan aman, karena ini adalah kunci untuk mengontrol bot kamu.
 
 ```admonish danger title="Peringatan"
-**Penting:** Token bot Anda akan terlihat seperti ini:
+**Penting:** Token bot kamu akan terlihat seperti ini:
 `123456789:ABC-DEF1234ghIkl-Jkl-Lmn-Opq-Rst-Uvwxyz`.
 **JANGAN** pernah membagikan token ini kepada siapapun.
 ```
 
 ### 2.2 Langkah 2: Membuat Proyek Google Apps Script
 
-1. Buka **Google Drive** Anda.
+1. Buka **Google Drive** kamu.
 2. Klik **Baru** -> **Lainnya** -> **Google Apps Script**. Ini akan membuka
    editor GAS baru.
-3. Beri nama proyek Anda (misalnya, "TelegramBotLumpia").
+3. Beri nama proyeknya (misal: "TelegramBotLumpia").
 
 ### 2.3 Langkah 3: Menambahkan Lumpia Framework (Library)
 
-Lumpia Framework ditambahkan ke proyek GAS Anda sebagai _Library_ eksternal.
+Lumpia Framework ditambahkan ke proyek GAS kamu sebagai _Library_ eksternal.
 
 1. Di editor GAS, klik ikon **Libraries** (biasanya ikon buku di panel kiri).
 2. Di bagian "Add a library", masukkan **ID Library** Lumpia Framework:
@@ -267,16 +267,16 @@ Lumpia Framework ditambahkan ke proyek GAS Anda sebagai _Library_ eksternal.
 3. Klik **Look up**.
 4. Pilih versi terbaru (disarankan versi stabil, biasanya angka terbesar).
 5. Pastikan _Identifier_ adalah `lumpia` (ini adalah nama variabel yang akan
-   Anda gunakan dalam kode).
+   kamu gunakan dalam kode).
 6. Klik **Add**.
 
 ![](https://lumpia.js.org/images/start/add_library.webp)
 
-Sekarang, proyek Anda sudah siap untuk menerima kode bot.
+Sekarang, proyek kamu sudah siap untuk menerima kode bot.
 
 ---
 
-## Bab 3: Bot Pertama Anda - Hello World
+## Bab 3: Bot Pertamamu - Hello World
 
 Di bab ini, kita akan membuat bot paling dasar yang dapat merespons perintah
 `/start` dan `/ping`.
@@ -289,8 +289,8 @@ komponen utama: fungsi `doPost(e)` dan inisiasi bot.
 #### 3.1.1 Fungsi `doPost(e)`
 
 Fungsi ini adalah _entry point_ (titik masuk) untuk semua komunikasi dari
-Telegram ke bot Anda. Ketika pengguna mengirim pesan, Telegram akan mengirimkan
-data pesan tersebut ke URL Web App Anda melalui metode HTTP POST. Data ini
+Telegram ke bot kamu. Ketika pengguna mengirim pesan, Telegram akan mengirimkan
+data pesan tersebut ke URL Web App kamu melalui metode HTTP POST. Data ini
 diterima oleh GAS dalam parameter `e`.
 
 ```javascript
@@ -302,11 +302,11 @@ function doPost(e) {
 
 #### 3.1.2 Inisiasi Bot
 
-Anda perlu menginisiasi Lumpia Framework dengan token bot Anda.
+Kamu perlu menginisiasi Lumpia Framework dengan token bot kamu.
 
 ```javascript
-// Ganti dengan token bot Anda yang sebenarnya
-const token = "TOKEN_BOT_ANDA_DI_SINI";
+// Ganti dengan token bot kamu yang sebenarnya
+const token = "TOKEN_BOT_KAMU_DI_SINI";
 
 // Inisiasi Lumpia Framework
 const bot = new lumpia.init(token);
@@ -328,8 +328,8 @@ pesan.
 ![](https://lumpia.js.org/images/start/menulis_kode.webp)
 
 ```javascript
-// Ganti dengan token bot Anda yang sebenarnya
-const token = "TOKEN_BOT_ANDA_DI_SINI";
+// Ganti dengan token bot kamu yang sebenarnya
+const token = "TOKEN_BOT_KAMU_DI_SINI";
 
 // Inisiasi Lumpia Framework
 const bot = new lumpia.init(token);
@@ -338,7 +338,7 @@ const bot = new lumpia.init(token);
 bot.start((ctx) => {
   // ctx.reply() adalah metode cepat untuk membalas pesan
   ctx.reply(
-    "Halo! Saya adalah bot pertama Anda yang dibuat dengan Lumpia Framework.",
+    "Halo! Saya adalah bot pertama kamu yang dibuat dengan Lumpia Framework.",
   );
 });
 
@@ -361,7 +361,7 @@ function doPost(e) {
 
 ### 3.3 Deployment dan Webhook
 
-Setelah kode selesai, Anda perlu _mendeploy_ skrip sebagai Aplikasi Web dan
+Setelah kode selesai, kamu perlu _mendeploy_ skrip sebagai Aplikasi Web dan
 mengatur _webhook_ agar Telegram tahu ke mana harus mengirim pesan.
 
 #### 3.3.1 Deployment (Penerbitan)
@@ -369,17 +369,17 @@ mengatur _webhook_ agar Telegram tahu ke mana harus mengirim pesan.
 1. Di editor GAS, klik **Deploy** -> **New deployment**.
 2. Pilih **Type** sebagai **Web app**.
 3. Isi deskripsi (misalnya, "Versi 1.0").
-4. Pada bagian **Execute as**, pilih **Me** (akun Anda).
+4. Pada bagian **Execute as**, pilih **Me** (akun kamu).
 5. Pada bagian **Who has access**, pilih **Anyone**.
 6. Klik **Deploy**.
-7. GAS akan memberikan Anda **Web app URL**. Salin URL ini.
+7. GAS akan memberikan kamu **Web app URL**. Salin URL ini.
 
 ![](https://lumpia.js.org/images/gas/deploy/web_app_url.webp)
 
 ```admonish warning title="Perhatian"
 **Penting:** Saat pertama kali menjalankan fungsi yang mengakses layanan
-Google (seperti `SpreadsheetApp`), GAS akan meminta Anda untuk memberikan izin
-(_Authorization_). Anda harus menyetujui izin ini agar bot dapat berfungsi.
+Google (seperti `SpreadsheetApp`), GAS akan meminta kamu untuk memberikan izin
+(_Authorization_). Kamu harus menyetujui izin ini agar bot dapat berfungsi.
 ```
 
 Petunjuk dalam gambar:
@@ -392,15 +392,15 @@ Petunjuk dalam gambar:
 
 #### 3.3.2 Set Webhook
 
-_Webhook_ adalah mekanisme di mana Telegram akan "memanggil" URL Web App Anda
+_Webhook_ adalah mekanisme di mana Telegram akan "memanggil" URL Web App kamu
 setiap kali ada pesan baru.
 
 Buat fungsi baru di GAS untuk mengatur _webhook_:
 
 ```javascript
 function setWebHook() {
-  // Ganti dengan URL Web App yang Anda dapatkan dari langkah deployment
-  const webAppUrl = "URL_WEB_APP_ANDA_DI_SINI";
+  // Ganti dengan URL Web App yang kamu dapatkan dari langkah deployment
+  const webAppUrl = "URL_WEB_APP_KAMU_DI_SINI";
 
   // Lumpia menyediakan metode setWebhook yang mudah
   let result = bot.telegram.setWebhook(webAppUrl);
@@ -410,20 +410,20 @@ function setWebHook() {
 }
 ```
 
-1. Ganti `URL_WEB_APP_ANDA_DI_SINI` dengan URL Web App Anda.
+1. Ganti `URL_WEB_APP_KAMU_DI_SINI` dengan URL Web App kamu.
 2. Pilih fungsi `setWebHook` di menu _dropdown_ di atas editor kode.
 3. Klik **Run**.
 4. Periksa **Execution log** (Log Eksekusi) untuk memastikan hasilnya sukses.
 
 ![](https://lumpia.js.org/images/gas/setWebhook.webp)
 
-Bot Anda sekarang sudah aktif! Coba kirim `/start` atau `/ping` di Telegram.
+Bot kamu sekarang sudah aktif! Coba kirim `/start` atau `/ping` di Telegram.
 
 ---
 
 ## Bab 4: Fitur Menengah - Context dan Keyboard
 
-Setelah bot dasar Anda berjalan, mari kita jelajahi fitur-fitur Lumpia yang
+Setelah bot dasar kamu berjalan, mari kita jelajahi fitur-fitur Lumpia yang
 lebih canggih.
 
 ### 4.1 Objek Context (`ctx`)
@@ -450,14 +450,14 @@ bot.cmd("siapa", (ctx) => {
   const namaPengirim = ctx.from.first_name;
   const chatId = ctx.chat.id;
 
-  ctx.reply(`Halo ${namaPengirim}! ID Chat Anda adalah ${chatId}.`);
+  ctx.reply(`Halo ${namaPengirim}! ID Chat kamu adalah ${chatId}.`);
 });
 
 // Contoh menangkap teks setelah perintah /say
 bot.hears(/^\/say (.*)/i, (ctx) => {
   // ctx.match[1] berisi teks yang ditangkap oleh regex group pertama
   const teksYangDiucapkan = ctx.match[1];
-  ctx.reply(`Anda mengatakan: ${teksYangDiucapkan}`);
+  ctx.reply(`Kamu mengatakan: ${teksYangDiucapkan}`);
 });
 ```
 
@@ -483,7 +483,7 @@ bot.cmd("menu", (ctx) => {
 });
 
 // Menangani respons dari tombol Reply Keyboard
-bot.hears("Pilihan A", (ctx) => ctx.reply("Anda memilih Pilihan A."));
+bot.hears("Pilihan A", (ctx) => ctx.reply("Kamu memilih Pilihan A."));
 ```
 
 #### 4.2.2 Inline Keyboard (Keyboard Sebaris)
@@ -525,13 +525,13 @@ bot.on("callback_query", (ctx) => {
 
 ## Bab 5: Fitur Mahir - Middleware dan Integrasi GAS
 
-Di bab terakhir ini, kita akan membahas fitur-fitur yang akan membawa bot Anda
+Di bab terakhir ini, kita akan membahas fitur-fitur yang akan membawa bot kamu
 ke tingkat yang lebih profesional, termasuk manajemen sesi dan integrasi dengan
 layanan Google.
 
 ### 5.1 Middleware: Memproses Pesan Sebelum Handler
 
-_Middleware_ adalah fungsi yang dijalankan sebelum _handler_ utama Anda. Ini
+_Middleware_ adalah fungsi yang dijalankan sebelum _handler_ utama kamu. Ini
 sangat berguna untuk tugas-tugas seperti otentikasi, _logging_, atau manajemen
 sesi. Lumpia menggunakan metode `bot.use(callback)` untuk menambahkan
 _middleware_.
@@ -560,12 +560,12 @@ bot.cmd("info", (ctx) => ctx.reply("Logging berhasil dilakukan."));
 ### 5.2 Manajemen Sesi (State Management)
 
 Untuk membuat bot yang dapat melakukan percakapan multi-langkah (misalnya,
-mengisi formulir), Anda perlu menyimpan _state_ atau sesi pengguna. Lumpia
+mengisi formulir), kamu perlu menyimpan _state_ atau sesi pengguna. Lumpia
 Framework memfasilitasi ini melalui objek `ctx.session`.
 
 Secara _default_, Lumpia menyimpan sesi di properti `ctx.session` yang dapat
-Anda atur. Untuk menyimpan sesi secara persisten (misalnya, di Google Sheets
-atau Cache Service), Anda perlu mengimplementasikan logika penyimpanan Anda
+kamu atur. Untuk menyimpan sesi secara persisten (misalnya, di Google Sheets
+atau Cache Service), kamu perlu mengimplementasikan logika penyimpanan kamu
 sendiri di _middleware_.
 
 #### Contoh Sesi Sederhana (Menggunakan Properti `ctx.session`)
@@ -582,7 +582,7 @@ bot.use((ctx, next) => {
 
 bot.cmd("tanya", (ctx) => {
   ctx.session.state = "menunggu_nama"; // Atur state pengguna
-  ctx.reply("Siapa nama Anda?");
+  ctx.reply("Siapa namamu?");
 });
 
 // Handler untuk menangani pesan teks
@@ -591,11 +591,11 @@ bot.hears(/.*/, (ctx) => {
     const nama = ctx.message.text;
     ctx.session.nama = nama;
     ctx.session.state = "menunggu_usia";
-    ctx.reply(`Halo, ${nama}. Berapa usia Anda?`);
+    ctx.reply(`Halo, ${nama}. Berapa usia kamu?`);
   } else if (ctx.session.state === "menunggu_usia") {
     const usia = ctx.message.text;
     ctx.session.state = null; // Sesi selesai
-    ctx.reply(`Terima kasih, ${ctx.session.nama}. Usia Anda ${usia} tahun.`);
+    ctx.reply(`Terima kasih, ${ctx.session.nama}. Usia kamu ${usia} tahun.`);
   } else {
     // Balasan default jika tidak ada sesi aktif
     ctx.reply("Saya tidak mengerti. Ketik /tanya untuk memulai sesi.");
@@ -609,19 +609,19 @@ bot.hears(/.*/, (ctx) => {
 
 ### 5.3 Integrasi dengan Google Sheets
 
-Salah satu kekuatan terbesar GAS adalah integrasinya dengan Google Sheets. Anda
-dapat menggunakan bot Anda untuk mencatat data pengguna, membuat log, atau
+Salah satu kekuatan terbesar GAS adalah integrasinya dengan Google Sheets. Kamu
+dapat menggunakan bot kamu untuk mencatat data pengguna, membuat log, atau
 bahkan berfungsi sebagai antarmuka database.
 
 #### Contoh Mencatat Data ke Google Sheets
 
-Asumsikan Anda memiliki Google Sheet dengan URL: `SHEET_URL_ANDA` dan nama
+Asumsikan kamu memiliki Google Sheet dengan URL: `SHEET_URL_KAMU` dan nama
 sheet: `Data Log`.
 
 ```javascript
 // Fungsi untuk mencatat log ke Google Sheet
 function logToSheet(data) {
-  const sheetId = "ID_GOOGLE_SHEET_ANDA"; // Ambil ID dari URL Sheet
+  const sheetId = "ID_GOOGLE_SHEET_KAMU"; // Ambil ID dari URL Sheet
   const sheet = SpreadsheetApp.openById(sheetId).getSheetByName("Data Log");
 
   // Tambahkan baris baru dengan data
@@ -639,10 +639,10 @@ bot.cmd("catat", (ctx) => {
 
   try {
     logToSheet(dataLog);
-    ctx.reply("Pesan Anda berhasil dicatat ke Google Sheet!");
+    ctx.reply("Pesan kamu berhasil dicatat ke Google Sheet!");
   } catch (e) {
     ctx.reply(
-      "Gagal mencatat data. Pastikan Anda sudah memberikan izin akses ke Google Sheet.",
+      "Gagal mencatat data. Pastikan kamu sudah memberikan izin akses ke Google Sheet.",
     );
     Logger.log(e);
   }
@@ -651,7 +651,7 @@ bot.cmd("catat", (ctx) => {
 
 #### Integrasi dengan miniSheetDBv2
 
-Untuk mempermudah pengelolaan data di Google Sheet, Anda dapat mengintegrasikan
+Untuk mempermudah pengelolaan data di Google Sheet, kamu dapat mengintegrasikan
 bot dengan Library
 [miniSheetDBv2](https://github.com/telegrambotindonesia/miniSheetDBv2). Library
 ini menyediakan abstraksi tingkat tinggi yang sangat menyederhanakan operasi
@@ -677,8 +677,10 @@ Penulis sangat merekomendasikan penggunaan Library **miniSheetDBv2**[^miniSheetD
 
 ## Penutup dan Sumber Daya Lanjutan
 
-Selamat! Anda telah mempelajari dasar-dasar hingga fitur mahir dalam membangun
+```admonish tip title="Selamat!"
+Kita telah mempelajari dasar-dasar hingga fitur mahir dalam membangun
 bot Telegram menggunakan Google Apps Script dan Lumpia Framework.
+```
 
 ### Ringkasan Pembelajaran
 
@@ -690,7 +692,7 @@ bot Telegram menggunakan Google Apps Script dan Lumpia Framework.
 
 ### Sumber Daya Lanjutan
 
-Untuk terus mengembangkan kemampuan bot Anda, kami merekomendasikan sumber daya
+Untuk terus mengembangkan kemampuan bot kamu, kami merekomendasikan sumber daya
 berikut:
 
 1. **Dokumentasi Resmi Lumpia Framework**[^1]: Selalu periksa dokumentasi resmi
