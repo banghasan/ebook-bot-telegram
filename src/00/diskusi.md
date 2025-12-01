@@ -1,3 +1,4 @@
+> [!TIP]
 > Gabung Yuk, ke Grup Telegram Kite! 😁
 
 Untuk memperkuat ekosistem belajar bersama, silakan bergabung dengan grup Telegram [@botIndonesia](https://t.me/botindonesia)
@@ -27,18 +28,20 @@ orang lain untuk langsung membantu.
 
 ### 👎🏾 Contoh kurang efektif
 
-- "Apakah saya boleh bertanya?"
-- "Permisi, boleh tanya tentang bot Telegram?"
-- "Apakah ada yang pakai Madelineproto?"
-- "Ada yang dari Bandung?"
+> [!WARNING]
+> - "Apakah saya boleh bertanya?"
+> - "Permisi, boleh tanya tentang bot Telegram?"
+> - "Apakah ada yang pakai Madelineproto?"
+> - "Ada yang dari Bandung?"
 
 🙅🏻‍♂️ Hindari itu yak!
 
 ### 👌🏽 Contoh Baik
 
-- "Saya menemukan error saat menjalankan perintah ini `[command line]`, menggunakan bot dengan Library `xxx` dengan pesan : `'...'`, kira-kira kenapa ya, dan apa solusinya?"
-- "Bagaimana cara membuat inline keyboard di bot Telegram menggunakan python-telegram-bot?"
-- "Saya ingin belajar secara langsung tentang coding membuat bot telegram, atau ada proyek yang harus dikerjakan bersama... apakah ada yang dari Salatiga?"
+> [!NOTE]
+> - "Saya menemukan error saat menjalankan perintah ini `[command line]`, menggunakan bot dengan Library `xxx` dengan pesan : `'...'`, kira-kira kenapa ya, dan apa solusinya?"
+> - "Bagaimana cara membuat inline keyboard di bot Telegram menggunakan python-telegram-bot?"
+> - "Saya ingin belajar secara langsung tentang coding membuat bot telegram, atau ada proyek yang harus dikerjakan bersama... apakah ada yang dari Salatiga?"
 
 Dengan bertanya langsung ke poin, kamu menghemat waktu semua orang dan
 meningkatkan peluang mendapat jawaban yang tepat.
@@ -54,4 +57,5 @@ Maka dari itu, kami sangat menghargai kalau kamu bisa memberikan penjelasan yang
 
 Sebagai informasi tambahan, sebagian besar dari kami adalah orang teknis yang sehari-hari bekerja di depan layar monitor. Ini berarti kami tidak selalu bisa merespons secepat kilat. Jadi, mari kita bawa santai saja proses ini. 
 
-Terima kasih atas pengertian dan kerja samanya!
+> [!NOTE]
+> Terima kasih atas pengertian dan kerja samanya!

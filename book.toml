@@ -11,6 +11,8 @@ site-url = "/"
 git-repository-url = "https://github.com/banghasan/ebook-bot-telegram"
 edit-url-template = "https://github.com/banghasan/ebook-bot-telegram/tree/main/{path}"
 hash-files = true
+#additional-css = ["theme/pagetoc.css"]
+#additional-js  = ["theme/pagetoc.js"]
 
 [output.html.playground]
 editable = true
@@ -28,3 +30,6 @@ heading-split-level = 2
 [output.html.print]
 enable = true    # include support for printable output
 page-break = true # insert page-break after each chapter
+
+#[preprocessor.pagetoc]
+#scroll_offset = 10  # pixels added to scroll position for active header detection (default: 10)

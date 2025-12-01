@@ -1,5 +1,22 @@
 # Halaman Uji Coba
 
+<style>
+    .mdbook-version {
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        background-color: var(--theme-popup-bg);
+        border-radius: 8px;
+        padding: 2px 5px 2px 5px;
+        border: 1px solid var(--theme-popup-border);
+        font-size: 0.9em;
+    }
+</style>
+
+<div class="mdbook-version">
+    Catatan Pojok
+</div>
+
 ![](https://blog.banghasan.com/assets/images/BOCAH/014.png)
 
 Halaman ini sengaja dibuat sebagai ruang eksperimen supaya setiap fungsi dapat diuji sebelum diterapkan ke halaman lain.
@@ -16,6 +33,22 @@ Halaman ini sengaja dibuat sebagai ruang eksperimen supaya setiap fungsi dapat d
 - Mengeksplorasi contoh format markdown yang disediakan di bawah.
 
 ---
+
+## Link Penting
+
+- [MdBook](https://github.com/rust-lang/mdBook) ![crates.io](https://img.shields.io/crates/v/mdbook.svg) program utama
+- <https://projects.localizethedocs.org/mdbook-docs-l10n/en-us/master/index.html>
+- <https://github.com/rust-lang/mdBook/wiki/Third-party-plugins>
+
+### Plugins 
+
+Nunggu update agar support versi `0.5.x`
+- [mdbook-embedify](https://github.com/MR-Addict/mdbook-embedify): `v0.2.18` ![Crates.io](https://img.shields.io/crates/v/mdbook-embedify)
+- [mdbook-admonish](https://github.com/tommilligan/mdbook-admonish): `v1.20.0` [![Latest version](https://img.shields.io/crates/v/mdbook-admonish.svg)](https://crates.io/crates/mdbook-admonish)
+- [mdbook-repl](https://github.com/MR-Addict/mdbook-repl)
+
+Support, tapi tidak terpakai:
+- [mdbook-pagetoc](https://github.com/slowsage/mdbook-pagetoc)
 
 ## Contoh Format Markdown
 
@@ -103,3 +136,39 @@ Silakan ubah parameter atau tambahkan simbol lain untuk menguji dukungan LaTeX y
 Hasil
 
 - <i class="fa-solid fa-book"></i> Buku
+
+## Alerts
+
+Ada di [admonitions](https://rust-lang.github.io/mdBook/format/markdown.html#admonitions)
+
+```
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+```
+
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.

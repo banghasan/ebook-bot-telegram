@@ -21,7 +21,8 @@ Untuk mengirim pesan melalui API Telegram, kita memerlukan sebuah bot.
 
 Salin dan simpan token ini di tempat yang aman. Kita akan menggunakannya di dalam skrip.
 
-**CATATAN PENTING:** Jaga kerahasiaan Token API kamu. Siapa pun yang memilikinya dapat mengendalikan botmu.
+> [!WARNING]
+> **CATATAN PENTING:** Jaga kerahasiaan Token API kamu. Siapa pun yang memilikinya dapat mengendalikan botmu.
 
 ---
 
@@ -164,8 +165,8 @@ Cara terbaik untuk memicu skrip ini saat ada login SSH adalah dengan menggunakan
     *   `pam_exec.so`: Modul PAM yang digunakan untuk mengeksekusi perintah eksternal.
 
 3.  Simpan dan tutup file.
-
-    tekan `CTRL+O` dan ENTER untuk menyimpannya.
+    > [!TIP]
+    > tekan `CTRL+O` dan ENTER untuk menyimpannya.
 ---
 
 

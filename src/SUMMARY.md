@@ -7,10 +7,17 @@
   - [Tanggung Jawab](./00/tanggung_jawab.md)
   - [Motivasi untuk Melangkah](./00/motivasi.md)
   - [Ruang Diskusi](./00/diskusi.md)
-- [Telegram dan Integrasi](./tools/README.md)
+  
+# Telegram dan Integrasi
+- [Telegram]()
+- [Integrasi](./tools/README.md)
   - [Notifikasi Login SSH](./tools/tutorial_telegram_curl_bash.md)
+  
+# Ebook
 - [PHP dan Curl](./php_curl.md)
 - [Google Apps Script](./gas_lumpia.md)
 - [Bun dan GramIO](./bun_gramio.md)
 - [Rust dan Teloxide (_draft_)](./rust/rust_teloxide.md)
+
+# Lain-lain
 - [Web Test](./test.md)

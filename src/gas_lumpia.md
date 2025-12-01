@@ -54,10 +54,11 @@ memandu kamu langkah demi langkah, dimulai dari konsep paling dasar.
 
 Kamu akan belajar:
 
-- Cara mendapatkan token bot dari BotFather
-- Memahami struktur kode JavaScript sederhana
-- Membuat bot pertama yang dapat merespons perintah dasar
-- Konsep fundamental seperti variabel, fungsi, dan objek
+> [!TIP]
+> - Cara mendapatkan token bot dari BotFather
+> - Memahami struktur kode JavaScript sederhana
+> - Membuat bot pertama yang dapat merespons perintah dasar
+> - Konsep fundamental seperti variabel, fungsi, dan objek
 
 
 #### 💡 Pemula dengan Pengetahuan Dasar Programming
@@ -65,9 +66,10 @@ Kamu akan belajar:
 Jika kamu sudah familiar dengan konsep dasar programming (variabel, fungsi,
 kondisional).
 
-- Bisa melewati penjelasan konsep dasar dan fokus pada implementasi
-- Langsung memahami struktur handler dan middleware
-- Mengeksplorasi fitur-fitur menengah seperti keyboard interaktif dan manajemen
+> [!NOTE]
+> - Bisa melewati penjelasan konsep dasar dan fokus pada implementasi
+> - Langsung memahami struktur handler dan middleware
+> - Mengeksplorasi fitur-fitur menengah seperti keyboard interaktif dan manajemen
   sesi
 
 #### 🚀 Developer Berpengalaman
@@ -75,10 +77,11 @@ kondisional).
 Bagi kamu yang sudah terbiasa dengan JavaScript atau framework bot lain (seperti
 Telegraf, python-telegram-bot), buku ini akan membantumu:
 
-- Memahami perbedaan dan keunikan Google Apps Script
-- Memanfaatkan integrasi ekosistem Google (Sheets, Drive, Gmail)
-- Mengoptimalkan bot dengan middleware dan arsitektur yang scalable
-- Mengatasi limitasi GAS dengan teknik-teknik advanced
+> [!IMPORTANT]
+> - Memahami perbedaan dan keunikan Google Apps Script
+> - Memanfaatkan integrasi ekosistem Google (Sheets, Drive, Gmail)
+> - Mengoptimalkan bot dengan middleware dan arsitektur yang scalable
+> - Mengatasi limitasi GAS dengan teknik-teknik advanced
 
 ### 1.3 Apa Itu Bot Telegram?
 
@@ -243,9 +246,10 @@ mengelola bot-bot lainnya.
 
 ![](https://lumpia.js.org/images/botfather/token.webp)
 
-**Penting:** Token bot kamu akan terlihat seperti ini:
-`123456789:ABC-DEF1234ghIkl-Jkl-Lmn-Opq-Rst-Uvwxyz`.
-**JANGAN** pernah membagikan token ini kepada siapapun.
+> [!CAUTION]
+> **Penting:** Token bot kamu akan terlihat seperti ini:
+> `123456789:ABC-DEF1234ghIkl-Jkl-Lmn-Opq-Rst-Uvwxyz`.
+> **JANGAN** pernah membagikan token ini kepada siapapun.
 
 ### 2.2 Langkah 2: Membuat Proyek Google Apps Script
 
@@ -373,9 +377,10 @@ mengatur _webhook_ agar Telegram tahu ke mana harus mengirim pesan.
 
 ![](https://lumpia.js.org/images/gas/deploy/web_app_url.webp)
 
-**Penting:** Saat pertama kali menjalankan fungsi yang mengakses layanan
-Google (seperti `SpreadsheetApp`), GAS akan meminta kamu untuk memberikan izin
-(_Authorization_). Kamu harus menyetujui izin ini agar bot dapat berfungsi.
+> [!IMPORTANT]  
+> **Penting:** Saat pertama kali menjalankan fungsi yang mengakses layanan
+> Google (seperti `SpreadsheetApp`), GAS akan meminta kamu untuk memberikan izin
+> (_Authorization_). Kamu harus menyetujui izin ini agar bot dapat berfungsi.
 
 Petunjuk dalam gambar:
 
@@ -696,13 +701,15 @@ berikut:
 3. **Komunitas Telegram Bot Indonesia**[^4]: Bergabunglah dengan grup diskusi
    untuk bertanya dan berbagi pengalaman.
 
-
+> [!NOTE]
 > Jangan lupa tonton video tutorialnya!
 >
 > Guna memperjelas pemahaman dan _insight_ secara umum.
 
 
 [![thumb](https://img.youtube.com/vi/H_GBc1nfqcA/sddefault.jpg)](https://youtu.be/H_GBc1nfqcA)
+
+- Link: <https://youtu.be/H_GBc1nfqcA>
 
 ---
 
