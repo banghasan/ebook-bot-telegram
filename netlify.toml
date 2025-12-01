@@ -5,15 +5,19 @@
 
     MDBOOK_URL=https://github.com/rust-lang/mdBook/releases/download/v0.4.52/mdbook-v0.4.52-x86_64-unknown-linux-gnu.tar.gz
     MDBOOK_FILE=mdbook.tar.gz
-    MDBOOK_SHA256=__ISI_SHA256_MDBOOK_DI_SINI__
+    MDBOOK_SHA256=c0b903f01dd8f4edc644372ad2b80b1fdddd12552d37b6a098657cbd8eddd768
 
     EMBEDIFY_URL=https://github.com/MR-Addict/mdbook-embedify/releases/download/0.2.18/mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu.zip
     EMBEDIFY_FILE=embedify.zip
-    EMBEDIFY_SHA256=__ISI_SHA256_EMBEDIFY_DI_SINI__
+    EMBEDIFY_SHA256=c5aa5bf7130034dcb5d0aa87c224112dce1b52f7a25866bea6e13fc401c16089
 
     KATEX_URL=https://github.com/lzanini/mdbook-katex/releases/download/0.10.0-alpha-binaries/mdbook-katex-v0.10.0-alpha-x86_64-unknown-linux-gnu.tar.gz
     KATEX_FILE=katex.tar.gz
-    KATEX_SHA256=__ISI_SHA256_KATEX_DI_SINI__
+    KATEX_SHA256=0db559af17213cdb4f466cb4210d8ed557032eaddc9763ad97f51c98bd9aec07
+
+    ADMONISH_URL=https://github.com/tommilligan/mdbook-admonish/releases/download/v1.20.0/mdbook-admonish-v1.20.0-x86_64-unknown-linux-gnu.tar.gz
+    ADMONISH_FILE=admonish.tar.gz
+    ADMONISH_SHA256=64ce6dad3d20d3723c149e333d9cf85a9f7d057f18c2707d264698afdfc6679f
 
     # ---------------------------
     # DOWNLOAD + VERIFY MDBOOK
@@ -61,6 +65,22 @@
 
       tar -xzf $KATEX_FILE
       mv mdbook-katex .netlify-cache/tools/mdbook-katex
+    fi
+
+    # ---------------------------
+    # DOWNLOAD + VERIFY ADMONISH
+    # ---------------------------
+    if [ ! -f .netlify-cache/tools/mdbook-admonish ]; then
+      wget -q $ADMONISH_URL -O $ADMONISH_FILE
+
+      echo "$ADMONISH_SHA256  $ADMONISH_FILE" | sha256sum -c - || \
+      (echo 'Checksum admonish invalid! Download ulang...' && rm -f $ADMONISH_FILE && wget -q $ADMONISH_URL -O $ADMONISH_FILE)
+
+      echo "$ADMONISH_SHA256  $ADMONISH_FILE" | sha256sum -c - || \
+      (echo 'Checksum admonish gagal dua kali. Stop.' && exit 1)
+
+      tar -xzf $ADMONISH_FILE
+      mv mdbook-admonish .netlify-cache/tools/mdbook-admonish
     fi
 
     # ---------------------------
