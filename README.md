@@ -1,5 +1,7 @@
 # Bot Telegram Multibahasa
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/880db421-2771-4335-916e-1620217e6b50/deploy-status)](https://app.netlify.com/projects/botindonesia/deploys)
+
 Repositori ini berisi sumber materi buku digital bertema pembangunan bot Telegram lintas bahasa menggunakan berbagai platform, seperti Google Apps Script dengan Lumpia Framework dan bahasa pemrograman populer lainnya. Konten dikemas menggunakan **[mdBook](https://github.com/rust-lang/mdBook)** sehingga mudah dibaca dalam bentuk situs statis maupun ebook.
 
 ## Struktur Proyek

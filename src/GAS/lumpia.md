@@ -1,6 +1,6 @@
 # Membangun Bot Telegram dengan Google Apps Script dan Lumpia Framework
 
-**Dari Pemula Hingga Mahir**
+**Dari Pemula Hingga Lanjutan**
 
 | Metadata                 | Detail                                     |
 | :----------------------- | :----------------------------------------- |

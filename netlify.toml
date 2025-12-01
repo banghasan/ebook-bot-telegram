@@ -1,5 +1,5 @@
 [build]
-  publish = "book"
+  publish = "buku"
   command = """
     mkdir -p .netlify-cache/tools bin
 
@@ -30,5 +30,5 @@
     chmod +x bin/mdbook
     export PATH=$PATH:$(pwd)/bin
 
-    bin/mdbook build
+    bin/mdbook build --dest-dir buku
   """
