@@ -57,5 +57,5 @@ Maka dari itu, kami sangat menghargai kalau kamu bisa memberikan penjelasan yang
 
 Sebagai informasi tambahan, sebagian besar dari kami adalah orang teknis yang sehari-hari bekerja di depan layar monitor. Ini berarti kami tidak selalu bisa merespons secepat kilat. Jadi, mari kita bawa santai saja proses ini. 
 
-> [!NOTE]
-> Terima kasih atas pengertian dan kerja samanya!
+> [!CAUTION]
+> <i class="fa-solid fa-handshake"></i> Terima kasih atas pengertian dan kerja samanya!

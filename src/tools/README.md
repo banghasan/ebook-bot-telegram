@@ -42,6 +42,5 @@ Berikut adalah beberapa contoh nyata dari apa yang bisa kamu temukan atau buat d
 
 Intinya, bagian ini didedikasikan untuk kreativitas dalam mengotomatisasi tugas-tugas kecil yang berguna. 
 
-```admonish info
-Jika kamu punya ide lain, jangan ragu untuk menambahkannya!
-```
+> [!NOTE]  
+> Jika kamu punya ide lain, jangan ragu untuk menambahkannya!

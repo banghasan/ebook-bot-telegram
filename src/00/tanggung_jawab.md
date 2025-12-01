@@ -1,6 +1,6 @@
 # Sebuah Kesepakatan
 
-## Tanggung Jawab Ada di Tanganmu
+## <i class="fa-solid fa-hand"></i> Tanggung Jawab Ada di Tanganmu
 
 Selamat datang di ruang belajar kita bersama! Panduan dan materi di sini disusun dengan semangat kolaborasi untuk membantumu mencapai tujuan. Kami percaya pada kekuatan berbagi ilmu dan saling mendukung.
 
@@ -8,7 +8,7 @@ Selamat datang di ruang belajar kita bersama! Panduan dan materi di sini disusun
 
 Namun, ada satu hal penting yang perlu kita sepakati bersama sejak awal:
 
-### Perjalanan Ini Milikmu
+### 🏃🏼‍♂️ Perjalanan Ini Milikmu
 
 Anggaplah kami sebagai teman yang memberikan peta dan kompas. Kami menunjukkan jalan yang mungkin, memberikan tips, dan berbagi alat yang kami tahu. Namun, kamu adalah sang petualang yang menempuh perjalanan itu sendiri.
 
@@ -17,7 +17,7 @@ Anggaplah kami sebagai teman yang memberikan peta dan kompas. Kami menunjukkan j
 
 Komunitas atau para kontributor **tidak dapat dimintai pertanggungjawaban** atas apa pun yang terjadi pada proyekmu.
 
-### Nikmati Buah Jerih Payahmu
+### 😘 Nikmati Buah Jerih Payahmu
 
 Di sisi lain, medali keberhasilannya juga sepenuhnya milikmu.
 
