@@ -3,6 +3,8 @@ title = "Telegram Bot Indonesia"
 description = "Panduan membuat bot Telegram"
 authors = ["bangHasan"]
 language = "en"
+default-theme = "light"
+preferred-dark-theme = "navy"
 
 [output.html]
 smart-punctuation = true
@@ -25,6 +27,11 @@ boost-hierarchy = 2
 boost-paragraph = 1
 expand = true
 heading-split-level = 2
+
+[output.html.print]
+enable = true    # include support for printable output
+page-break = true # insert page-break after each chapter
+
 
 [preprocessor.embedify]
 
@@ -52,4 +59,4 @@ assets_version = "3.1.0" # do not edit: managed by `mdbook-admonish install`
 [preprocessor.admonish.renderer.test]
 render_mode = "strip"
 
-katex.after = ["links"]
+#katex.after = ["links"]
