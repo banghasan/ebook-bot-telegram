@@ -1,9 +1,7 @@
-```admonish bug
-Buku ini masih *draft*, kemungkinan akan mengalami banyak errornya baik dipraktekkan maupun susunan materinya.
-```
+>> 🚫 Materi ini masih *draft*, kemungkinan akan mengalami banyak errornya baik dipraktekkan maupun susunan materinya.
 
 
-# MEMBANGUN BOT TELEGRAM DENGAN RUST DAN TELOXIDE
+# BOT TELEGRAM DENGAN RUST DAN TELOXIDE
 
 ## Pengantar
 
