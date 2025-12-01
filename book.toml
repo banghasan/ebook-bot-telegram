@@ -11,6 +11,7 @@ site-url = "/mdBook/"
 git-repository-url = "https://github.com/banghasan/ebook-bot-telegram"
 edit-url-template = "https://github.com/banghasan/ebook-bot-telegram/tree/main/{path}"
 hash-files = true
+additional-css = ["./mdbook-admonish.css"]
 
 [output.html.playground]
 editable = true
@@ -24,3 +25,29 @@ boost-hierarchy = 2
 boost-paragraph = 1
 expand = true
 heading-split-level = 2
+
+[preprocessor.embedify]
+
+giscus.enable = true
+giscus.repo = "banghasan/ebook-bot-telegram"
+giscus.repo-id = "R_kgDOQfTNjg"
+giscus.category-id = "DIC_kwDOQfTNjs4CzMgm"
+giscus.category = "Announcements"
+giscus.mapping = "pathname"
+giscus.theme = "light"
+giscus.reactions = 1
+
+scroll-to-top.enable = true
+footer.enable = true
+footer.message = "Copyright © 2025 • Created with ❤️ by [bangHasan](https://banghasan.com)"
+
+announcement-banner.enable = false
+announcement-banner.id = "0.0.1"
+announcement-banner.message = "Dokumen telah diupdate ke rilis terbaru"
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.1.0" # do not edit: managed by `mdbook-admonish install`
+
+[preprocessor.admonish.renderer.test]
+render_mode = "strip"

@@ -735,9 +735,9 @@ berikut:
 3. **Komunitas Telegram Bot Indonesia**[^4]: Bergabunglah dengan grup diskusi
    untuk bertanya dan berbagi pengalaman.
 
-> Jangan lupa tonton video tutorialnya pada
-> [youtube](https://youtu.be/H_GBc1nfqcA)
-> [![](https://i.ytimg.com/vi/H_GBc1nfqcA/maxresdefault.jpg)](https://youtu.be/H_GBc1nfqcA)
+> Jangan lupa tonton video tutorialnya:
+
+{% embed youtube id="H_GBc1nfqcA" loading="lazy" %}
 
 ---
 

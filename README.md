@@ -18,6 +18,8 @@ Repositori ini berisi sumber materi buku digital bertema pembangunan bot Telegra
 
 ## Deployment
 
+Menggunakan release terbaru mdbook tanpa `preprocessor`
+
 ### Netlify
 
 Gunakan pengaturan berikut saat menyiapkan situs Netlify:
@@ -40,3 +42,27 @@ VERSION=$(curl -s https://api.github.com/repos/rust-lang/mdBook/releases/latest 
 Perintah di atas akan mengambil rilis mdBook terbaru secara otomatis, mengekstraknya, dan menjalankan proses build untuk menghasilkan folder `book/` yang siap dipublikasikan oleh Netlify.
 
 Selamat berkontribusi dan jangan ragu untuk mengembangkan materi maupun contoh bot baru demi memperkaya ekosistem belajar Telegram di Indonesia!
+
+## Deploy Dengan Preprocessor
+
+Karena mdBook terbaru tidak support untuk `preprocessor` yang sudah jadi, maka build pakai versi lama.
+
+Misalkan ingin menambahkan komentar [giscus](https://giscus.app/id)
+
+Contoh: pakai versi `mdbook-v0.4.52-x86_64-unknown-linux-gnu.tar.gz` dan menambahkan [mdbook-embedify](https://github.com/MR-Addict/mdbook-embedify/)
+
+Sehingga build command untuk Clouflare Pages:
+
+```sh
+mkdir -p bin && \
+wget -q https://github.com/rust-lang/mdBook/releases/download/v0.4.52/mdbook-v0.4.52-x86_64-unknown-linux-gnu.tar.gz && \
+tar -xzf mdbook-v0.4.52-x86_64-unknown-linux-gnu.tar.gz && mv mdbook bin/ && \
+wget -q https://github.com/MR-Addict/mdbook-embedify/releases/download/0.2.18/mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu.zip && \
+unzip -q mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu.zip && \
+mv mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu/mdbook-embedify bin/ && \
+chmod +x bin/* && \
+export PATH=$PATH:$(pwd)/bin && \
+bin/mdbook build
+```
+
+Netlify tidak perlu lagi, karena sudah ditambahkan pada file `netlify.toml`

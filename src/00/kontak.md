@@ -1,5 +1,4 @@
-Untuk memperkuat ekosistem belajar bersama, silakan bergabung dengan grup
-Telegram [@botIndonesia](https://t.me/botindonesia)
+Untuk memperkuat ekosistem belajar bersama, silakan bergabung dengan grup Telegram [@botIndonesia](https://t.me/botindonesia)
 
 Di sana, kita bisa berdiskusi santai, bertukar pikiran, mengulas studi kasus,
 hingga membantu teman-teman yang baru memulai. Anggap saja ini seperti

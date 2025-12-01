@@ -1,0 +1,54 @@
+[build]
+  publish = "book"
+  command = """
+    mkdir -p .netlify-cache/tools bin
+
+    MDBOOK_URL=https://github.com/rust-lang/mdBook/releases/download/v0.4.52/mdbook-v0.4.52-x86_64-unknown-linux-gnu.tar.gz
+    MDBOOK_FILE=mdbook.tar.gz
+    MDBOOK_SHA256=__ISI_SHA256_MDBOOK_DI_SINI__
+
+    EMBEDIFY_URL=https://github.com/MR-Addict/mdbook-embedify/releases/download/0.2.18/mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu.zip
+    EMBEDIFY_FILE=embedify.zip
+    EMBEDIFY_SHA256=__ISI_SHA256_EMBEDIFY_DI_SINI__
+
+    # ---------------------------
+    # DOWNLOAD + VERIFY MDBOOK
+    # ---------------------------
+    if [ ! -f .netlify-cache/tools/mdbook ]; then
+      wget -q $MDBOOK_URL -O $MDBOOK_FILE
+
+      echo "$MDBOOK_SHA256  $MDBOOK_FILE" | sha256sum -c - || \
+      (echo 'Checksum mdBook invalid! Download ulang...' && rm -f $MDBOOK_FILE && wget -q $MDBOOK_URL -O $MDBOOK_FILE)
+
+      echo "$MDBOOK_SHA256  $MDBOOK_FILE" | sha256sum -c - || \
+      (echo 'Checksum mdBook gagal dua kali. Stop.' && exit 1)
+
+      tar -xzf $MDBOOK_FILE
+      mv mdbook .netlify-cache/tools/mdbook
+    fi
+
+    # ---------------------------
+    # DOWNLOAD + VERIFY EMBEDIFY
+    # ---------------------------
+    if [ ! -f .netlify-cache/tools/mdbook-embedify ]; then
+      wget -q $EMBEDIFY_URL -O $EMBEDIFY_FILE
+
+      echo "$EMBEDIFY_SHA256  $EMBEDIFY_FILE" | sha256sum -c - || \
+      (echo 'Checksum embedify invalid! Download ulang...' && rm -f $EMBEDIFY_FILE && wget -q $EMBEDIFY_URL -O $EMBEDIFY_FILE)
+
+      echo "$EMBEDIFY_SHA256  $EMBEDIFY_FILE" | sha256sum -c - || \
+      (echo 'Checksum embedify gagal dua kali. Stop.' && exit 1)
+
+      unzip -q $EMBEDIFY_FILE
+      mv mdbook-embedify-0.2.18-x86_64-unknown-linux-gnu/mdbook-embedify .netlify-cache/tools/mdbook-embedify
+    fi
+
+    # ---------------------------
+    # COPY TOOL & BUILD BOOK
+    # ---------------------------
+    cp .netlify-cache/tools/* bin/
+    chmod +x bin/*
+    export PATH=$PATH:$(pwd)/bin
+
+    bin/mdbook build
+  """
