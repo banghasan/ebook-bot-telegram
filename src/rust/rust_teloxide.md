@@ -306,9 +306,8 @@ Buka menggunakan editor favoritmu, misalnya VS Code, Sublime, Zed, atau lainnya.
 ```bash
 $ zed .
 ```
-```admonish tip
+
 Saya menggunakan Zed[^zed] untuk editor, karena lebih ringan.
-```
 
 #### 4.3. Menambahkan Dependensi
 
@@ -334,13 +333,12 @@ log = "0.4"
 pretty_env_logger = "0.5"
 ```
 
-```admonish tip
 **Catatan:** Pastikan kamu menggunakan versi yang stabil. Versi di atas mungkin sudah usang saat kamu membaca ini, tetapi konsepnya tetap sama. 
 
 Saat ini ditulis, sudah menggunakan versi terbaru. 
 
 `-- Desember 2025`
-```
+
 
 ### Bab 5: Bot "Hello World" Teloxide
 
@@ -454,7 +452,6 @@ $env:TELOXIDE_TOKEN="YOUR_BOT_TOKEN"
 cargo run
 ```
 
-```admonish question
 Jika keluar error seperti ini:
 
     thread 'main' (124428) panicked at /home/banghasan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/teloxide-core-0.13.0/src/bot.rs:319:43:
@@ -462,7 +459,7 @@ Jika keluar error seperti ini:
     note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
   
 Artinya, kamu belum measukkan TOKEN BOT dengan command `export TELOXIDE_TOKEN="YOUR_BOT_TOKEN"`
-```
+
 
 Setelah kamu menjalankan `cargo run`, kamu akan melihat *output* log seperti: `INFO [teloxide_pertama] Memulai Bot Teloxide...`.
 

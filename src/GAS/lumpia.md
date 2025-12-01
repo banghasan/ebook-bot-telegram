@@ -52,37 +52,33 @@ tingkat keahlian:
 Jika kamu belum pernah menulis kode sebelumnya, jangan khawatir! Buku ini akan
 memandu kamu langkah demi langkah, dimulai dari konsep paling dasar. 
 
-```admonish title="Kamu akan belajar"
+Kamu akan belajar:
 
 - Cara mendapatkan token bot dari BotFather
 - Memahami struktur kode JavaScript sederhana
 - Membuat bot pertama yang dapat merespons perintah dasar
 - Konsep fundamental seperti variabel, fungsi, dan objek
-```
+
 
 #### 💡 Pemula dengan Pengetahuan Dasar Programming
 
 Jika kamu sudah familiar dengan konsep dasar programming (variabel, fungsi,
 kondisional).
 
-```admonish summary title="Poin"
 - Bisa melewati penjelasan konsep dasar dan fokus pada implementasi
 - Langsung memahami struktur handler dan middleware
 - Mengeksplorasi fitur-fitur menengah seperti keyboard interaktif dan manajemen
   sesi
-```
 
 #### 🚀 Developer Berpengalaman
 
 Bagi kamu yang sudah terbiasa dengan JavaScript atau framework bot lain (seperti
 Telegraf, python-telegram-bot), buku ini akan membantumu:
 
-```admonish title="Hal-hal"
 - Memahami perbedaan dan keunikan Google Apps Script
 - Memanfaatkan integrasi ekosistem Google (Sheets, Drive, Gmail)
 - Mengoptimalkan bot dengan middleware dan arsitektur yang scalable
 - Mengatasi limitasi GAS dengan teknik-teknik advanced
-```
 
 ### 1.3 Apa Itu Bot Telegram?
 
@@ -178,7 +174,8 @@ menyiapkan hal-hal berikut:
    - Pastikan kamu dapat login ke Google Drive
    - Tidak memerlukan akun berbayar, akun Gmail gratis sudah cukup
 
-#### 🛠️ Pengetahuan Dasar (Opsional tapi Direkomendasikan)
+#### 🛠️ Pengetahuan Dasar
+*Opsional tapi Direkomendasikan*
 
 1. **Pemahaman JavaScript Dasar**
    - Variabel dan tipe data
@@ -204,23 +201,21 @@ Sebelum masuk ke Bab 2, pastikan kamu sudah:
 
 #### 💡 Tips Sebelum Memulai
 
-```admonish tip title="Untuk Pemula"
+**Untuk Pemula**
  Jangan terburu-buru. Ikuti setiap langkah dengan teliti dan
  jangan ragu untuk mencoba kode berkali-kali. Kesalahan adalah bagian dari
  proses belajar!
-```
 
-```admonish info title="Untuk Developer Berpengalaman"
+
+**Untuk Developer Berpengalaman**
 Meskipun kamu familiar dengan JavaScript,
  perhatikan perbedaan dan limitasi Google Apps Script dibandingkan dengan
  Node.js atau environment JavaScript lainnya.
-```
 
-```admonish quote title="Untuk Semua"
+**Untuk Semua**
 Simpan token bot kamu dengan aman dan jangan pernah
  membagikannya di tempat publik (GitHub, forum, dll). Token adalah kunci penuh
  kontrol atas botmu.
-```
 
 ---
 
@@ -244,11 +239,9 @@ mengelola bot-bot lainnya.
 5. Setelah berhasil, BotFather akan memberikan kamu **HTTP API Token**. Simpan
    token ini dengan aman, karena ini adalah kunci untuk mengontrol bot kamu.
 
-```admonish danger title="Peringatan"
 **Penting:** Token bot kamu akan terlihat seperti ini:
 `123456789:ABC-DEF1234ghIkl-Jkl-Lmn-Opq-Rst-Uvwxyz`.
 **JANGAN** pernah membagikan token ini kepada siapapun.
-```
 
 ### 2.2 Langkah 2: Membuat Proyek Google Apps Script
 
@@ -376,11 +369,9 @@ mengatur _webhook_ agar Telegram tahu ke mana harus mengirim pesan.
 
 ![](https://lumpia.js.org/images/gas/deploy/web_app_url.webp)
 
-```admonish warning title="Perhatian"
 **Penting:** Saat pertama kali menjalankan fungsi yang mengakses layanan
 Google (seperti `SpreadsheetApp`), GAS akan meminta kamu untuk memberikan izin
 (_Authorization_). Kamu harus menyetujui izin ini agar bot dapat berfungsi.
-```
 
 Petunjuk dalam gambar:
 
@@ -657,8 +648,9 @@ bot dengan Library
 ini menyediakan abstraksi tingkat tinggi yang sangat menyederhanakan operasi
 database menggunakan Google Sheets sebagai backend.
 
-```admonish summary title="Rekomendasi"
-Penulis sangat merekomendasikan penggunaan Library **miniSheetDBv2**[^miniSheetDBv2] karena beberapa alasan:
+**Rekomendasi**
+
+Penulis sangat merekomendasikan penggunaan Library **miniSheetDBv2** [^miniSheetDBv2] karena beberapa alasan:
 
  - **Operasi CRUD yang Mudah**: Menyediakan metode sederhana untuk Create,
    Read, Update, dan Delete data tanpa perlu menulis kode `SpreadsheetApp` yang
@@ -671,16 +663,14 @@ Penulis sangat merekomendasikan penggunaan Library **miniSheetDBv2**[^miniSheetD
    mengurangi API calls dan mempercepat eksekusi
  - **Dokumentasi Lengkap**: Dilengkapi dengan contoh kode dan tutorial dalam
    Bahasa Indonesia
-```
 
 ---
 
 ## Penutup dan Sumber Daya Lanjutan
 
-```admonish tip title="Selamat!"
+**Selamat**
 Kita telah mempelajari dasar-dasar hingga fitur mahir dalam membangun
 bot Telegram menggunakan Google Apps Script dan Lumpia Framework.
-```
 
 ### Ringkasan Pembelajaran
 
@@ -703,13 +693,12 @@ berikut:
    untuk bertanya dan berbagi pengalaman.
 
 
-```admonish tip
-Jangan lupa tonton video tutorialnya!
+> Jangan lupa tonton video tutorialnya!
+>
+> Guna memperjelas pemahaman dan _insight_ secara umum.
 
-Guna memperjelas pemahaman dan _insight_ secara umum.
-```
 
-{% embed youtube id="H_GBc1nfqcA" loading="lazy" %}
+[![thumb](https://img.youtube.com/vi/H_GBc1nfqcA/sddefault.jpg)](https://youtu.be/H_GBc1nfqcA)
 
 ---
 

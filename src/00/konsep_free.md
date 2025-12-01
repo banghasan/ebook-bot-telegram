@@ -69,9 +69,7 @@ Memahami kedua sisi dari "gratis" ini membantu kita menjadi pengembang yang lebi
 
 Apabila kamu merasa mendapatkan manfaat yang signifikan dari suatu proyek atau layanan gratis, dengan rendah hati menyarankan kamu untuk mempertimbangkan donasi. Dukungan finansial dari pengguna yang puas—seperti kamu—merupakan energi utama bagi para pengembang untuk menjaga kelangsungan proyek, membantu menutup biaya operasional, dan terus berinovasi dalam menghadirkan fitur-fitur baru.
 
-```admonish tip
-Ini juga berlaku untuk Proyek Pembelajaran ini!
-```
+> Ini juga berlaku untuk Proyek Pembelajaran ini, yak 😍
 
 Meski demikian, kami tegaskan bahwa memberikan donasi bukanlah suatu kewajiban bagimu.
 

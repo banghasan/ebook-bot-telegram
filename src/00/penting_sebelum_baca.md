@@ -186,6 +186,4 @@ lingkungan teknis yang siap, kebiasaan dokumentasi, dan dukungan komunitas —
 kamu sudah memiliki fondasi yang kuat untuk sukses dalam mempelajari pembuatan
 bot Telegram.
 
-```admonish tip title="Cmungudh Ea"
-**Selamat belajar**, dan nikmati setiap prosesnya! 🚀
-```
+> **Selamat belajar**, dan nikmati setiap prosesnya! 🚀

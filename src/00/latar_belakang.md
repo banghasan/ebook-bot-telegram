@@ -1,8 +1,6 @@
 # Membuka Jendela Otomatisasi dengan Telegram
 
-```admonish quote title=" "
-*Ilmu itu tak mengenal satu pintu, melainkan banyak jendela*
-```
+> *Ilmu itu tak mengenal satu pintu, melainkan banyak jendela*
 
 Kutipan di atas secara sempurna menangkap esensi dari dunia teknologi yang terus berkembang, termasuk dalam bidang otomasi. Jika kita ibaratkan otomasi sebagai sebuah ruangan besar yang penuh dengan solusi canggih, maka Telegram adalah salah satu jendela terluas untuk masuk dan menjelajahinya. Ia bukan sekadar aplikasi pengirim pesan, melainkan sebuah platform matang yang menawarkan ekosistem kaya untuk inovasi.
 
