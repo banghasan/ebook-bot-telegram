@@ -345,15 +345,12 @@ Sekarang, mari kita tulis kode bot paling sederhana.
 #### 5.1. Kode Bot Dasar
 
 
-```admonish failure title="Pasti Gagal"
-Jangan di run di sini, pasti akan error.
-
-Jalankan pada komputer / vps kamu.
-```
+> Jangan di run di sini, pasti akan error.
+> Jalankan pada komputer / vps kamu.
 
 Buka `src/main.rs` dan ganti isinya dengan kode berikut:
 
-```rust
+```rust,ignore
 // src/main.rs
 
 use log::info;
@@ -491,7 +488,7 @@ Kita perlu memodifikasi *dispatcher* untuk menangani semua jenis pesan, bukan ha
 
 Ganti bagian `dptree::entry()` di `main` dengan ini:
 
-```rust
+```rust,ignore
 // teloxide_pertama/src/main.rs (Modifikasi di fungsi main)
 
 // ... (Kode sebelumnya)
@@ -546,7 +543,7 @@ Kita akan membuat bot yang meminta nama pengguna, menunggu balasan, dan kemudian
 
 Tambahkan *crate* `std::sync::Arc` dan `std::collections::HashMap` di bagian `use` dan definisikan *state* di luar `main`.
 
-```rust
+```rust,ignore
 // teloxide_pertama/src/main.rs (Tambahkan di bagian atas)
 use std::{sync::Arc, collections::HashMap};
 use teloxide::dispatching::dialogue::{InMemStorage, Dialogue};
@@ -568,7 +565,7 @@ type HandlerResult = Result<(), Box<dyn std::error::Error + Send + Sync>>;
 
 Kita akan membuat *handler* baru yang menggunakan *dialogue* (state).
 
-```rust
+```rust,ignore
 // Handler untuk perintah /register
 async fn register_command(bot: Bot, dialogue: MyDialogue, msg: Message) -> HandlerResult {
     bot.send_message(msg.chat.id, "Siapa nama kamu?").await?;
@@ -595,7 +592,7 @@ async fn handle_text(bot: Bot, dialogue: MyDialogue, msg: Message, text: String)
 
 Kita perlu mengaktifkan *dialogue* di *dispatcher* dan mengatur *routing* berdasarkan *state*.
 
-```rust
+```rust,ignore
 // teloxide_pertama/src/main.rs (Modifikasi di fungsi main)
 
 #[tokio::main]
@@ -679,7 +676,7 @@ Kita akan membuat bot yang menawarkan tiga pilihan warna dan merespons berdasark
 
 Kita akan menggunakan *enum* untuk mendefinisikan data yang akan dikirim kembali. Ini adalah praktik terbaik di Rust.
 
-```rust
+```rust,ignore
 // teloxide_pertama/src/main.rs (Tambahkan di bagian atas)
 use serde::{Deserialize, Serialize};
 use teloxide::types::{InlineKeyboardMarkup, InlineKeyboardButton};
@@ -702,7 +699,7 @@ enum Warna {
 
 Buat fungsi yang menghasilkan *inline keyboard*.
 
-```rust
+```rust,ignore
 fn buat_keyboard() -> InlineKeyboardMarkup {
     let tombol_merah = InlineKeyboardButton::callback(
         "Merah",
@@ -726,7 +723,7 @@ fn buat_keyboard() -> InlineKeyboardMarkup {
 
 Tambahkan perintah baru `/warna` dan *handler*-nya.
 
-```rust
+```rust,ignore
 // Tambahkan /warna ke enum Command
 // ...
     #[command(description = "meminta kamu memilih warna favorit.")]
@@ -746,7 +743,7 @@ async fn warna_command(bot: Bot, msg: Message) -> HandlerResult {
 
 Ini adalah bagian terpenting. Ketika pengguna menekan tombol, bot menerima `CallbackQuery`, bukan `Message`. Kita perlu *handler* terpisah untuk ini.
 
-```rust
+```rust,ignore
 async fn callback_handler(bot: Bot, q: CallbackQuery) -> HandlerResult {
     // Pastikan ada data callback
     let data = q.data.ok_or_else(|| "Callback query tanpa data")?;
@@ -781,7 +778,7 @@ async fn callback_handler(bot: Bot, q: CallbackQuery) -> HandlerResult {
 
 Kita perlu menambahkan cabang baru di *dispatcher* untuk menangani `CallbackQuery`.
 
-```rust
+```rust,ignore
 // teloxide_pertama/src/main.rs (Modifikasi di fungsi main)
 
 #[tokio::main]
@@ -818,7 +815,7 @@ Karena Rust menggunakan model asinkron, kita dapat "tidur" (*sleep*) tanpa membl
 
 Tambahkan perintah `/ingatkan <waktu_detik> <pesan>` ke `enum Command`.
 
-```rust
+```rust,ignore
 // ...
     #[command(description = "mengirim pengingat setelah beberapa detik.", parse_with = "split")]
     Ingatkan {
@@ -830,7 +827,7 @@ Tambahkan perintah `/ingatkan <waktu_detik> <pesan>` ke `enum Command`.
 
 **Langkah 2: Handler Pengingat**
 
-```rust
+```rust,ignore
 use std::time::Duration;
 
 async fn ingatkan_command(bot: Bot, msg: Message, waktu_detik: u64, pesan: String) -> HandlerResult {
@@ -853,7 +850,7 @@ async fn ingatkan_command(bot: Bot, msg: Message, waktu_detik: u64, pesan: Strin
 
 Pastikan `ingatkan_command` ditambahkan ke cabang perintah di *dispatcher*.
 
-```rust
+```rust,ignore
 // teloxide_pertama/src/main.rs (Modifikasi di fungsi main)
 
 // ...
@@ -884,13 +881,138 @@ Dengan studi kasus ini, kamu telah melihat bagaimana Rust dan Teloxide menangani
 
 Bot yang berguna harus mampu menyimpan data. Kita akan menggunakan **SQLite**, basis data ringan yang sangat cocok untuk aplikasi bot karena tidak memerlukan server terpisah. Kita akan menggunakan *crate* **`sqlx`** yang merupakan ORM (Object-Relational Mapper) asinkron yang modern untuk Rust.
 
-### Bab 9: Integrasi `sqlx` dan SQLite
+### Bab 9: Alternatif Deployment: Menggunakan Webhook
 
-#### 9.1. Menambahkan Dependensi
+Sejauh ini, kita telah menggunakan metode **Long Polling**, di mana bot secara berkala "bertanya" kepada server Telegram apakah ada *update* baru. Metode ini sederhana dan cocok untuk pengembangan.
+
+Namun, untuk bot yang lebih besar dan lebih responsif, metode **Webhook** lebih disukai. Dengan Webhook, kamu memberi tahu Telegram sebuah URL, dan Telegram akan mengirimkan *update* ke URL tersebut secara *real-time* (seperti *push notification*).
+
+#### 9.1. Kelebihan Webhook
+
+*   **Responsivitas Instan:** Bot merespons segera setelah *update* diterima.
+*   **Efisiensi Sumber Daya:** Bot tidak perlu terus-menerus melakukan *polling* ke server Telegram.
+*   **Skalabilitas:** Lebih mudah diskalakan untuk menangani volume lalu lintas yang tinggi.
+
+#### 9.2. Persiapan Webhook
+
+Untuk menggunakan Webhook, kamu memerlukan:
+1.  **Server Web:** Bot kamu harus berjalan di server yang dapat menerima permintaan HTTP POST.
+2.  **URL Publik (HTTPS):** URL server kamu harus dapat diakses publik dan menggunakan protokol HTTPS.
+
+Dalam contoh ini, kita akan menggunakan *crate* **`axum`** (sebuah *framework* web populer di Rust) bersama dengan Teloxide.
+
+#### 9.3. Menambahkan Dependensi untuk Webhook
+
+Buka `Cargo.toml` dan tambahkan `axum` dan `hyper`.
+
+```toml
+# teloxide_pertama/Cargo.toml
+
+[dependencies]
+# ... (Dependensi Teloxide, Tokio, dll.)
+
+# Axum: Web framework untuk server Webhook
+axum = "0.7"
+hyper = { version = "1.0", features = ["full"] }
+tokio = { version = "1.35", features = ["full"] } # Pastikan fitur "full" aktif
+```
+
+#### 9.4. Implementasi Kode Webhook
+
+Kita akan membuat *endpoint* HTTP yang akan menerima *update* dari Telegram.
+
+```rust
+// teloxide_pertama/src/main.rs (Modifikasi di fungsi main)
+
+use axum::{
+    extract::State,
+    routing::post,
+    Json, Router,
+};
+use hyper::server::conn::http1;
+use hyper::service::service_fn;
+use hyper::{body::Incoming, Request};
+use std::net::SocketAddr;
+use teloxide::dispatching::update_listeners::webhooks;
+use teloxide::update_listeners::webhooks::Options;
+use teloxide::types::Update;
+
+// ... (Semua use, enum Command, dan handler lainnya tetap sama)
+
+// Fungsi utama untuk menjalankan bot dengan Webhook
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    // ... (Inisialisasi logger, load .env, dll.)
+
+    let bot = Bot::from_env();
+
+    // 1. Tentukan URL Webhook
+    // Ganti dengan URL publik server kamu. Misalnya: https://namadomainmu.com/webhook/
+    let url = std::env::var("WEBHOOK_URL").expect("WEBHOOK_URL harus diatur");
+    let port: u16 = std::env::var("PORT")
+        .unwrap_or_else(|_| "8080".to_string())
+        .parse()?;
+    let addr = SocketAddr::from(([0, 0, 0, 0], port));
+
+    // 2. Buat Listener Webhook
+    let (mut listener, stop_flag) = webhooks::axum(bot.clone(), Options::new(url.parse()?)).await?;
+
+    // 3. Setup Dispatcher (Sama seperti Long Polling)
+    let handler = dptree::entry()
+        // ... (Semua cabang handler kamu, seperti filter_command, filter_callback_query, dll.)
+        // Untuk contoh ini, kita akan menggunakan handler sederhana:
+        .branch(Update::filter_message().endpoint(|bot: Bot, msg: Message| async move {
+            bot.send_message(msg.chat.id, "Webhook berhasil menerima pesan!").await?;
+            ResponseResult::Ok(())
+        }));
+
+    // 4. Buat Service Axum
+    let app = Router::new()
+        .route("/", post(handle_update))
+        .with_state(listener.clone()); // Masukkan listener sebagai state Axum
+
+    // Handler Axum untuk menerima Update
+    async fn handle_update(
+        State(mut listener): State<webhooks::Listener<Arc<Bot>>>,
+        Json(update): Json<Update>,
+    ) -> () {
+        // Kirim update ke dispatcher Teloxide
+        listener.feed(update).await
+    }
+
+    // 5. Jalankan Server Webhook
+    info!("Memulai server Webhook di {}", addr);
+
+    axum::serve(tokio::net::TcpListener::bind(&addr).await?, app.into_make_service())
+        .await?;
+
+    Ok(())
+}
+```
+
+#### 9.5. Langkah-Langkah Deployment Webhook
+
+1.  **Atur Environment Variable:** Pastikan kamu mengatur `WEBHOOK_URL` dan `PORT` di file `.env`.
+    ```
+    # .env
+    TELOXIDE_TOKEN="YOUR_BOT_TOKEN"
+    WEBHOOK_URL="https://namadomainmu.com/webhook/"
+    PORT=8080
+    ```
+2.  **Deployment:** *Deploy* aplikasi Rust kamu ke server publik (misalnya, Heroku, AWS, atau VPS).
+3.  **Pengaturan Webhook:** Saat bot dijalankan, Teloxide akan secara otomatis memanggil `setWebhook` ke Telegram dengan URL yang kamu berikan.
+
+Dengan Webhook, kamu telah melangkah ke level profesional dalam *deployment* bot Telegram!
+
+---
+
+### Bab 10: Integrasi `sqlx` dan SQLite
+
+#### 10.1. Menambahkan Dependensi
 
 Buka `Cargo.toml` dan tambahkan dependensi berikut. Perhatikan bahwa kita perlu mengaktifkan fitur `runtime-tokio-rustls` dan `sqlite` untuk `sqlx`.
 
-```toml
+```rust,ignore
 # teloxide_pertama/Cargo.toml
 
 [dependencies]
@@ -901,7 +1023,7 @@ sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "sqlite", "macros"
 dotenvy = "0.15" # Untuk memuat environment variable dari file .env
 ```
 
-#### 9.2. Setup Database dan Migrasi
+#### 10.2. Setup Database dan Migrasi
 
 `sqlx` memerlukan *tool* `sqlx-cli` untuk menjalankan migrasi (pembuatan skema tabel).
 
@@ -951,7 +1073,7 @@ cargo sqlx migrate run
 
 Ini akan membuat file `bot_data.db` dan tabel `notes` di dalamnya.
 
-#### 9.3. Koneksi Database ke Bot
+#### 10.3. Koneksi Database ke Bot
 
 Kita perlu membuat *pool* koneksi basis data dan menyediakannya sebagai *dependency* untuk *handler* bot.
 
@@ -959,7 +1081,7 @@ Kita perlu membuat *pool* koneksi basis data dan menyediakannya sebagai *depende
 
 Tambahkan *use* yang diperlukan dan *load* `.env`.
 
-```rust
+```rust,ignore
 // teloxide_pertama/src/main.rs (Tambahkan di bagian atas)
 use sqlx::{SqlitePool, migrate::Migrator};
 use dotenvy::dotenv;
@@ -1011,15 +1133,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-### Bab 10: Implementasi CRUD+List
+### Bab 11: Implementasi CRUD+List
 
 Kita akan membuat bot yang dapat menyimpan, melihat, memperbarui, dan menghapus catatan.
 
-#### 10.1. Definisikan Perintah CRUD
+#### 11.1. Definisikan Perintah CRUD
 
 Tambahkan perintah berikut ke `enum Command`:
 
-```rust
+```rust,ignore
 // ...
     #[command(description = "menambahkan catatan baru.", parse_with = "split")]
     Tambah { content: String },
@@ -1032,9 +1154,9 @@ Tambahkan perintah berikut ke `enum Command`:
 // ...
 ```
 
-#### 10.2. Handler untuk CREATE (Tambah)
+#### 11.2. Handler untuk CREATE (Tambah)
 
-```rust
+```rust,ignore
 async fn tambah_note(bot: Bot, msg: Message, pool: DbPool, content: String) -> HandlerResult {
     let chat_id = msg.chat.id.0; // Ambil ID chat sebagai i64
 
@@ -1051,9 +1173,9 @@ async fn tambah_note(bot: Bot, msg: Message, pool: DbPool, content: String) -> H
 }
 ```
 
-#### 10.3. Handler untuk READ (List)
+#### 11.3. Handler untuk READ (List)
 
-```rust
+```rust,ignore
 // Struktur untuk memetakan hasil query
 #[derive(Debug)]
 struct Note {
@@ -1096,9 +1218,9 @@ async fn list_notes(bot: Bot, msg: Message, pool: DbPool) -> HandlerResult {
 }
 ```
 
-#### 10.4. Handler untuk UPDATE
+#### 11.4. Handler untuk UPDATE
 
-```rust
+```rust,ignore
 async fn update_note(bot: Bot, msg: Message, pool: DbPool, id: i64, content: String) -> HandlerResult {
     let chat_id = msg.chat.id.0;
 
@@ -1121,9 +1243,9 @@ async fn update_note(bot: Bot, msg: Message, pool: DbPool, id: i64, content: Str
 }
 ```
 
-#### 10.5. Handler untuk DELETE (Hapus)
+#### 11.5. Handler untuk DELETE (Hapus)
 
-```rust
+```rust,ignore
 async fn hapus_note(bot: Bot, msg: Message, pool: DbPool, id: i64) -> HandlerResult {
     let chat_id = msg.chat.id.0;
 
@@ -1145,11 +1267,11 @@ async fn hapus_note(bot: Bot, msg: Message, pool: DbPool, id: i64) -> HandlerRes
 }
 ```
 
-#### 10.6. Mengintegrasikan Handler ke Dispatcher
+#### 11.6. Mengintegrasikan Handler ke Dispatcher
 
 Terakhir, kita perlu menambahkan *handler* CRUD ini ke *dispatcher* utama.
 
-```rust
+```rust,ignore
 // teloxide_pertama/src/main.rs (Modifikasi di fungsi main)
 
 // ... (Di dalam Dispatcher::builder)
@@ -1177,7 +1299,7 @@ Dengan implementasi ini, bot kamu kini memiliki kemampuan untuk menyimpan data s
 
 ## Bagian V: Penutup dan Sumber Belajar
 
-### Bab 11: Kesimpulan dan Langkah Selanjutnya
+### Bab 12: Kesimpulan dan Langkah Selanjutnya
 
 Selamat! Kamu telah menyelesaikan perjalanan dari instalasi Rust hingga membangun bot Telegram yang canggih dengan Teloxide dan integrasi basis data SQLite.
 
@@ -1191,7 +1313,7 @@ Kamu telah mempelajari:
 
 Bot yang kamu buat ini adalah fondasi yang kuat. Dari sini, kamu bisa mengembangkan bot yang lebih kompleks, seperti bot manajemen grup, bot *e-commerce* sederhana, atau bot yang berinteraksi dengan API eksternal lainnya.
 
-### Bab 12: Referensi dan Sumber Belajar Tambahan
+### Bab 13: Referensi dan Sumber Belajar Tambahan
 
 Perjalanan belajar tidak berhenti di sini. Berikut adalah beberapa sumber daya penting yang dapat kamu gunakan untuk memperdalam pengetahuanmu tentang Rust dan Teloxide.
 

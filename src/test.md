@@ -91,3 +91,15 @@ $$
 $$
 
 Silakan ubah parameter atau tambahkan simbol lain untuk menguji dukungan LaTeX yang lebih kompleks.
+
+## Icons
+
+- Bisa ditemukan di <https://fontawesome.com/v6/search?ic=free-collection>
+
+```
+<i class="fa-solid fa-book"></i>
+```
+
+Hasil
+
+- <i class="fa-solid fa-book"></i> Buku
