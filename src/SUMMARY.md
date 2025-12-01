@@ -10,7 +10,7 @@
 - [Telegram dan Integrasi](./tools/README.md)
   - [Notifikasi Login SSH](./tools/tutorial_telegram_curl_bash.md)
 - [PHP dan Curl](./PHP/curl/php_with_curl.md)
-- [Google Apps Script](./GAS/gas_lumpia.md)
+- [Google Apps Script](./google_apps_script.md)
 - [Bun dan GramIO](./BUN/bun_n_gramio.md)
 - [Rust dan Teloxide (_draft_)](./rust/rust_teloxide.md)
 - [Web Test](./test.md)
