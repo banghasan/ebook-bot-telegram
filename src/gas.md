@@ -102,33 +102,39 @@ tingkat keahlian:
 #### 🎯 Pemula Absolut (Belum Pernah Coding)
 
 Jika Anda belum pernah menulis kode sebelumnya, jangan khawatir! Buku ini akan
-memandu Anda langkah demi langkah, dimulai dari konsep paling dasar. Anda akan
-belajar:
+memandu Anda langkah demi langkah, dimulai dari konsep paling dasar. 
+
+```admonish title="Anda akan belajar"
 
 - Cara mendapatkan token bot dari BotFather
 - Memahami struktur kode JavaScript sederhana
 - Membuat bot pertama yang dapat merespons perintah dasar
 - Konsep fundamental seperti variabel, fungsi, dan objek
+```
 
 #### 💡 Pemula dengan Pengetahuan Dasar Programming
 
 Jika Anda sudah familiar dengan konsep dasar programming (variabel, fungsi,
-kondisional), Anda dapat:
+kondisional).
 
-- Melewati penjelasan konsep dasar dan fokus pada implementasi
+```admonish summary title="Poin"
+- Bisa melewati penjelasan konsep dasar dan fokus pada implementasi
 - Langsung memahami struktur handler dan middleware
 - Mengeksplorasi fitur-fitur menengah seperti keyboard interaktif dan manajemen
   sesi
+```
 
 #### 🚀 Developer Berpengalaman
 
 Bagi Anda yang sudah terbiasa dengan JavaScript atau framework bot lain (seperti
 Telegraf, python-telegram-bot), buku ini akan membantu Anda:
 
+```admonish title="Hal-hal"
 - Memahami perbedaan dan keunikan Google Apps Script
 - Memanfaatkan integrasi ekosistem Google (Sheets, Drive, Gmail)
 - Mengoptimalkan bot dengan middleware dan arsitektur yang scalable
 - Mengatasi limitasi GAS dengan teknik-teknik advanced
+```
 
 ### 1.3 Apa Itu Bot Telegram?
 
@@ -250,17 +256,23 @@ Sebelum masuk ke Bab 2, pastikan Anda sudah:
 
 #### 💡 Tips Sebelum Memulai
 
-> **Untuk Pemula**: Jangan terburu-buru. Ikuti setiap langkah dengan teliti dan
-> jangan ragu untuk mencoba kode berkali-kali. Kesalahan adalah bagian dari
-> proses belajar!
+```admonish tip title="Untuk Pemula"
+ Jangan terburu-buru. Ikuti setiap langkah dengan teliti dan
+ jangan ragu untuk mencoba kode berkali-kali. Kesalahan adalah bagian dari
+ proses belajar!
+```
 
-> **Untuk Developer Berpengalaman**: Meskipun Anda familiar dengan JavaScript,
-> perhatikan perbedaan dan limitasi Google Apps Script dibandingkan dengan
-> Node.js atau environment JavaScript lainnya.
+```admonish info title="Untuk Developer Berpengalaman"
+Meskipun Anda familiar dengan JavaScript,
+ perhatikan perbedaan dan limitasi Google Apps Script dibandingkan dengan
+ Node.js atau environment JavaScript lainnya.
+```
 
-> **Untuk Semua**: Simpan token bot Anda dengan aman dan jangan pernah
-> membagikannya di tempat publik (GitHub, forum, dll). Token adalah kunci penuh
-> kontrol atas bot Anda.
+```admonish quote title="Untuk Semua"
+Simpan token bot Anda dengan aman dan jangan pernah
+ membagikannya di tempat publik (GitHub, forum, dll). Token adalah kunci penuh
+ kontrol atas bot Anda.
+```
 
 ---
 
@@ -284,9 +296,11 @@ mengelola bot-bot lainnya.
 5. Setelah berhasil, BotFather akan memberikan Anda **HTTP API Token**. Simpan
    token ini dengan aman, karena ini adalah kunci untuk mengontrol bot Anda.
 
-> **Penting:** Token bot Anda akan terlihat seperti ini:
-> `123456789:ABC-DEF1234ghIkl-Jkl-Lmn-Opq-Rst-Uvwxyz`. JANGAN pernah membagikan
-> token ini kepada siapapun.
+```admonish danger title="Peringatan"
+**Penting:** Token bot Anda akan terlihat seperti ini:
+`123456789:ABC-DEF1234ghIkl-Jkl-Lmn-Opq-Rst-Uvwxyz`.
+**JANGAN** pernah membagikan token ini kepada siapapun.
+```
 
 ### 2.2 Langkah 2: Membuat Proyek Google Apps Script
 
@@ -414,9 +428,11 @@ mengatur _webhook_ agar Telegram tahu ke mana harus mengirim pesan.
 
 ![](https://lumpia.js.org/images/gas/deploy/web_app_url.webp)
 
-> **Penting:** Saat pertama kali menjalankan fungsi yang mengakses layanan
-> Google (seperti `SpreadsheetApp`), GAS akan meminta Anda untuk memberikan izin
-> (_Authorization_). Anda harus menyetujui izin ini agar bot dapat berfungsi.
+```admonish warning title="Perhatian"
+**Penting:** Saat pertama kali menjalankan fungsi yang mengakses layanan
+Google (seperti `SpreadsheetApp`), GAS akan meminta Anda untuk memberikan izin
+(_Authorization_). Anda harus menyetujui izin ini agar bot dapat berfungsi.
+```
 
 Petunjuk dalam gambar:
 
@@ -693,20 +709,21 @@ bot dengan Library
 ini menyediakan abstraksi tingkat tinggi yang sangat menyederhanakan operasi
 database menggunakan Google Sheets sebagai backend.
 
-> **Rekomendasi:** Penulis sangat merekomendasikan penggunaan Library
-> **miniSheetDBv2**[^miniSheetDBv2] karena beberapa alasan:
->
-> - **Operasi CRUD yang Mudah**: Menyediakan metode sederhana untuk Create,
->   Read, Update, dan Delete data tanpa perlu menulis kode `SpreadsheetApp` yang
->   kompleks
-> - **Penanganan Tipe Data Otomatis**: Secara otomatis mengkonversi data antara
->   format JavaScript dan Google Sheets
-> - **Query yang Fleksibel**: Mendukung pencarian dan filtering data dengan
->   sintaks yang intuitif, mirip dengan database NoSQL
-> - **Performa Optimal**: Menggunakan caching dan batch operations untuk
->   mengurangi API calls dan mempercepat eksekusi
-> - **Dokumentasi Lengkap**: Dilengkapi dengan contoh kode dan tutorial dalam
->   Bahasa Indonesia
+```admonish summary title="Rekomendasi"
+Penulis sangat merekomendasikan penggunaan Library **miniSheetDBv2**[^miniSheetDBv2] karena beberapa alasan:
+
+ - **Operasi CRUD yang Mudah**: Menyediakan metode sederhana untuk Create,
+   Read, Update, dan Delete data tanpa perlu menulis kode `SpreadsheetApp` yang
+   kompleks
+ - **Penanganan Tipe Data Otomatis**: Secara otomatis mengkonversi data antara
+   format JavaScript dan Google Sheets
+ - **Query yang Fleksibel**: Mendukung pencarian dan filtering data dengan
+   sintaks yang intuitif, mirip dengan database NoSQL
+ - **Performa Optimal**: Menggunakan caching dan batch operations untuk
+   mengurangi API calls dan mempercepat eksekusi
+ - **Dokumentasi Lengkap**: Dilengkapi dengan contoh kode dan tutorial dalam
+   Bahasa Indonesia
+```
 
 ---
 
@@ -735,7 +752,12 @@ berikut:
 3. **Komunitas Telegram Bot Indonesia**[^4]: Bergabunglah dengan grup diskusi
    untuk bertanya dan berbagi pengalaman.
 
-> Jangan lupa tonton video tutorialnya:
+
+```admonish tip
+Jangan lupa tonton video tutorialnya!
+
+Guna memperjelas pemahaman dan _insight_ secara umum.
+```
 
 {% embed youtube id="H_GBc1nfqcA" loading="lazy" %}
 
