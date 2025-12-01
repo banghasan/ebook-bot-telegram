@@ -166,7 +166,7 @@ Menjalankan skrip langsung dari command line memudahkan pengujian tanpa harus me
         with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies
     ```
     
-    ![](./img/php/version.jpg)
+    ![](./static/img/version.jpg)
     
     Bila muncul pesan error, instal PHP terlebih dahulu atau pastikan path PHP sudah ditambahkan ke `PATH`.
     

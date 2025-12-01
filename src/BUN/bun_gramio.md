@@ -13,7 +13,7 @@
 - **Website:** [banghasan.com](https://banghasan.com)
 - **Grup Diskusi Telegram:** [@botindonesia](https://t.me/botindonesia)
 
-![cover bun](./img/bun/bun_cover.webp)
+![cover bun](./static/img/bun_cover.webp)
 
 ## Daftar Isi
 
