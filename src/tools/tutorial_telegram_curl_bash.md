@@ -190,6 +190,5 @@ Pesan notifikasinya akan terlihat seperti ini:
 >
 > *Waktu:* `29-11-2025 10:30:00`
 
-```admonish tip title="Selamat!"
+**Selamat!**
 Kamu telah berhasil meningkatkan keamanan server kamu dengan notifikasi login real-time!
-```

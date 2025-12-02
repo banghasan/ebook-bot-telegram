@@ -6,13 +6,15 @@ language = "en"
 
 [output.html]
 smart-punctuation = true
-mathjax-support = true
+mathjax-support = false
 site-url = "/"
 git-repository-url = "https://github.com/banghasan/ebook-bot-telegram"
 edit-url-template = "https://github.com/banghasan/ebook-bot-telegram/tree/main/{path}"
 hash-files = true
-additional-css = ["giscus.css"]
-additional-js = ["giscus.js"]
+#additional-css = ["asset/giscus.css", "asset/whichlang.css"]
+#additional-js = ["asset/giscus.js", "asset/whichlang.js"]
+additional-css = ["asset/giscus.css"]
+additional-js = ["asset/giscus.js"]
 
 [output.html.playground]
 editable = true

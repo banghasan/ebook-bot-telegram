@@ -148,7 +148,7 @@ Sebelum kita masuk ke Teloxide, mari kita pahami beberapa konsep dasar Rust.
 
 Secara *default*, variabel di Rust bersifat **tidak dapat diubah (*immutable*)**.
 
-```rust
+```rust,editable
 fn main() {
     let x = 5; // x immutable
     println!("Nilai x adalah: {}", x);
@@ -178,7 +178,7 @@ Rust adalah bahasa yang diketik secara statis (*statically typed*), tetapi serin
 
 Rust menggunakan `if` seperti bahasa lain, tetapi juga memiliki ekspresi `match` yang sangat kuat.
 
-```rust
+```rust,editable
 fn main() {
     let angka = 7;
 
@@ -206,7 +206,7 @@ fn main() {
 
 Fungsi didefinisikan dengan kata kunci `fn`.
 
-```rust
+```rust,editable
 // Fungsi tanpa nilai kembalian
 fn sapa_kamu(nama: &str) {
     println!("Halo, {}!", nama);
@@ -236,7 +236,7 @@ fn main() {
 
 **Contoh Sederhana:**
 
-```rust
+```rust,editable
 fn main() {
     let s1 = String::from("halo"); // s1 adalah pemilik String "halo"
     let s2 = s1; // KEPEMILIKAN PINDAH (MOVE) dari s1 ke s2. s1 tidak valid lagi!
@@ -249,7 +249,7 @@ fn main() {
 
 Untuk menghindari *move* dan hanya menggunakan nilai tanpa mengambil kepemilikan, kita menggunakan **Referensi dan Peminjaman (*References and Borrowing*)**.
 
-```rust
+```rust,editable
 fn hitung_panjang(s: &String) -> usize { // Menerima referensi (&String)
     s.len()
 } // s keluar dari scope, tetapi karena itu hanya referensi, tidak ada yang dihapus

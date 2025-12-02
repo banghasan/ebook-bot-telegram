@@ -28,7 +28,7 @@ Sisipkan kode Giscus di dalam template halaman, tepat setelah konten utama (`{{{
 2. Cari tag penutup `</main>`.
 3. Sisipkan kode Giscus yang dibungkus `div` (`giscus-wrapper`) di lokasi tersebut:
 
-```
+```html
 // ... 
         <main>
           {{{ content }}}
@@ -124,25 +124,25 @@ additional-css = ["giscus.css"]
 additional-js = ["giscus.js"]
 ```
 
-### B. theme/giscus.css
+### B. Buat file `giscus.css`
 
 CSS ini diperlukan untuk mengatur lebar wrapper yang dibuat secara dinamis oleh JavaScript.
 
-```css
-{{#include ../../giscus.css}}
+```css,fp=giscus.css
+{{#include ../../asset/giscus.css}}
 ```
 
 ### 2. 🧠 Skrip Utama (`giscus.js`)
 
 Kode ini mengurus pemuatan Giscus (injeksi ke DOM) dan sinkronisasi tema dinamis melalui `MutationObserver` dan `postMessage`
 
-```js
+```JavaScript,fp=giscus.js
 // giscus.js
 
 // --- Konfigurasi Tema Giscus ---
 // Pemetaan Tema Spesifik ke Tema Giscus:
-// Light/Default: catppuccin_latte
-// Gelap Umum (Navy/Coal/Dark): catppuccin_macchiato
+// Light/Default: light
+// Gelap Umum (Navy/Coal/Dark): dark
 // Rust: gruvbox_dark
 // Ayu: dark_dimmed
 
