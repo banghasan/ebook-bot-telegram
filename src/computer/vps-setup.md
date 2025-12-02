@@ -677,19 +677,19 @@ Ini menjawab masalah klasik "bekerja di komputer saya, tetapi tidak di VPS/serve
 
 ##### Kelebihan Utama Menggunakan Docker di VPS
 
-1. Konsistensi Lingkungan (Consistency)
+1. **Konsistensi Lingkungan (Consistency)**
 
     Kamu menjamin bahwa lingkungan pengembangan (laptop/PC kamu) sama persis dengan lingkungan production (VPS kamu).
 
     Jika aplikasi kamu membutuhkan Node.js versi X, database versi Y, dan Redis versi Z, semua itu akan berjalan bersama-sama di dalam container tanpa mengganggu atau dipengaruhi oleh sistem operasi utama VPS.
 
-2. Isolasi dan Keamanan (Isolation)
+2. **Isolasi dan Keamanan (Isolation)**
 
     Setiap aplikasi (misalnya backend, frontend, database) berjalan di container terpisah.
 
     Jika satu container bermasalah atau diserang, ia tidak akan secara langsung mempengaruhi container lain atau sistem operasi VPS secara keseluruhan.
 
-3. Pemanfaatan Sumber Daya yang Lebih Efisien
+3. **Pemanfaatan Sumber Daya yang Lebih Efisien**
 
     Container jauh lebih ringan daripada Virtual Machine (VM) penuh. Container berbagi kernel sistem operasi VPS, sehingga membutuhkan lebih sedikit resource (RAM, CPU, disk space) untuk menjalankan aplikasi.
 

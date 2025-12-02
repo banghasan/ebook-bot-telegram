@@ -1,7 +1,6 @@
 # Bot Telegram Multibahasa
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/880db421-2771-4335-916e-1620217e6b50/deploy-status)](https://app.netlify.com/projects/botindonesia/deploys) ![](https://img.shields.io/github/last-commit/banghasan/ebook-bot-telegram
-)
+[![bang - Hasan](https://img.shields.io/badge/bang-Hasan-2ea44f)](https://banghasan.com) [![Netlify Status](https://api.netlify.com/api/v1/badges/880db421-2771-4335-916e-1620217e6b50/deploy-status)](https://app.netlify.com/projects/botindonesia/deploys) ![](https://img.shields.io/github/last-commit/banghasan/ebook-bot-telegram) ![maintained - yes](https://img.shields.io/badge/maintained-yes-blue) [![issues - ebook-bot-telegram](https://img.shields.io/github/issues/banghasan/ebook-bot-telegram)](https://github.com/banghasan/ebook-bot-telegram/issues)
 
 Repositori ini berisi sumber materi buku digital bertema pembangunan bot Telegram lintas bahasa menggunakan berbagai platform, seperti Google Apps Script dengan Lumpia Framework dan bahasa pemrograman populer lainnya. Konten dikemas menggunakan **[mdBook](https://github.com/rust-lang/mdBook)** sehingga mudah dibaca dalam bentuk situs statis maupun ebook.
 
