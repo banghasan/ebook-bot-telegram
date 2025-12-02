@@ -28,10 +28,10 @@ PHP adalah bahasa pemrograman sisi server yang sangat populer untuk pengembangan
 
 #### 1.3. Persiapan Lingkungan Pengembangan
 
-Untuk memulai, Anda memerlukan lingkungan pengembangan yang mencakup:
+Untuk memulai, kamu memerlukan lingkungan pengembangan yang mencakup:
 1.  **Web Server:** Apache, Nginx, atau sejenisnya. Diperlukan hanya jika menggunakan metode webhook.
 2.  **PHP:** Versi 7.4 ke atas direkomendasikan.
-3.  **Ekstensi cURL:** Pastikan ekstensi `php-curl`[^phpcurl] telah diaktifkan di konfigurasi PHP Anda.
+3.  **Ekstensi cURL:** Pastikan ekstensi `php-curl`[^phpcurl] telah diaktifkan di konfigurasi PHP kamu.
 
 #### 1.4. Mendapatkan Token Bot dari @BotFather
 
@@ -41,7 +41,7 @@ Setiap bot memerlukan token unik untuk otentikasi. Token ini didapatkan dari bot
 
 1.  Buka aplikasi Telegram dan cari **@BotFather**.
 2.  Ketik `/newbot` dan ikuti instruksi untuk memilih nama bot (misalnya, "Bot Buku PHP") dan username (harus diakhiri dengan "bot", misalnya, "BotBukuPHP_bot").
-3.  Setelah berhasil, @BotFather akan memberikan Anda **HTTP API Token** yang terlihat seperti `123456:ABC-DEF1234ghIkl-jkl-jkl-jkl-jkl`. **Jaga kerahasiaan token ini.**
+3.  Setelah berhasil, @BotFather akan memberikan kamu **HTTP API Token** yang terlihat seperti `123456:ABC-DEF1234ghIkl-jkl-jkl-jkl-jkl`. **Jaga kerahasiaan token ini.**
 
 ![](https://lumpia.js.org/images/botfather/token.webp)
 
@@ -56,8 +56,8 @@ https://api.telegram.org/bot<TOKEN>/<METHOD>
 ```
 
 Di mana:
-*   `<TOKEN>` adalah token bot Anda.
-*   `<METHOD>` adalah nama metode API yang ingin Anda panggil (misalnya, `sendMessage`).
+*   `<TOKEN>` adalah token bot kamu.
+*   `<METHOD>` adalah nama metode API yang ingin kamu panggil (misalnya, `sendMessage`).
 
 #### 2.2. Memahami Fungsi cURL di PHP
 
@@ -78,8 +78,8 @@ Berikut adalah fungsi PHP yang mengimplementasikan permintaan cURL ke API Telegr
 
 ```php
 <?php
-// Ganti dengan token bot Anda
-define('BOT_TOKEN', 'GANTI_DENGAN_TOKEN_BOT_ANDA');
+// Ganti dengan token bot kamu
+define('BOT_TOKEN', 'GANTI_DENGAN_TOKEN_BOT_KAMU');
 define('API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN . '/');
 
 /**
@@ -114,7 +114,7 @@ function apiRequest($method, $params = []) {
 }
 
 // Contoh penggunaan: Mengirim pesan ke chat ID tertentu
-$chat_id = 'GANTI_DENGAN_CHAT_ID_ANDA'; // Anda bisa mendapatkan ini dari update pertama
+$chat_id = 'GANTI_DENGAN_CHAT_ID_KAMU'; // kamu bisa mendapatkan ini dari update pertama atau di @strukturbot
 $text = 'Halo! Ini adalah pesan pertama dari bot PHP cURL saya.';
 
 $result = apiRequest('sendMessage', [
@@ -130,7 +130,7 @@ print_r($result);
 
 #### 2.4. Contoh Dasar: Mendapatkan Informasi Bot (`getMe`)
 
-Metode `getMe` adalah cara termudah untuk menguji koneksi dan memverifikasi token bot Anda.
+Metode `getMe` adalah cara termudah untuk menguji koneksi dan memverifikasi token bot kamu.
 
 ```php
 // ... (gunakan fungsi apiRequest dari contoh sebelumnya)
@@ -172,7 +172,7 @@ Menjalankan skrip langsung dari command line memudahkan pengujian tanpa harus me
     
     Bila muncul pesan error, instal PHP terlebih dahulu atau pastikan path PHP sudah ditambahkan ke `PATH`.
     
-2.  **Simpan kode PHP Anda ke dalam sebuah berkas.** Misalnya `send_message.php` atau `get_me.php`. Gunakan editor teks apa pun (Notepad, VS Code, atau nano) dan pastikan token bot sudah diganti dengan milik Anda.
+2.  **Simpan kode PHP kamu ke dalam sebuah berkas.** Misalnya `send_message.php` atau `get_me.php`. Gunakan editor teks apa pun (Notepad, VS Code, atau nano) dan pastikan token bot sudah diganti dengan milikmu.
 3.  **Masuk ke folder tempat berkas disimpan.** Gunakan perintah `cd` (change directory). Contoh:
 
     ```bash
@@ -186,7 +186,7 @@ Menjalankan skrip langsung dari command line memudahkan pengujian tanpa harus me
     php send_message.php
     ```
 
-    Terminal akan menampilkan hasil `print_r($result)` atau pesan lain yang Anda buat di skrip. Jika permintaan berhasil, status `ok` bernilai `true` dan pesan akan terkirim ke Telegram.
+    Terminal akan menampilkan hasil `print_r($result)` atau pesan lain yang kamu buat di skrip. Jika permintaan berhasil, status `ok` bernilai `true` dan pesan akan terkirim ke Telegram.
 5.  **Baca pesan atau error yang muncul.** Pesan sukses berarti skrip berjalan sesuai harapan. Jika ada error (misalnya `{"ok":false,...}`), catat keterangannya, periksa ulang token, koneksi internet, atau parameter yang dikirim.
 
 Dengan alur di atas, siapapun dapat menguji bot kecil secara mandiri hanya bermodalkan PHP CLI dan koneksi internet, tanpa harus memahami konfigurasi server web yang lebih kompleks.
@@ -237,15 +237,15 @@ Polling adalah metode di mana bot secara berkala (misalnya, setiap beberapa deti
 
 #### 3.2. Metode Webhook (Direkomendasikan)
 
-Webhook adalah mekanisme di mana server Telegram yang akan menghubungi (memanggil) skrip PHP Anda secara instan setiap kali ada pembaruan baru.
+Webhook adalah mekanisme di mana server Telegram yang akan menghubungi (memanggil) skrip PHP kamu secara instan setiap kali ada pembaruan baru.
 
-*   **Cara Kerja Webhook:** Anda memberikan URL publik (misalnya, `https://domainanda.com/webhook.php`) kepada Telegram. Ketika ada pesan baru, Telegram mengirimkan permintaan HTTP POST berisi data pembaruan (dalam format JSON) ke URL tersebut.
+*   **Cara Kerja Webhook:** kamu memberikan URL publik (misalnya, `https://domainmu.com/webhook.php`) kepada Telegram. Ketika ada pesan baru, Telegram mengirimkan permintaan HTTP POST berisi data pembaruan (dalam format JSON) ke URL tersebut.
 *   **Mendaftarkan Webhook (`setWebhook`):**
 
 ```php
 // ... (gunakan fungsi apiRequest)
 
-$webhook_url = 'https://domainanda.com/webhook.php'; // Ganti dengan URL publik Anda
+$webhook_url = 'https://domainmu.com/webhook.php'; // Ganti dengan URL publik kamu
 
 $result = apiRequest('setWebhook', [
     'url' => $webhook_url
@@ -259,7 +259,7 @@ if ($result['ok']) {
 ```
 
 *   **Menangani Data JSON dari Webhook di PHP:**
-    Skrip `webhook.php` Anda hanya perlu membaca input mentah dari permintaan POST dan memprosesnya.
+    Skrip `webhook.php` kamu hanya perlu membaca input mentah dari permintaan POST dan memprosesnya.
 
 ```php
 <?php
@@ -278,7 +278,7 @@ if (isset($update['message'])) {
     // Lakukan aksi balasan (misalnya, echo)
     apiRequest('sendMessage', [
         'chat_id' => $chat_id,
-        'text' => "Anda mengirim: " . $text
+        'text' => "Kamu mengirim: " . $text
     ]);
 }
 
@@ -300,7 +300,7 @@ Keyboard Balasan (Reply Keyboard) adalah keyboard kustom yang muncul di atas kol
 
 #### 4.1. Pengenalan `ReplyKeyboardMarkup`
 
-Untuk menampilkan keyboard ini, Anda perlu mengirimkan objek JSON `ReplyKeyboardMarkup` sebagai nilai dari parameter `reply_markup` dalam metode seperti `sendMessage`.
+Untuk menampilkan keyboard ini, kamu perlu mengirimkan objek JSON `ReplyKeyboardMarkup` sebagai nilai dari parameter `reply_markup` dalam metode seperti `sendMessage`.
 
 ```json
 {
@@ -356,7 +356,7 @@ apiRequest('sendMessage', [
 
 #### 4.4. Menangani Input Teks dari Keyboard
 
-Ketika pengguna menekan tombol Reply Keyboard, teks pada tombol tersebut akan dikirimkan ke bot sebagai pesan teks biasa. Bot Anda perlu memproses teks ini seperti perintah atau pesan biasa.
+Ketika pengguna menekan tombol Reply Keyboard, teks pada tombol tersebut akan dikirimkan ke bot sebagai pesan teks biasa. Bot kamu perlu memproses teks ini seperti perintah atau pesan biasa.
 
 ```php
 // Dalam skrip webhook.php
@@ -432,7 +432,7 @@ $reply_markup = json_encode($keyboard);
 
 apiRequest('sendMessage', [
     'chat_id' => $chat_id,
-    'text' => 'Apakah Anda setuju dengan kebijakan ini?',
+    'text' => 'Apakah kamu setuju dengan kebijakan ini?',
     'reply_markup' => $reply_markup
 ]);
 ```
@@ -443,7 +443,7 @@ Data `callback_query` diterima oleh bot sebagai jenis pembaruan yang berbeda dar
 
 1.  **Mendeteksi `callback_query`:** Periksa apakah array `$update` memiliki kunci `callback_query`.
 2.  **Mengambil Data:** Ambil `callback_data` dan `id` dari `callback_query`.
-3.  **Menjawab Query:** Setelah memproses, Anda **harus** memanggil metode `answerCallbackQuery` untuk menghilangkan status "loading" pada tombol pengguna.
+3.  **Menjawab Query:** Setelah memproses, kamu **harus** memanggil metode `answerCallbackQuery` untuk menghilangkan status "loading" pada tombol pengguna.
 
 ```php
 // Dalam skrip webhook.php
@@ -458,12 +458,12 @@ if (isset($update['callback_query'])) {
     
     switch ($callback_data) {
         case 'vote_yes':
-            $alert_text = 'Anda memilih Ya!';
-            $new_text = 'Anda telah memilih: **Ya**';
+            $alert_text = 'Kamu memilih Ya!';
+            $new_text = 'Kamu telah memilih: **Ya**';
             break;
         case 'vote_no':
-            $alert_text = 'Anda memilih Tidak!';
-            $new_text = 'Anda telah memilih: **Tidak**';
+            $alert_text = 'Kamu memilih Tidak!';
+            $new_text = 'Kamu telah memilih: **Tidak**';
             break;
     }
     
@@ -489,24 +489,24 @@ if (isset($update['callback_query'])) {
 
 ### Bab 6: Bot Inline (Inline Mode)
 
-Bot Inline memungkinkan pengguna untuk berinteraksi dengan bot Anda langsung dari kolom input pesan di obrolan mana pun, tanpa perlu menambahkan bot ke grup atau mengirim pesan langsung. Pengguna hanya perlu mengetik `@usernamebot` diikuti dengan kueri mereka.
+Bot Inline memungkinkan pengguna untuk berinteraksi dengan bot kamu langsung dari kolom input pesan di obrolan mana pun, tanpa perlu menambahkan bot ke grup atau mengirim pesan langsung. Pengguna hanya perlu mengetik `@usernamebot` diikuti dengan kueri mereka.
 
 #### 6.1. Mengaktifkan Inline Mode pada Bot
 
 Inline Mode harus diaktifkan melalui @BotFather:
-1.  Ketik `/setinline` dan pilih bot Anda.
+1.  Ketik `/setinline` dan pilih bot kamu.
 2.  Pilih teks placeholder yang akan muncul di kolom input pengguna (misalnya, "Cari di bot ini...").
 
 #### 6.2. Memahami `inline_query`
 
-Ketika pengguna mengetik `@usernamebot kueri`, bot Anda akan menerima pembaruan jenis `inline_query`. Pembaruan ini berisi:
+Ketika pengguna mengetik `@usernamebot kueri`, bot kamu akan menerima pembaruan jenis `inline_query`. Pembaruan ini berisi:
 *   `id`: ID unik dari kueri inline.
 *   `query`: Teks yang diketik pengguna setelah username bot.
 *   `from`: Informasi pengguna yang membuat kueri.
 
 #### 6.3. Mengirim Hasil Pencarian dengan `answerInlineQuery`
 
-Untuk merespons `inline_query`, Anda harus memanggil metode `answerInlineQuery`. Metode ini memerlukan dua parameter utama:
+Untuk merespons `inline_query`, kamu harus memanggil metode `answerInlineQuery`. Metode ini memerlukan dua parameter utama:
 1.  `inline_query_id`: ID kueri yang diterima.
 2.  `results`: Array JSON dari hasil yang akan ditampilkan kepada pengguna.
 
@@ -543,7 +543,7 @@ if (isset($update['inline_query'])) {
         'id' => '1',
         'title' => 'Echo: ' . $query_text,
         'input_message_content' => [
-            'message_text' => 'Anda mengetik: *' . $query_text . '*',
+            'message_text' => 'Kamu mengetik: *' . $query_text . '*',
             'parse_mode' => 'Markdown'
         ]
     ];
@@ -727,8 +727,8 @@ Berikut adalah contoh skrip `webhook.php` yang menggunakan kelas `SimpleTelegram
 // File: SimpleTelegramBot.php (berisi definisi kelas di atas)
 require_once 'SimpleTelegramBot.php';
 
-// Ganti dengan token bot Anda
-$bot_token = 'GANTI_DENGAN_TOKEN_BOT_ANDA';
+// Ganti dengan token bot kamu
+$bot_token = 'GANTI_DENGAN_TOKEN_BOT_KAMU';
 $bot = new SimpleTelegramBot($bot_token);
 
 // 1. Dapatkan pembaruan
@@ -739,7 +739,7 @@ $chat_id = $bot->getChatId();
 
 if ($chat_id) {
     if ($bot->isCommand('start')) {
-        $bot->sendMessage($chat_id, "Selamat datang di Bot Sederhana!\nKetik /echo [pesan] untuk mengulang pesan Anda.");
+        $bot->sendMessage($chat_id, "Selamat datang di Bot Sederhana!\nKetik /echo [pesan] untuk mengulang pesan kamu.");
     } elseif (isset($update['message']['text'])) {
         $text = $update['message']['text'];
         
@@ -749,7 +749,7 @@ if ($chat_id) {
             $bot->sendMessage($chat_id, "Echo: " . $echo_text);
         } else {
             // Echo default
-            $bot->sendMessage($chat_id, "Anda mengirim: " . $text);
+            $bot->sendMessage($chat_id, "Kamu mengirim: " . $text);
         }
     }
 }
@@ -770,18 +770,18 @@ if (isset($update['callback_query'])) {
 
 #### 9.1. Ringkasan Materi
 
-Ebook ini telah memandu Anda dari dasar-dasar interaksi dengan Telegram Bot API menggunakan PHP dan cURL hingga implementasi fitur-fitur lanjutan seperti Inline Keyboard dan Inline Mode. Puncak dari pembelajaran ini adalah perancangan dan penggunaan kelas `SimpleTelegramBot` yang menyederhanakan komunikasi API, meletakkan fondasi untuk pengembangan bot yang lebih terstruktur dan mudah dikelola.
+Ebook ini telah memandu kamu dari dasar-dasar interaksi dengan Telegram Bot API menggunakan PHP dan cURL hingga implementasi fitur-fitur lanjutan seperti Inline Keyboard dan Inline Mode. Puncak dari pembelajaran ini adalah perancangan dan penggunaan kelas `SimpleTelegramBot` yang menyederhanakan komunikasi API, meletakkan fondasi untuk pengembangan bot yang lebih terstruktur dan mudah dikelola.
 
 #### 9.2. Langkah Selanjutnya
 
-Untuk mengembangkan bot Anda lebih jauh, pertimbangkan langkah-langkah berikut:
+Untuk mengembangkan bot kamu lebih jauh, pertimbangkan langkah-langkah berikut:
 *   **Database:** Integrasikan database (misalnya, MySQL atau PostgreSQL) untuk menyimpan data pengguna, sesi, dan konfigurasi bot.
-*   **Hosting:** Pindahkan bot Anda ke server hosting yang mendukung Webhook (memiliki domain publik dan SSL).
+*   **Hosting:** Pindahkan bot kamu ke server hosting yang mendukung Webhook (memiliki domain publik dan SSL).
 *   **Skalabilitas:** Untuk bot dengan volume tinggi, pertimbangkan untuk menggunakan *queue* (antrian) seperti Redis atau RabbitMQ untuk memproses pembaruan secara asinkron.
 
 #### 9.3. Informasi Penulis dan Diskusi
 
-Terima kasih telah membaca ebook ini. Semoga panduan ini bermanfaat dalam perjalanan Anda membangun bot Telegram.
+Terima kasih telah membaca ebook ini. Semoga panduan ini bermanfaat dalam perjalanan kamu membangun bot Telegram.
 
 *   **Penulis:** Hasanudin H Syafaat
 *   **Email:** banghasan@gmail.com

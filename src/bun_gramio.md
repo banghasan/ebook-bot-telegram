@@ -15,83 +15,6 @@
 
 ![cover bun](./BUN/static/img/bun_cover.webp)
 
-## Daftar Isi
-
-- [Pengantar](#pengantar)
-
-### Bagian I: Memulai dengan Bun (The Modern JavaScript Runtime)
-
-- [Bab 1: Pengantar Bun: Arsitektur dan Filosofi](#bab-1-pengantar-bun-arsitektur-dan-filosofi)
-  - [1.1. Apa itu Bun? (Definisi, Visi, dan Tujuan)](#11-apa-itu-bun-definisi-visi-dan-tujuan)
-  - [1.2. Mengapa Bun? (Kecepatan, All-in-One Toolkit, JavaScriptCore) ⚡️](#12-mengapa-bun-kecepatan-all-in-one-toolkit-javascriptcore-️)
-    - [1.2.1. Mesin JavaScriptCore dan Bahasa Zig](#121-mesin-javascriptcore-dan-bahasa-zig)
-    - [1.2.2. All-in-One Toolkit: Menyederhanakan Toolchain](#122-all-in-one-toolkit-menyederhanakan-toolchain)
-  - [1.3. Perbandingan Bun vs. Node.js: Analisis Mendalam](#13-perbandingan-bun-vs-nodejs-analisis-mendalam)
-
-- [Bab 2: Instalasi dan Menguasai Tooling Bun](#bab-2-instalasi-dan-menguasai-tooling-bun)
-  - [2.1. Cara Instalasi Bun (Linux/macOS/WSL) 🛠️](#21-cara-instalasi-bun-linuxmacoswsl-️)
-  - [2.2. Menguasai Package Manager: `bun install`](#22-menguasai-package-manager-bun-install)
-  - [2.3. Menguasai Runtime: `bun run`](#23-menguasai-runtime-bun-run)
-  - [2.4. Menguasai Bundler: `bun build`](#24-menguasai-bundler-bun-build)
-
-- [Bab 3: Dasar-dasar Pemrograman dengan Bun API](#bab-3-dasar-dasar-pemrograman-dengan-bun-api)
-  - [3.1. Membuat Proyek Bot Awal](#31-membuat-proyek-bot-awal)
-  - [3.2. Menggunakan `bun:file` untuk Operasi I/O Cepat](#32-menggunakan-bunfile-untuk-operasi-io-cepat)
-  - [3.3. Menggunakan `bun:serve` untuk Webhook (Lanjutan)](#33-menggunakan-bunserve-untuk-webhook-lanjutan)
-
-### Bagian II: Pengenalan GramIO dan Bot Telegram
-
-- [Bab 4: Memahami Ekosistem Bot Telegram](#bab-4-memahami-ekosistem-bot-telegram)
-  - [4.1. Apa itu Bot Telegram? (Konsep Dasar) ✈️](#41-apa-itu-bot-telegram-konsep-dasar-️)
-    - [4.1.1. Perbedaan Bot dan Akun Pengguna Biasa](#411-perbedaan-bot-dan-akun-pengguna-biasa)
-  - [4.2. Mendapatkan Token Bot dari BotFather: Kunci Rahasia Anda](#42-mendapatkan-token-bot-dari-botfather-kunci-rahasia-anda)
-  - [4.3. Konsep Dasar Telegram Bot API: Updates, Methods, dan Types](#43-konsep-dasar-telegram-bot-api-updates-methods-dan-types)
-
-- [Bab 5: Pengantar GramIO Framework: Type-Safety dan Middleware](#bab-5-pengantar-gramio-framework-type-safety-dan-middleware)
-  - [5.1. Apa itu GramIO? (Fitur Utama, Keunggulan) ✨](#51-apa-itu-gramio-fitur-utama-keunggulan-)
-    - [5.1.1. Keunggulan Type-Safety](#511-keunggulan-type-safety)
-    - [5.1.2. Arsitektur Middleware](#512-arsitektur-middleware)
-  - [5.2. Setup Proyek GramIO Pertama dengan Bun](#52-setup-proyek-gramio-pertama-dengan-bun)
-
-- [Bab 6: Bot Pertama: Reaksi dan Respons](#bab-6-bot-pertama-reaksi-dan-respons)
-  - [6.1. Konsep `Context` (Ctx): Jantung Bot Anda](#61-konsep-context-ctx-jantung-bot-anda)
-  - [6.2. Menangani Perintah (`bot.command`)](#62-menangani-perintah-botcommand)
-  - [6.3. Menangani Pesan Teks dan Filter (`bot.on` dan `bot.hears`)](#63-menangani-pesan-teks-dan-filter-boton-dan-bothears)
-
-### Bagian III: Pengembangan Bot Tingkat Menengah
-
-- [Bab 7: Menguasai Middleware dan Aliran Kontrol 🔄](#bab-7-menguasai-middleware-dan-aliran-kontrol-)
-  - [7.1. Struktur Middleware: `context` dan `next()`](#71-struktur-middleware-context-dan-next)
-  - [7.2. Contoh Middleware: Autentikasi Admin](#72-contoh-middleware-autentikasi-admin)
-  - [7.3. Aliran Kontrol Lanjutan: `bot.use` dan `bot.filter`](#73-aliran-kontrol-lanjutan-botuse-dan-botfilter)
-
-- [Bab 8: Interaksi Kaya: Media dan Callback Queries](#bab-8-interaksi-kaya-media-dan-callback-queries)
-  - [8.1. Menangani Media dengan Filter Spesifik](#81-menangani-media-dengan-filter-spesifik)
-  - [8.2. Menggunakan Inline Keyboard: Interaksi Non-Intrusif](#82-menggunakan-inline-keyboard-interaksi-non-intrusif)
-
-- [Bab 9: Keyboard Kustom dan Pengelolaan Pesan](#bab-9-keyboard-kustom-dan-pengelolaan-pesan)
-  - [9.1. Reply Keyboard: Menu Utama yang Nyaman](#91-reply-keyboard-menu-utama-yang-nyaman)
-  - [9.2. Mengedit dan Menghapus Pesan](#92-mengedit-dan-menghapus-pesan)
-
-### Bagian IV: Pengembangan Bot Tingkat Lanjut dan Produksi
-
-- [Bab 10: State Management dan Persistent Storage 💾](#bab-10-state-management-dan-persistent-storage-)
-  - [10.1. Konsep Sesi (Session) dalam GramIO: Mengingat Pengguna](#101-konsep-sesi-session-dalam-gramio-mengingat-pengguna)
-    - [10.1.1. Session Middleware dan Tipe Data](#1011-session-middleware-dan-tipe-data)
-  - [10.2. Integrasi Database dengan `bun:sqlite`: Penyimpanan Lokal yang Cepat 🗄️](#102-integrasi-database-dengan-bunsqlite-penyimpanan-lokal-yang-cepat-️)
-    - [10.2.1. Setup dan Operasi Dasar SQLite](#1021-setup-dan-operasi-dasar-sqlite)
-    - [10.2.2. Mengintegrasikan SQLite ke Bot](#1022-mengintegrasikan-sqlite-ke-bot)
-
-- [Bab 11: Bot Terjadwal (Cron/Scheduler): Menjadi Proaktif ⏰](#bab-11-bot-terjadwal-cronscheduler-menjadi-proaktif-)
-  - [11.1. Memahami Ekspresi Cron](#111-memahami-ekspresi-cron)
-  - [11.2. Implementasi Cron Job dengan `node-cron`](#112-implementasi-cron-job-dengan-node-cron)
-
-- [Bab 12: Deployment dan Produksi: Menjadikan Bot Anda Hidup ☁️](#bab-12-deployment-dan-produksi-menjadikan-bot-anda-hidup-️)
-  - [12.1. Persiapan Produksi dengan Bun](#121-persiapan-produksi-dengan-bun)
-  - [12.2. Strategi Deployment: Memilih yang Tepat](#122-strategi-deployment-memilih-yang-tepat)
-  - [12.3. Deployment dengan PM2 di VPS](#123-deployment-dengan-pm2-di-vps)
-  - [12.4. Deployment dengan Docker](#124-deployment-dengan-docker)
-
 ### Penutup dan Lampiran
 
 - [Penutup](#penutup)
@@ -887,7 +810,7 @@ console.log(
 );
 ```
 
-### Bab 12: Deployment dan Produksi: Menjadikan Bot Anda Hidup ☁️
+### Bab 12:  ☁️ Deployment dan Produksi: Menjadikan Bot Anda Hidup
 
 Deployment adalah langkah krusial untuk memastikan bot Anda berjalan 24/7 dan
 dapat diakses oleh pengguna.
