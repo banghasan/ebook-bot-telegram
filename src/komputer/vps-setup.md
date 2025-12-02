@@ -25,7 +25,7 @@
 
 ---
 
-## ☁️ Apa Itu VPS (Virtual Private Server)?
+## ☁️ Apa Itu VPS?
 
 **VPS** adalah singkatan dari **Virtual Private Server**, yang secara harfiah berarti "Server Pribadi Virtual." VPS adalah metode *hosting* yang membagi satu *server* fisik yang kuat menjadi beberapa mesin virtual yang terisolasi dan independen.
 
@@ -42,75 +42,76 @@ Kamu bisa membayangkan konsep ini sebagai sebuah **apartemen** di dalam gedung b
 
 ## ✨ Fitur Utama dan Manfaat VPS
 
-### 1. **Virtual (Terbagi)**
+1. **Virtual (Terbagi)**
 
-VPS adalah *software* yang berjalan di atas *hardware* fisik, tetapi karena teknologi virtualisasi, VPS berfungsi penuh layaknya *server* fisik yang terpisah. Ini memungkinkan pembagian *resource* fisik secara efisien.
+    VPS adalah *software* yang berjalan di atas *hardware* fisik, tetapi karena teknologi virtualisasi, VPS berfungsi penuh layaknya *server* fisik yang terpisah. Ini memungkinkan pembagian *resource* fisik secara efisien.
 
-### 2. **Private (Pribadi dan Terisolasi)**
+2. **Private (Pribadi dan Terisolasi)**
 
-* **Akses *Root* Penuh:** Kamu mendapatkan akses *root* atau administrator penuh. Ini berarti kamu memiliki **kontrol penuh** untuk menginstal Sistem Operasi, *software*, dan mengkonfigurasi *firewall* (seperti UFW) sesuai kebutuhan kamu.
-* **Isolasi *Resource*:** Sumber daya yang dialokasikan (misalnya
+    * **Akses *Root* Penuh:** Kamu mendapatkan akses *root* atau administrator penuh. Ini berarti kamu memiliki **kontrol penuh** untuk menginstal Sistem Operasi, *software*, dan mengkonfigurasi *firewall* (seperti UFW) sesuai kebutuhan kamu.
+    
+    * **Isolasi *Resource*:** Sumber daya yang dialokasikan (misalnya
 
 
 ---
 
 ## Kegunaan dan Fungsi VPS
 
-### 1. **Hosting Website dan Aplikasi Web**
+1. **Hosting Website dan Aplikasi Web**
 
 - Menjalankan website dengan traffic tinggi
 - Hosting multiple websites
 - Aplikasi web yang membutuhkan konfigurasi khusus
 
-### 2. **Development dan Testing**
+2. **Development dan Testing**
 
 - Environment untuk development
 - Testing aplikasi sebelum production
 - CI/CD pipelines
 
-### 3. **Database Server**
+3. **Database Server**
 
 - MySQL, PostgreSQL, MongoDB
 - Isolated database environment
 - Backup dan recovery control
 
-### 4. **Application Server**
+4. **Application Server**
 
 - API servers
 - Microservices
 - Backend applications (Node.js, Python, Go, dll)
 
-### 5. **Bot dan Automation**
+5. **Bot dan Automation**
 
 - Telegram bots
 - Discord bots
 - Web scraping
 - Scheduled tasks (cron jobs)
 
-### 6. **Game Server**
+6. **Game Server**
 
 - Minecraft server
 - Counter-Strike server
 - Private game servers
 
-### 7. **VPN Server**
+7. **VPN Server**
 
 - Private VPN untuk keamanan
 - Bypass geo-restrictions
 - Secure remote access
 
-### 8. **Mail Server**
+8. **Mail Server**
 
 - Email server pribadi
 - Mailing list management
 
-### 9. **File Storage dan Backup**
+9. **File Storage dan Backup**
 
 - Cloud storage pribadi (Nextcloud)
 - Backup server
 - File sharing
 
-### 10. **Learning dan Eksperimen**
+10. **Learning dan Eksperimen**
 
 - Belajar Linux administration
 - Eksperimen dengan teknologi baru
@@ -136,18 +137,6 @@ VPS adalah *software* yang berjalan di atas *hardware* fisik, tetapi karena tekn
 
 ---
 
-### Kesimpulan Ringkas
-
-Jika kamu membutuhkan **kontrol penuh, kinerja stabil, dan fleksibilitas** untuk menjalankan aplikasi yang unik atau *website* dengan *traffic* yang signifikan, **VPS** adalah pilihan yang lebih tepat.
-
-Jika kamu baru memulai dan membutuhkan solusi yang **paling murah dan mudah** tanpa memerlukan konfigurasi khusus, **Shared Hosting** adalah pilihan awal yang baik.
-
-> [!TIP]
-> Jika kamu butuh VPS murah meriah dan sudah teruji pemakaiannya, cek webnya [banghasan.com](https://banghasan.com)[^banghasan]
->
-> Tidak sampai 200 ribu **per TAHUN** bisa untuk belajar, uji coba, produksi dan kebutuhan lainnya. Apalagi *hanya* untuk bot Telegram.
----
-
 ## Kapan kamu Membutuhkan VPS?
 
 kamu membutuhkan VPS jika:
@@ -162,6 +151,18 @@ kamu membutuhkan VPS jika:
 ✅ Membutuhkan environment development yang mirip production
 
 ---
+## Kesimpulan Ringkas
+
+Jika kamu membutuhkan **kontrol penuh, kinerja stabil, dan fleksibilitas** untuk menjalankan aplikasi yang unik atau *website* dengan *traffic* yang signifikan, **VPS** adalah pilihan yang lebih tepat.
+
+Jika kamu baru memulai dan membutuhkan solusi yang **paling murah dan mudah** tanpa memerlukan konfigurasi khusus, **Shared Hosting** adalah pilihan awal yang baik.
+
+> [!TIP]
+> Jika kamu butuh VPS murah meriah dan sudah teruji pemakaiannya, cek webnya [banghasan.com](https://banghasan.com)[^banghasan]
+>
+> Tidak sampai 200 ribu **per TAHUN** bisa untuk belajar, uji coba, produksi dan kebutuhan lainnya. Apalagi *hanya* untuk bot Telegram.
+---
+
 
 ## Panduan Setup VPS Pertama Kali
 
