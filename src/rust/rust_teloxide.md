@@ -1,4 +1,5 @@
->> 🚫 Materi ini masih *draft*, kemungkinan akan mengalami banyak errornya baik dipraktekkan maupun susunan materinya.
+> [!CAUTION]
+> 🚫 Materi ini masih *draft*, kemungkinan akan mengalami banyak errornya baik ketika dipraktekkan maupun susunan materinya.
 
 
 # BOT TELEGRAM DENGAN RUST DAN TELOXIDE

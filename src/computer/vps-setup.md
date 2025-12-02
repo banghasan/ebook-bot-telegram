@@ -143,7 +143,7 @@ Jika kamu membutuhkan **kontrol penuh, kinerja stabil, dan fleksibilitas** untuk
 Jika kamu baru memulai dan membutuhkan solusi yang **paling murah dan mudah** tanpa memerlukan konfigurasi khusus, **Shared Hosting** adalah pilihan awal yang baik.
 
 > [!TIP]
-> Jika kamu butuh VPS murah meriah dan sudah teruji pemakaiannya, cek webnya [banghasan.com](https://banghasan.com)
+> Jika kamu butuh VPS murah meriah dan sudah teruji pemakaiannya, cek webnya [banghasan.com](https://banghasan.com)[^banghasan]
 >
 > Tidak sampai 200 ribu **per TAHUN** bisa untuk belajar, uji coba, produksi dan kebutuhan lainnya. Apalagi *hanya* untuk bot Telegram.
 ---
@@ -1772,4 +1772,5 @@ Setelah setup dasar, kamu bisa:
 > **🔖 Bookmark Tip:** Simpan panduan ini dan referensi di atas. kamu akan
 > sering kembali ke sini saat setup server baru atau troubleshooting!
 
+[^banghasan]: [banghasan.com](https://banghasan.com), Hasanudin H Syafaat atau bangHasan -- penyusun tulisan ini.
 [^fastfetch]: <https://github.com/fastfetch-cli/fastfetch> A maintained, feature-rich and performance oriented, neofetch like system information tool.
