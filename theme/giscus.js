@@ -1,10 +1,16 @@
 // theme/custom.js
 
 function setGiscusTheme(themeName) {
+  // Cari iframe Giscus
   const iframe = document.querySelector("iframe.giscus-frame");
-  if (!iframe) return;
 
-  // Peta Tema mdBook ke Tema Giscus
+  // Keluar jika tidak ditemukan
+  if (!iframe) {
+    console.warn("Giscus iframe not found. Theme change skipped.");
+    return;
+  }
+
+  // Pemetaan Tema mdBook ke Tema Giscus
   let giscusTheme;
   switch (themeName) {
     case "rust":
@@ -21,11 +27,12 @@ function setGiscusTheme(themeName) {
       giscusTheme = "light"; // Tema terang Giscus
   }
 
+  // Kirim postMessage tanpa retry logic yang kompleks
   iframe.contentWindow.postMessage(
     { giscus: { setTheme: giscusTheme } },
     "https://giscus.app",
   );
-  console.log("Giscus theme updated to:", giscusTheme);
+  console.log("Giscus theme command sent:", giscusTheme);
 }
 
 // ----------------------------------------------------
@@ -35,29 +42,14 @@ function setGiscusTheme(themeName) {
 document.addEventListener("DOMContentLoaded", () => {
   const htmlElement = document.documentElement;
 
-  // Pastikan Giscus iframe ada sebelum kita memulai observer
-  // Beri sedikit jeda agar Giscus punya waktu untuk membuat iframe-nya
-  setTimeout(() => {
-    const giscusIframe = document.querySelector("iframe.giscus-frame");
-    if (giscusIframe) {
-      console.log("Giscus iframe ditemukan, mulai pengawasan tema.");
-    } else {
-      console.warn(
-        "Giscus iframe belum ditemukan. Giscus mungkin tidak akan disinkronkan.",
-      );
-      // Anda mungkin perlu meningkatkan jeda (delay) di sini jika iframe dimuat sangat lambat
-    }
-  }, 1500); // Jeda 1.5 detik
-
+  // Observer harus dijalankan segera.
   const observer = new MutationObserver((mutationsList, observer) => {
     for (const mutation of mutationsList) {
       if (
         mutation.type === "attributes" &&
         mutation.attributeName === "class"
       ) {
-        // Ambil semua class dari tag <html>
         const classes = htmlElement.className.split(" ");
-        // Filter class tema yang dikenali mdBook (e.g., light, rust, navy)
         const currentTheme = classes.find(
           (cls) =>
             cls === "light" ||
@@ -69,7 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         if (currentTheme) {
-          setGiscusTheme(currentTheme);
+          // Jeda 50ms (sangat singkat) untuk memastikan Giscus sempat merespons postMessage
+          setTimeout(() => setGiscusTheme(currentTheme), 50);
         }
       }
     }
@@ -81,7 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
     attributeFilter: ["class"],
   });
 
-  // Panggil sekali saat dimuat untuk tema awal (jika tema bukan 'default_theme')
-  const initialTheme = localStorage.getItem("mdbook-theme") || "default";
-  setGiscusTheme(initialTheme);
+  // Set tema awal saat dimuat. Beri jeda 3 detik agar Giscus pasti sudah selesai dimuat.
+  // Ini adalah fallback terkuat untuk loading awal.
+  setTimeout(() => {
+    const initialTheme = localStorage.getItem("mdbook-theme") || "default";
+    setGiscusTheme(initialTheme);
+  }, 3000);
 });
