@@ -22,6 +22,7 @@
 
 # Setup
 - [Setup VPS](./computer/vps-setup.md)
+- [Giscus di MdBook](./tools/mdbook_giscus.md)
 
 # Lain-lain
 - [Status](./status.md)
