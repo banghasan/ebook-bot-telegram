@@ -31,11 +31,13 @@ Telegram Bot API, sehingga kamu tidak perlu menulis kode dari nol.
 ### Sejarah
 
 Sejarah-nya euy..
- **PHPTelebot** ini awalnya dibuat pertama kali oleh admin grup [Bot PHP Indonesia](https://t.me/botphp) Sdr. [Pringgo Radianto (Radya) alias @Radyakaze](https://t.me/error_log)
+ **PHPTelebot** ini awalnya dibuat pertama kali oleh admin grup [Bot PHP Indonesia](https://t.me/botphp) Sdr. [@Radyakaze](https://t.me/error_log)[^radya]
  
 Namun, karena lain satu hal.. repository-nya tidak pernah diupdate, dan dilanjutkan oleh pengembang luar [GrayHoax](https://github.com/GrayHoax/) dan sampai tulisan ini dibuat, masih *uptodate* untuk dipakai di tahun 2025 dan masih aktif.
 
 ![GrayHoax](https://avatars.githubusercontent.com/u/8663789?v=4)
+
+Sehingga pada tutorial ini, akan menggunakan repository dari **GrayHoax** yang merupakan forknya. Lantaran ini juga, kita akan menggunakan metode langsung (tidak pakai composer).
 
 ### Fitur Utama
 
@@ -47,6 +49,48 @@ Namun, karena lain satu hal.. repository-nya tidak pernah diupdate, dan dilanjut
 ---
 
 ## Mengapa Menggunakan Framework?
+
+**🚀 Mengapa Menggunakan Framework daripada Coding Biasa?**
+
+Menggunakan **framework** adalah praktik standar dalam pengembangan perangkat lunak modern karena menawarkan berbagai keuntungan signifikan dibandingkan menulis kode dari nol (*vanilla coding*). Alasan-alasan ini berpusat pada **efisiensi, kualitas, dan pemeliharaan**.
+
+---
+
+### 1. Peningkatan Produktivitas dan Kecepatan Pengembangan
+
+* **Fungsi Siap Pakai:** Frameworks menyediakan **komponen dan library** yang sudah teruji untuk tugas-tugas umum (misalnya, *routing*, koneksi database, autentikasi, manajemen *session*). Ini berarti pengembang tidak perlu "menciptakan kembali roda" dan bisa fokus langsung pada fitur unik aplikasi.
+* **Pengembangan Cepat (*Rapid Development*):** Dengan adanya alat bantu bawaan, waktu yang dibutuhkan untuk membuat aplikasi fungsional pertama jauh lebih singkat, memungkinkan *Time-to-Market* yang lebih cepat.
+
+---
+
+### 2. Struktur, Konsistensi, dan Pemeliharaan
+
+* **Struktur Proyek Terstandardisasi:** Frameworks memaksakan pola desain tertentu (seperti **MVC** - *Model-View-Controller*). Struktur ini membuat proyek **terorganisir**, konsisten, dan mudah dipahami oleh pengembang mana pun yang familiar dengan framework tersebut.
+* **Kemudahan Pemeliharaan (*Maintainability*):** Karena kode mengikuti konvensi framework, menemukan, memperbaiki *bug*, atau menambahkan fitur baru menjadi lebih mudah. Ini sangat penting untuk proyek jangka panjang.
+* **Skalabilitas:** Framework sering dirancang dengan mempertimbangkan skalabilitas, menyediakan mekanisme yang lebih baik untuk menangani pertumbuhan aplikasi dan peningkatan beban pengguna.
+
+---
+
+### 3. Keamanan dan Keandalan
+
+* **Perlindungan Keamanan Bawaan:** Frameworks yang populer terus diperbarui dan menyediakan mitigasi terhadap kerentanan keamanan web yang umum, seperti:
+    * **SQL Injection**
+    * **Cross-Site Scripting (XSS)**
+    * **Cross-Site Request Forgery (CSRF)**
+    * Mengimplementasikan perlindungan ini sendiri secara manual sangat kompleks dan rawan kesalahan.
+* **Kode yang Teruji:** Kode inti framework telah diuji secara ekstensif dan diperbaiki *bug*-nya oleh komunitas pengembang global, membuatnya jauh lebih **andal** daripada kode yang ditulis pengembang tunggal dari awal.
+
+---
+
+### 4. Dukungan Komunitas dan Ekosistem
+
+* **Dokumentasi dan Bantuan:** Frameworks besar (seperti Laravel, React, Django) memiliki **dokumentasi yang lengkap** dan komunitas pengguna yang besar. Jika Anda menemui masalah, solusinya kemungkinan besar sudah dibahas di forum atau *Stack Overflow*.
+* **Ekosistem yang Kaya:** Ada banyak **library, *plugin*, dan *tool* pihak ketiga** yang secara khusus dibuat untuk memperluas fungsionalitas framework, sehingga memudahkan integrasi fitur tambahan.
+
+| Aspek | Framework | Coding Biasa (Vanilla) |
+| :--- | :--- | :--- |
+| **Kecepatan** | **Cepat**, menggunakan fungsionalitas siap pakai | **Lambat**, harus membangun dasar dari nol |
+| **Keamanan** | **Bawaan
 
 ### Tanpa Framework (PHP + cURL Murni)
 
@@ -936,3 +980,5 @@ Jika ada pertanyaan atau menemui masalah, jangan ragu untuk bertanya di
 komunitas atau membuka issue di repository PHPTelebot.
 
 **Selamat coding! 🚀**
+
+[^radya]: <https://github.com/radyakaze/> yakni Sdr. Pringgo Radianto alias [Radyakaze](https://t.me/error_log), merupakan developer PHP untuk PHPTelebot pertama.
