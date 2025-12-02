@@ -3,7 +3,7 @@
 Panduan ini memungkinkan Anda menyematkan widget komentar Giscus di bawah setiap bab mdBook dan menyinkronkan temanya secara dinamis.
 
 > [!IMPORTANT]
-> Update Metode: [LIHAT LANGSUNG CARA DIBAWAH](#-skrip-giscus-terakhir-yang-berhasil-injeksi-javascript)!
+> Update Metode: Setelah langkah [1)](#1--mendapatkan-data-giscus-yang-diperlukan) langsung meluncurlah [LIHAT CARA DIBAWAH](#-skrip-giscus-terakhir-yang-berhasil) yang sudah berhasil dengan baik!
 
 ## 1. 🔑 Mendapatkan Data Giscus yang Diperlukan
 
