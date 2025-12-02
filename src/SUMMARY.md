@@ -19,5 +19,8 @@
 - [Bun dan GramIO](./bun_gramio.md)
 - [Rust dan Teloxide (_draft_)](./rust/rust_teloxide.md)
 
+# Setup
+- [Setup VPS](./computer/vps-setup.md)
+
 # Lain-lain
 - [Web Test](./test.md)
