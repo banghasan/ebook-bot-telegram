@@ -1,35 +1,102 @@
 /* giscus.css */
+/* --- Styling untuk Tombol Scroll ke Atas (Profesional) --- */
+#back-to-top {
+    /* Posisi */
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
 
-/* Target elemen HR yang disuntikkan setelah <main> */
-main + hr {
-    /* Hapus border default browser */
+    /* Tampilan Tombol */
+    background-color: var(--link-color, #0077aa); /* Warna utama mdBook */
+    color: white;
     border: none;
+    border-radius: 50%; /* Bentuk lingkaran */
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 20px; /* Ukuran ikon */
 
-    /* Atur ketebalan dan warna baru */
-    border-top: 1px solid var(--fg-color-border, #ddd); /* Menggunakan variabel mdBook jika tersedia, fallback ke abu-abu terang */
+    /* Ikon: Menggunakan Flexbox untuk penempatan ikon yang sempurna di tengah */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    /* Tambahkan jarak atas dan bawah */
-    margin-top: 2.5rem; /* Lebih besar */
-    margin-bottom: 2.5rem; /* Lebih besar */
-
-    /* Batasi lebar HR agar tidak terlalu lebar */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    /* Efek Visual */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow yang lebih dalam */
+    opacity: 0;
+    transition:
+        opacity 0.3s,
+        transform 0.3s; /* Tambahkan transisi transform */
+    transform: scale(0.95); /* Sedikit kecil saat tidak aktif */
+    visibility: hidden;
+    z-index: 1000;
 }
 
+/* Tampilkan tombol saat class 'show' ditambahkan */
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1); /* Ukuran normal saat aktif */
+}
+
+/* Efek Hover */
+#back-to-top:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    background-color: var(
+        --link-color-dark,
+        #005580
+    ); /* Sedikit lebih gelap saat di-hover */
+}
+
+/* ------------------------------------------------ */
+/* PEMBERSIHAN DAN PEMBATASAN LEBAR GISCUS WRAPPER */
+/* ------------------------------------------------ */
 #giscus-wrapper {
-    /* Atur lebar maksimum agar tidak melebihi lebar tertentu */
+    /* Tetap pertahankan lebar dan posisi */
     max-width: 800px;
-
-    /* Atau atur lebar yang lebih kecil, misalnya 75% dari konten */
-    /* width: 75%; */
-
-    /* Gunakan margin: 0 auto; untuk menempatkannya di tengah halaman (center) */
     margin-left: auto;
     margin-right: auto;
 
-    /* Berikan sedikit margin di bagian atas/bawah agar terpisah dari konten */
-    margin-top: 2em;
+    /* Atur jarak atas/bawah agar pemisah memiliki ruang */
+    margin-top: 4rem; /* Memberi ruang besar di atas */
     margin-bottom: 2em;
+
+    position: relative;
+}
+
+/* ------------------------------------------------ */
+/* STYLE PEMISAH BARU (Garis Jelas di Atas Teks) */
+/* ------------------------------------------------ */
+
+#giscus-wrapper::before {
+    content: "Reaksi dan Diskusi"; /* Label yang jelas */
+    display: block;
+    text-align: center;
+
+    /* Gaya Teks */
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 0.1em; /* Jarak antar huruf */
+    color: var(--link-color, #0077aa); /* Warna kontras, seperti link mdBook */
+
+    /* Garis Penebal di Atas Teks */
+    border-top: 3px solid var(--link-color, #0077aa);
+    width: 200px; /* Lebar garis hanya 100px */
+
+    /* Penempatan Garis dan Teks */
+    padding-top: 1.5rem; /* Jarak antara garis dan teks */
+    padding-bottom: 1rem;
+    margin: 0 auto; /* Tengah */
+}
+
+/* ------------------------------------------------ */
+/* STYLE UNTUK MODE GELAP */
+/* ------------------------------------------------ */
+.coal #giscus-wrapper::before,
+.navy #giscus-wrapper::before,
+.rust #giscus-wrapper::before,
+.dark #giscus-wrapper::before {
+    /* Gunakan warna border yang sesuai untuk tema gelap */
+    border-top: 3px solid var(--link-color-dark, #80cfff);
+    color: var(--link-color-dark, #80cfff);
 }

@@ -86,11 +86,11 @@ async function loadGiscusAndStartObserver() {
   // Buat HR, Wrapper, dan Script
   const wrapper = document.createElement("div");
   wrapper.id = "giscus-wrapper";
-  const hr = document.createElement("hr");
+  //const hr = document.createElement("hr");
 
   // Sisipkan elemen di luar tag <main>
   mainElement.insertAdjacentElement("afterend", wrapper);
-  mainElement.insertAdjacentElement("afterend", hr);
+  //mainElement.insertAdjacentElement("afterend", hr);
 
   let giscusAttributes = {
     src: "https://giscus.app/client.js",
@@ -145,5 +145,38 @@ async function loadGiscusAndStartObserver() {
   }, 3000);
 }
 
-// --- INI ADALAH SATU-SATUNYA LISTENER DOMContentLoaded YANG TERSISA ---
-document.addEventListener("DOMContentLoaded", loadGiscusAndStartObserver);
+// --- FUNGSI BARU: LOGIKA SCROLL KE ATAS ---
+function setupBackToTopButton() {
+  // A. Buat Tombol HTML
+  const button = document.createElement("button");
+  button.id = "back-to-top";
+  button.innerHTML = "&#9650;"; // Panah ke atas
+  document.body.appendChild(button);
+
+  // B. Tampilkan/Sembunyikan Tombol saat Scroll
+  window.addEventListener("scroll", () => {
+    // Tampilkan tombol jika posisi scroll Y > 100 piksel
+    if (window.scrollY > 100) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
+    }
+  });
+
+  // C. Fungsi Scroll saat Diklik
+  button.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Gulir halus
+    });
+  });
+}
+
+// --- Revisi Listener DOMContentLoaded ---
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Muat Giscus dan Observer (Seperti sebelumnya)
+  loadGiscusAndStartObserver();
+
+  // 2. Setup Tombol Scroll ke Atas
+  setupBackToTopButton();
+});

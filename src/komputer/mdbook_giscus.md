@@ -129,7 +129,21 @@ additional-js = ["giscus.js"]
 CSS ini diperlukan untuk mengatur lebar wrapper yang dibuat secara dinamis oleh JavaScript.
 
 ```css,fp=giscus.css
-{{#include ../../asset/giscus.css}}
+#giscus-wrapper {
+    /* Atur lebar maksimum agar tidak melebihi lebar tertentu */
+    max-width: 800px;
+
+    /* Atau atur lebar yang lebih kecil, misalnya 75% dari konten */
+    /* width: 75%; */
+
+    /* Gunakan margin: 0 auto; untuk menempatkannya di tengah halaman (center) */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Berikan sedikit margin di bagian atas/bawah agar terpisah dari konten */
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
 ```
 
 ### 2. 🧠 Skrip Utama (`giscus.js`)
