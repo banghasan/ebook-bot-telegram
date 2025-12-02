@@ -21,8 +21,8 @@
 - [Rust dan Teloxide (_draft_)](./rust/rust_teloxide.md)
 
 # Setup
-- [Setup VPS](./computer/vps-setup.md)
-- [Giscus di MdBook](./tools/mdbook_giscus.md)
+- [Setup VPS](./komputer/vps-setup.md)
+- [Giscus di MdBook](./komputer/mdbook_giscus.md)
 
 # Lain-lain
 - [Status](./status.md)

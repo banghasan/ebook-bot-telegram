@@ -28,7 +28,7 @@ Halaman ini disediakan sebagai rujukan resmi mengenai kondisi terbaru aplikasi w
 ## Utama
 
 - Program Utama [MdBook](https://github.com/rust-lang/mdBook)
-- Dokumentasi <https://projects.localizethedocs.org/mdbook-docs-l10n/en-us/master/index.html>
+- Dokumentasi <https://rust-lang.github.io/mdBook/>
 - Aneka Plugins <https://github.com/rust-lang/mdBook/wiki/Third-party-plugins>
 
 ## Plugins 
