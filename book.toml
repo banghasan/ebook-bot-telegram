@@ -12,7 +12,7 @@ git-repository-url = "https://github.com/banghasan/ebook-bot-telegram"
 edit-url-template = "https://github.com/banghasan/ebook-bot-telegram/tree/main/{path}"
 hash-files = true
 additional-css = ["theme/giscus.css"]
-additional-js = ["theme/giscus.js"]
+#additional-js = ["theme/giscus.js"]
 
 [output.html.playground]
 editable = true
