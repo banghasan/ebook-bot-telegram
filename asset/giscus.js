@@ -144,18 +144,19 @@ async function loadGiscusAndStartObserver() {
     changeGiscusTheme();
   }, 3000);
 }
-
 // --- FUNGSI BARU: LOGIKA SCROLL KE ATAS ---
 function setupBackToTopButton() {
   // A. Buat Tombol HTML
   const button = document.createElement("button");
   button.id = "back-to-top";
-  button.innerHTML = "&#9650;"; // Panah ke atas
+
+  // Ganti ikon panah lama (&#9650;) dengan karakter Unicode yang lebih modern (Panah ke atas tebal)
+  button.innerHTML = "&#x2191;"; // Karakter Unicode: ↑ (Panah ke atas)
+
   document.body.appendChild(button);
 
   // B. Tampilkan/Sembunyikan Tombol saat Scroll
   window.addEventListener("scroll", () => {
-    // Tampilkan tombol jika posisi scroll Y > 100 piksel
     if (window.scrollY > 100) {
       button.classList.add("show");
     } else {
@@ -167,16 +168,13 @@ function setupBackToTopButton() {
   button.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Gulir halus
+      behavior: "smooth",
     });
   });
 }
 
-// --- Revisi Listener DOMContentLoaded ---
+// --- Listener DOMContentLoaded (tetap sama) ---
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Muat Giscus dan Observer (Seperti sebelumnya)
   loadGiscusAndStartObserver();
-
-  // 2. Setup Tombol Scroll ke Atas
   setupBackToTopButton();
 });

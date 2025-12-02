@@ -1,33 +1,37 @@
 /* giscus.css */
-/* --- Styling untuk Tombol Scroll ke Atas (Profesional) --- */
+
+/* --- Styling untuk Tombol Scroll ke Atas (Ditingkatkan) --- */
 #back-to-top {
     /* Posisi */
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 30px; /* Sedikit lebih tinggi dari sebelumnya */
+    right: 30px; /* Sedikit menjauh dari tepi */
 
-    /* Tampilan Tombol */
-    background-color: var(--link-color, #0077aa); /* Warna utama mdBook */
+    /* Tampilan Tombol DITINGKATKAN */
+    background-color: var(--link-color, #0077aa);
     color: white;
     border: none;
-    border-radius: 50%; /* Bentuk lingkaran */
-    width: 45px;
-    height: 45px;
-    cursor: pointer;
-    font-size: 20px; /* Ukuran ikon */
+    border-radius: 50%;
 
-    /* Ikon: Menggunakan Flexbox untuk penempatan ikon yang sempurna di tengah */
+    /* UKURAN DITINGKATKAN */
+    width: 50px; /* Dari 45px menjadi 50px */
+    height: 50px; /* Dari 45px menjadi 50px */
+    font-size: 24px; /* Dari 20px menjadi 24px (memperbesar ikon) */
+
+    cursor: pointer;
+
+    /* Ikon: Tetap gunakan Flexbox untuk penempatan di tengah */
     display: flex;
     align-items: center;
     justify-content: center;
 
     /* Efek Visual */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow yang lebih dalam */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35); /* Shadow yang lebih kuat */
     opacity: 0;
     transition:
         opacity 0.3s,
-        transform 0.3s; /* Tambahkan transisi transform */
-    transform: scale(0.95); /* Sedikit kecil saat tidak aktif */
+        transform 0.3s;
+    transform: scale(0.9); /* Sedikit lebih kecil saat tidak aktif */
     visibility: hidden;
     z-index: 1000;
 }
@@ -41,11 +45,8 @@
 
 /* Efek Hover */
 #back-to-top:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    background-color: var(
-        --link-color-dark,
-        #005580
-    ); /* Sedikit lebih gelap saat di-hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Shadow yang lebih dramatis saat hover */
+    background-color: var(--link-color-dark, #005580);
 }
 
 /* ------------------------------------------------ */
@@ -92,11 +93,19 @@
 /* ------------------------------------------------ */
 /* STYLE UNTUK MODE GELAP */
 /* ------------------------------------------------ */
-.coal #giscus-wrapper::before,
-.navy #giscus-wrapper::before,
-.rust #giscus-wrapper::before,
-.dark #giscus-wrapper::before {
-    /* Gunakan warna border yang sesuai untuk tema gelap */
-    border-top: 3px solid var(--link-color-dark, #80cfff);
-    color: var(--link-color-dark, #80cfff);
+/* Penyesuaian warna untuk Mode Gelap */
+.coal #back-to-top,
+.navy #back-to-top,
+.rust #back-to-top,
+.dark #back-to-top {
+    background-color: var(--link-color-dark, #80cfff);
+    color: #333;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.coal #back-to-top:hover,
+.navy #back-to-top:hover,
+.rust #back-to-top:hover,
+.dark #back-to-top:hover {
+    background-color: var(--link-color-dark, #a0dfff);
 }
