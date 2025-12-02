@@ -1,5 +1,23 @@
 /* giscus.css */
 
+/* Target elemen HR yang disuntikkan setelah <main> */
+main + hr {
+    /* Hapus border default browser */
+    border: none;
+
+    /* Atur ketebalan dan warna baru */
+    border-top: 1px solid var(--fg-color-border, #ddd); /* Menggunakan variabel mdBook jika tersedia, fallback ke abu-abu terang */
+
+    /* Tambahkan jarak atas dan bawah */
+    margin-top: 2.5rem; /* Lebih besar */
+    margin-bottom: 2.5rem; /* Lebih besar */
+
+    /* Batasi lebar HR agar tidak terlalu lebar */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #giscus-wrapper {
     /* Atur lebar maksimum agar tidak melebihi lebar tertentu */
     max-width: 800px;
