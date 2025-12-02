@@ -23,4 +23,5 @@
 - [Setup VPS](./computer/vps-setup.md)
 
 # Lain-lain
+- [Status](./status.md)
 - [Web Test](./test.md)

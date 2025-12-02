@@ -14,14 +14,11 @@
 </style>
 
 <div class="mdbook-version">
-    mdbook v0.5.1
+    Teks Pojok
 </div>
 
 ![](https://blog.banghasan.com/assets/images/BOCAH/014.png)
 
-Halaman ini sengaja dibuat sebagai ruang eksperimen supaya setiap fungsi dapat diuji sebelum diterapkan ke halaman lain.
-
-[![bang - Hasan](https://img.shields.io/badge/bang-Hasan-2ea44f)](https://banghasan.com) ![](https://img.shields.io/github/last-commit/banghasan/ebook-bot-telegram) ![maintained - yes](https://img.shields.io/badge/maintained-yes-blue) [![contributions - welcome](https://img.shields.io/badge/contributions-welcome-blue)](/CONTRIBUTING.md "Go to contributions doc") [![OS - Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux&logoColor=white)](https://www.linux.org/ "Go to Linux homepage") [![Netlify Status](https://api.netlify.com/api/v1/badges/880db421-2771-4335-916e-1620217e6b50/deploy-status)](https://app.netlify.com/projects/botindonesia/deploys) [![issues - ebook-bot-telegram](https://img.shields.io/github/issues/banghasan/ebook-bot-telegram)](https://github.com/banghasan/ebook-bot-telegram/issues)
 
 ## Untuk Developer
 
@@ -36,22 +33,6 @@ Halaman ini sengaja dibuat sebagai ruang eksperimen supaya setiap fungsi dapat d
 
 ---
 
-## Link Penting
-
-- [MdBook](https://github.com/rust-lang/mdBook) program utama
-- <https://projects.localizethedocs.org/mdbook-docs-l10n/en-us/master/index.html>
-- <https://github.com/rust-lang/mdBook/wiki/Third-party-plugins>
-
-### Plugins 
-
-Nunggu update agar support versi `0.5.x` 
-[![GitHub release](https://img.shields.io/github/release/rust-lang/mdBook?include_prereleases=&sort=semver&color=blue)](https://github.com/rust-lang/mdBook/releases/)
-- [mdbook-embedify](https://github.com/MR-Addict/mdbook-embedify): `v0.2.18` [![GitHub release](https://img.shields.io/github/release/MR-Addict/mdbook-embedify?include_prereleases=&sort=semver&color=blue)](https://github.com/MR-Addict/mdbook-embedify/releases/)
-- [mdbook-admonish](https://github.com/tommilligan/mdbook-admonish): `v1.20.0`[![GitHub release](https://img.shields.io/github/release/tommilligan/mdbook-admonish?include_prereleases=&sort=semver&color=blue)](https://github.com/tommilligan/mdbook-admonish/releases/)
-- [mdbook-repl](https://github.com/MR-Addict/mdbook-repl) `v0.2.8` [![GitHub tag](https://img.shields.io/github/tag/MR-Addict/mdbook-repl?include_prereleases=&sort=semver&color=blue)](https://github.com/MR-Addict/mdbook-repl/releases/)
-
-Support, tapi tidak terpakai:
-- [mdbook-pagetoc](https://github.com/slowsage/mdbook-pagetoc)
 
 ## Contoh Format Markdown
 
