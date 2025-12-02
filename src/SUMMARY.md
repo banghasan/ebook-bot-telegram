@@ -15,6 +15,7 @@
   
 # Ebook
 - [PHP dan Curl](./php_curl.md)
+- [PHP Telebot](./PHP/phptelebot.md)
 - [Google Apps Script](./gas_lumpia.md)
 - [Bun dan GramIO](./bun_gramio.md)
 - [Rust dan Teloxide (_draft_)](./rust/rust_teloxide.md)
