@@ -2,6 +2,9 @@
 
 Panduan ini memungkinkan Anda menyematkan widget komentar Giscus di bawah setiap bab mdBook dan menyinkronkan temanya secara dinamis.
 
+> [!IMPORTANT]
+> Update Metode: [LIHAT LANGSUNG CARA DIBAWAH](#-skrip-giscus-terakhir-yang-berhasil-injeksi-javascript)!
+
 ## 1. 🔑 Mendapatkan Data Giscus yang Diperlukan
 
 1.  **Kunjungi** [Giscus App](https://giscus.app/).
@@ -93,7 +96,173 @@ additional-css = ["theme/custom.css"]
 
 ## ⚠️ Catatan Penting Mengenai Sinkronisasi Tema
 
-Saat ini, pergantian tema gelap atau terang pada widget Giscus secara dinamis (menggunakan tombol tema mdBook) belum berhasil. Sudah dicoba dengan cara meng-custom js tetap tidak berubah.
+~Saat ini, pergantian tema gelap atau terang pada widget Giscus secara dinamis (menggunakan tombol tema mdBook) belum berhasil. Sudah dicoba dengan cara meng-custom js tetap tidak berubah~
+
+Gunakan cara dibawah ini...
+
+
+---
+
+# 🚀 Skrip Giscus Terakhir yang Berhasil
+
+Dengan metode **Injeksi JavaScript**, cara ini sungguh pamungkas euy!
+
+Kode ini menyuntikkan widget Giscus setelah `<main>` dan menyinkronkan tema mdBook Anda dengan tema Giscus yang spesifik, menjaga `theme/index.hbs` tetap bersih.
+
+## 1. 🛠️ Konfigurasi Aset
+
+Pastikan file-file ini ada di folder theme/ Anda dan dimuat di book.toml.
+
+### A. Atur `book.toml`
+
+Pastikan file kustom Anda dimuat:
+
+```toml
+[output.html]
+# ... konfigurasi lainnya
+additional-css = ["giscus.css"]
+additional-js = ["giscus.js"]
+```
+
+### B. theme/giscus.css
+
+CSS ini diperlukan untuk mengatur lebar wrapper yang dibuat secara dinamis oleh JavaScript.
+
+```css
+{{#include ../../giscus.css}}
+```
+
+### 2. 🧠 Skrip Utama (`giscus.js`)
+
+Kode ini mengurus pemuatan Giscus (injeksi ke DOM) dan sinkronisasi tema dinamis melalui `MutationObserver` dan `postMessage`
+
+```js
+// giscus.js
+
+// --- Konfigurasi Tema Giscus ---
+// Pemetaan Tema Spesifik ke Tema Giscus:
+// Light/Default: catppuccin_latte
+// Gelap Umum (Navy/Coal/Dark): catppuccin_macchiato
+// Rust: gruvbox_dark
+// Ayu: dark_dimmed
+
+function getThemeName() {
+    const htmlClass = document.documentElement.className;
+    
+    if (htmlClass.includes("ayu")) {
+        return "dark_dimmed"; 
+    } 
+    
+    if (htmlClass.includes("rust")) {
+        return "gruvbox_dark";
+    }
+
+    if (htmlClass.includes("navy") || htmlClass.includes("coal") || htmlClass.includes("dark")) {
+        return "dark"; 
+    }
+    
+    return "light";
+}
+
+// --- Fungsi Pemuatan Giscus (Injeksi DOM) ---
+function loadGiscus() {
+    const mainElement = document.querySelector("main");
+    if (!mainElement) {
+        console.error("Main content area (<main>) not found. Cannot inject Giscus.");
+        return;
+    }
+
+    // Buat HR (opsional, sebagai pemisah)
+    const hr = document.createElement("hr");
+    // Sisipkan elemen setelah <main>
+    mainElement.insertAdjacentElement('afterend', hr); 
+
+    // Buat DIV WRAPPER (untuk menerapkan CSS kustom)
+    const wrapper = document.createElement("div");
+    wrapper.id = "giscus-wrapper";
+    mainElement.insertAdjacentElement('afterend', wrapper); 
+
+    // Buat Script Giscus
+    let giscusAttributes = {
+        src: "https://giscus.app/client.js",
+        "data-repo": "<USERNAME/REPO-ANDA>", // Ganti dengan data Anda
+        "data-repo-id": "R_kgDOXXXXXXXX", // Ganti dengan data Anda
+        "data-category": "<NAMA-KATEGORI>", // Ganti dengan data Anda
+        "data-category-id": "DIC_kwDOXXXXXXXX", // Ganti dengan data Anda
+        "data-mapping": "pathname",
+        "data-strict": "0",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "top",
+        "data-theme": getThemeName(), 
+        "data-lang": "id",
+        "data-loading": "lazy",
+        crossorigin: "anonymous",
+        async: "",
+    };
+
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) =>
+        giscusScript.setAttribute(key, value),
+    );
+    wrapper.appendChild(giscusScript); 
+}
+
+// --- Sinkronisasi Tema Dinamis ---
+function changeGiscusTheme() {
+    const iframe = document.querySelector("iframe.giscus-frame");
+    if (!iframe) {
+        // Retry logic: Coba lagi hingga iframe ditemukan
+        setTimeout(changeGiscusTheme, 500);
+        return;
+    }
+
+    const theme = getThemeName();
+    
+    const sendMessage = (message) => {
+        if (iframe.contentWindow) {
+            iframe.contentWindow.postMessage(
+                { giscus: message },
+                "https://giscus.app",
+            );
+            console.log("Giscus theme sent via postMessage:", theme);
+        }
+    };
+
+    sendMessage({ setConfig: { theme: theme } });
+}
+
+// --- Observer (Trigger Perubahan Tema) ---
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Muat Giscus saat DOM siap
+    loadGiscus();
+
+    const htmlElement = document.documentElement;
+
+    // 2. Observer untuk mendeteksi pergantian tema mdBook
+    const observer = new MutationObserver((mutationsList) => {
+        for (const mutation of mutationsList) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                // Jeda 100ms untuk stabilitas sebelum mengirim pesan postMessage
+                setTimeout(changeGiscusTheme, 100); 
+            }
+        }
+    });
+
+    observer.observe(htmlElement, { attributes: true, attributeFilter: ['class'] });
+
+    // 3. Fallback Pemuatan Awal (Wajib untuk mengatasi masalah timing)
+    setTimeout(() => {
+        console.log("Applying initial theme forcefully after 3s delay.");
+        changeGiscusTheme(); 
+    }, 3000);
+});
+```
+
+## 3. Build dan Uji
+
+Seperti [metode sebelumnya](#6--build-dan-uji).
+
 
 Baiklah, segini dulu aja yak! 
 

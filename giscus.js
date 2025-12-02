@@ -1,4 +1,4 @@
-// theme/custom.js
+// giscus.js
 
 // 1. FUNGSI DETEKSI TEMA MD BOOK (TIDAK BERUBAH)
 function getThemeName() {
@@ -10,7 +10,7 @@ function getThemeName() {
   }
 
   if (htmlClass.includes("rust")) {
-    return "gruvbox_dark";
+    return "fro";
   }
 
   // Pemetaan Tema Gelap Umum (Coal, Navy, atau default dark lainnya)
@@ -19,11 +19,11 @@ function getThemeName() {
     htmlClass.includes("coal") ||
     htmlClass.includes("dark")
   ) {
-    return "catppuccin_macchiato";
+    return "dark";
   }
 
   // Default untuk Light dan tema tanpa class spesifik
-  return "catppuccin_latte";
+  return "light";
 }
 
 // 2. FUNGSI MEMUAT GISCUS SAAT PERTAMA KALI (MODIFIKASI UTAMA)
