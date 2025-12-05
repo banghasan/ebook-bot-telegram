@@ -122,3 +122,34 @@ Ada di [admonitions](https://rust-lang.github.io/mdBook/format/markdown.html#adm
 
 > [!CAUTION]
 > Negative potential consequences of an action.
+
+
+## Rust 
+
+### Hello World
+
+`Hello world` nya bisa dijalankan di sini.
+
+```rust 
+use std::time::{SystemTime, UNIX_EPOCH};
+
+fn main() {
+    println!("🌟 Hello World! 🌟");
+    
+    // Dapatkan waktu saat ini dari sistem
+    let now = SystemTime::now();
+
+    // Hitung durasi sejak epoch (1 Januari 1970)
+    let duration_since_epoch = match now.duration_since(UNIX_EPOCH) {
+        Ok(duration) => duration,
+        Err(e) => {
+            // Ini terjadi jika waktu sistem mundur sebelum epoch
+            eprintln!("Waktu sistem mundur sebelum epoch: {}", e);
+            return;
+        }
+    };
+
+    // Tampilkan waktu mentah sebagai durasi
+    println!("\nTotal detik sejak epoch: {} detik", duration_since_epoch.as_secs());
+}
+```
